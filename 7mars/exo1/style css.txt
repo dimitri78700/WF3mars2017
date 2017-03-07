@@ -1,0 +1,32 @@
+
+    <style>
+
+form  {
+    background-image: url(http://www.sur-la-plage.com/images/photos/palmier-tordu.jpg); *//* height: 200px; *//* width: 440px; */background-size: cover;background-size:100% 100%;
+    }
+ 
+ 
+ table { text-align:center; border:dashed; border-collapse: collapse 
+        }       
+
+ td {
+     width: 50px; border: dashed;height: 30px;
+     }
+
+ ol {
+     background-color:blue;
+     }
+
+ ul {
+     background-color: red;list-style-type: thai
+     }
+
+ .latin {
+     color: green;
+     }
+
+#webforce {
+    color: hotpink;
+        }
+   
+    </style>

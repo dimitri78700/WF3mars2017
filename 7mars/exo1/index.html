@@ -12,6 +12,39 @@
   <!--ajouter un titre à la page-->
   <title>Bonjour le monde</title>
 
+    <style>
+
+form  {
+    background-image: url(http://www.sur-la-plage.com/images/photos/palmier-tordu.jpg); *//* height: 200px; *//* width: 440px; */background-size: cover;background-size:100% 100%;
+    }
+ 
+ 
+ table { text-align:center; border:dashed; border-collapse: collapse 
+        }       
+
+ td {
+     width: 50px; border: dashed;height: 30px;
+     }
+
+ ol {
+     background-color:blue;
+     }
+
+ ul {
+     background-color: red;list-style-type: thai
+     }
+
+ .latin {
+     color: green;
+     }
+
+#webforce {
+    color: hotpink;
+        }
+   
+    </style>
+
+
 </head>
 
 <!--ajouter du contenu dans la page-->
@@ -19,8 +52,8 @@
    
     <!--les titres-->
     
-    <h1>Les</h1> <!--la balise h1 doit être unique sur la page-->
-    <h2>Mingnons</h2>
+    <h1 class="latin">Les</h1> <!--la balise h1 doit être unique sur la page-->
+    <h2 class="latin">Mignons</h2>
 
 
     <!--un lien dans un nouvel onglet-->
@@ -33,11 +66,11 @@
 
     <!--Paragraphes-->
     
-    <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Nemo cupiditate iure dolores in non, <i>inventore nihil impedit iste natus voluptas</i>, harum dolorum necessitatibus, quas. Nam asperiores earum adipisci voluptates recusandae.
+    <p id="webforce">Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Nemo cupiditate iure dolores in non, <i>inventore nihil impedit iste natus voluptas</i>, harum dolorum necessitatibus, quas. Nam asperiores earum adipisci voluptates recusandae.
 
 <!--liste ordonnée avec couleur-->
    
-   <ol style=background-color:blue;>
+   <ol>
         <li>Pierre</li>
         <li>Paul</li>
         <li>Jack</li>
@@ -45,10 +78,7 @@
         
  <!--liste non ordonnée avec couleur et style-->
     
-    <ul <ul style="
-    background-color: red;
-    list-style-type: thai;
-    ">
+    <ul>
         <li>John</li>
         <li><b>Jack</b></li>
         <li>George</li>
@@ -59,24 +89,52 @@
         <img src="img/coucou.jpeg" alt="Photo d'un mignon'">
         <img src="img/coucou.jpeg" alt="Photo d'un mignon'">
 
+<!--ajouter un tableau avec 3 colonnes td= colonne tr=  ligne  width= largeur  height= hauteur-->
 
-<!--ajout de formulaire avec un lien qui renvoie à un site-->
+<table>
+<tbody>
+   
+    <tr>
+  <td ></td>  
+  <td>k</td>  
+  <td></td>  
+    </tr> 
+
+    <tr>
+  <td></td>
+  <td id="webforce">Mike</td>
+  <td></td>
+    </tr>   
+
+    <tr>
+  <td></td>  
+  <td>J</td>  
+  <td></td>  
+    </tr> 
+
+
+</tbody> 
+   
+
+</table>
+
+<!--ajout de formulaire avec un lien qui renvoie à un site avec une image et texte couleur-->
         
-        <form action="about.html" method="POST" style="background-image: url(http://www.sur-la-plage.com/images/photos/palmier-tordu.jpg); *//* height: 200px; *//* width: 440px; */background-size: cover;background-size: 100% 100%;">
+        <form action="about.html" method="POST">
            
        <fieldset>
            
         <legend>Mike</legend>
         
-         <p style="text-align: center">First name:<br>
+         <p>First name:<br>
         
         <input type="text"; name="prénom" value=""></p>
          
-         <p style="text-align: center">Last name:<br>
+         <p>Last name:<br>
         
         <input type="text" name="Nom" value=""style=""></p>
        
-        <p style="text-align: center"><input type="submit" value="submit"></p>
+        <p><input type="submit" value="submit"></p>
         
         </fieldset>
         
