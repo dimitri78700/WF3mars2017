@@ -45,11 +45,18 @@ Style reset
            }
         p{
         text-align: center;
-        color: red;
+        color: white;
+            }
+        
+        p2{
+       
+        color: green;
+        
+
             }
 
         .Aurevoir{
-            color: saddlebrown;
+            color: black;
             font-size: 10rem;
         }
 
