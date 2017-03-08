@@ -1,5 +1,80 @@
+.ImportantClass{
+    color: green
+}
+
+#ImportantId{
+    color: darkred
+}
+
+
+/*
+Selecteur logique : une balise html
+*/
+
+/*Faire en sorte que tout les textes de la page soient centrés*/
+
+body{
+    text-align: center;
+}
+
+
 /*Selectionner la balise h2*/
-h2{
+h2, h3{
    /* Changer la couleur de la font */
    color: red;
 }
+
+h3{
+    color: blueviolet;
+
+}
+
+/*Selectionner les balises a*/
+
+a{
+    /*Supprimer le soulignement*/
+    text-decoration: none; 
+}
+
+/*
+selecteur imbriqués
+*/
+        h2 b{
+            color: indigo
+        }
+
+        .redBackground h2{
+            color: navy;
+        }
+
+
+ /*selecteur par class
+ */
+     /*Selectionner la class redBackground*/
+        .redBackground{
+                background-color: skyblue;
+        }
+
+/*Selecteur par id
+*/
+                /*Selectionner l'id BigTitle*/
+                #BigTitle{
+                        /*Modifier la taille de la font */
+                        font-size: 3rem; 
+                }
+
+
+                /*Selecteur d'interaction ( état )*/
+
+                        /*changer la couleur des balises a au survol */
+                        a:hover{
+                            color: red
+                        }
+
+                        .redBackground:hover{
+                            background-color: green;
+                        }
+                        
+                        #bigTitle:hover{
+                            color:gold;
+                        }
