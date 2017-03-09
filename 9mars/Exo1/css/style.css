@@ -11,7 +11,7 @@ Style reset
 
     /*Faire en sorte que 1rem soit égal à 10px*/
 
-    html{
+    html{ 
         font-size: 62.5%;
     }
 
@@ -54,6 +54,22 @@ Style reset
         text-transform: uppercase;
         margin-bottom: 3rem;
     }
+
+
+
+/*
+Style largeur max
+*/
+
+nav ul, #dimitri, #about p, #contact, footer section{
+    
+    /*Definir une largeur max*/
+    max-width: 95rem;
+
+    /*centrer une balise de type block dans son parent*/
+    margin: auto; 
+}
+
 
 
 /*
@@ -107,24 +123,26 @@ Style Header
                 }
 
 
+
 /*
 Style Dimitri Raievsky
 */
 
-#dimitri a{
-    display: none;
+                #dimitri a{
+        display: none;
 }
-#dimitri article{
+                #dimitri article{
 
-/* Créer 3 colonnes */
-display: inline-block;
-width: 30%;
-margin: 1.5rem;
+        /* Créer 3 colonnes */
+        display: inline-block;
+        width: 30%;
+        margin: 1.5rem;
 }
 
-#dimitri{
-    text-align: center;
+                #dimitri{
+        text-align: center;
 }
+
 
 /*
 Style About me
@@ -139,17 +157,20 @@ Style About me
 } 
 
 #about p{
+   
     /*afficher le texte sur 2 colonnes */
      column-count: 2;
      -webkit-column-count: 2;
      -moz-column-count: 2;
-/*Justifier le texte */
+
+    /*Justifier le texte */
      text-align: justify;
      
      margin-bottom: 1.5rem;
 }
 
 #about a{
+    
     color: dimgray;
     border: .3rem solid lightgreen;
     border-style: outset;
@@ -161,6 +182,8 @@ Style About me
     -moz-border-radius: 1rem;
     border-radius: 1rem;
 }
+
+
 
 
 /*
@@ -197,6 +220,7 @@ textarea{
     }
 
 
+
 /*
 Style footer
 */
@@ -217,6 +241,7 @@ Style footer
         }
 
 /* Selectionner une balise grâce à son attribut et valeur*/
+        
         [href="http://google.com"]{
             color: yellow;
         }
