@@ -34,26 +34,54 @@ Style reset
         max-width: 100%;
     }
 
+    section{
+        padding: 6rem 0;
+    }
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        
+        /*ajouter une marge ext en bas de 30px*/
+        margin-bottom: 3rem;
+
+        font-size: 4rem;
+
+    }
+
+    h3{
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+
+
 /*
 Style Header 
 */
             header{
                 text-align: center;
-                 color: goldenrod;
-                 background: black;
-                  
+                 color: white;
+                 background: cadetblue;
+                
+                 /* ajouter une marge int de 60px */
+                 padding-bottom: 6rem;
                  }
 
                 Nav{
                     /*mettre le text en MAJ*/
                     text-transform: uppercase;
-                    background: white;
-                    text-align: left;
                     
+                    background: #233140;
+                    text-align: left;
+                    padding: 4rem;
+
+                    /*ajouter une marge ext*/
+                    margin-bottom: 3rem;
                 }
                 
                 Nav a{
-                    color:black;
+                    color:gold;
                     
                     /*Texte en gras*/
                     font-weight: bold;
@@ -67,4 +95,133 @@ Style Header
                    margin-right: 1rem;
                 }
 
+                h1{
+                    padding-bottom: 6rem;
+                    text-transform: uppercase;
+                    font-size: 6rem;
+                }
 
+                header p{
+                    /*augmenter la taille de font du p*/
+                    font-size: 2.2rem;
+                }
+
+
+/*
+Style Dimitri Raievsky
+*/
+
+#dimitri a{
+    display: none;
+}
+#dimitri article{
+
+/* Créer 3 colonnes */
+display: inline-block;
+width: 30%;
+margin: 1.5rem;
+}
+
+#dimitri{
+    text-align: center;
+}
+
+/*
+Style About me
+*/
+
+#about{
+    
+    color:white;
+    background: #233140;
+    text-align: center;
+    
+} 
+
+#about p{
+    /*afficher le texte sur 2 colonnes */
+     column-count: 2;
+     -webkit-column-count: 2;
+     -moz-column-count: 2;
+/*Justifier le texte */
+     text-align: justify;
+     
+     margin-bottom: 1.5rem;
+}
+
+#about a{
+    color: dimgray;
+    border: .3rem solid lightgreen;
+    border-style: outset;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+
+    /*créer un bord arrondi*/
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+
+/*
+Style contact me
+*/
+
+input, textarea{
+            display: block;
+            width: 90%;
+            margin: 1rem auto;
+            padding: 1rem;
+            font-size: 2rem;
+
+            border: none;
+            border-bottom: .1rem solid white;
+        }
+
+textarea{
+    /*definir une hauteur min*/
+    min-height: 20rem;
+    
+}
+
+    /*selectionner une balise grace à un attribut et sa valeur*/
+    [type="submit"]{
+        width: 10rem;
+        display: inline-grid;
+        background: black;
+        color: white;
+        font-weight: bold;
+
+        border-radius: .5rem;
+
+    }
+
+
+/*
+Style footer
+*/
+
+        footer{
+            color: white;
+            text-align: center;
+            background: cadetblue;
+            
+        }
+
+        footer article{
+            display: inline-block;
+            width: 30%;
+            
+            /* Gerer l'alignement vertical */
+            vertical-align: top;
+        }
+
+/* Selectionner une balise grâce à son attribut et valeur*/
+        [href="http://google.com"]{
+            color: yellow;
+        }
+
+        aside{
+            padding: 1.5rem;
+            background: #233140;
+        }
