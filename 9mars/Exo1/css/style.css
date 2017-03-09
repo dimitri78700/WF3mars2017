@@ -1,0 +1,157 @@
+/*
+Style reset
+*/
+/*Selecteur TOUTES les balises du DOM */
+        *{
+/*Supprimer les marges intérieures*/
+            padding: 0;
+
+/*Supprimer les marges extérieures*/
+            margin: 0;
+        }
+
+/* Ramener la valeur à rem à 10px */
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.5rem;  /* 1.5rem= 15px */
+            }
+
+/*Modifier marge section */
+            section {
+                margin-bottom: 4rem;
+            }
+        
+         /*
+        em rem 
+        */
+        
+        h1{
+            font-size: 3rem;  /*3 fois le font size de HTML */
+        }
+        
+        h1 b{
+ /* la taille de la font soit toujours 2 fois plus petite que son parent direct */
+            font-size: .5em;
+            color: red;
+        }
+        
+        h2{
+            color: red;
+            font-size: larger;
+            text-align: center;
+           }
+        p{
+        text-align: center;
+        color: white;
+            }
+        
+        p2{
+       
+        color: green;
+        
+
+            }
+
+        .Aurevoir{
+            color: black;
+            font-size: 10rem;
+        }
+
+        /*
+        Style header 
+        */
+
+/*ajouter une bordure de 1px rouge*/
+           
+            header{
+/*ajouter une bordure de 1px rouge*/
+                border: .5rem solid darkgreen; 
+
+/*Ajouter une marge à l'intèrieur de la balise */
+                padding: 10rem 5rem;
+               
+/*ajouter une marge à l'extèrieur de la balise */
+                margin: 2rem;
+                 }
+
+/*Modifier des balises li */
+
+li{
+    display: inline-block;
+    
+}
+         /*limiter la largeur header, main et footer 950px*/
+
+header,main,footer{
+    max-width: 95rem;
+
+    /* Centrer une balise block réduite en largeur */
+    margin: 2rem auto; 
+
+    }  
+
+/*
+Mise en forme typographique
+*/
+
+.presentation{
+    
+    /* modfier la famille de caractères de la font */
+    font-family: "Arial", sans-serif;
+    
+    /*Modifier la taille de la fond*/
+    font-size: 1.7rem;
+
+    /* modifier l'interlignage */
+    line-height: 1.2em;
+
+    /* modifier la graisse de la font */
+    font-weight: bold;
+
+    /* ajouter une ombre portée à la font */
+    text-shadow: .5rem .5rem .5rem black;
+
+    /* Modifier la casse de la font */
+    text-transform: uppercase;
+
+    /* modifier le style de la font */
+    font-style: italic;
+
+    /*modifier la décoration de la font*/
+    text-decoration: underline;
+
+    /*Modifier la couleur de la font */
+    
+    color: #fdfdfd;
+   
+    padding: 2rem;
+    background-color: #071c92; 
+    margin: 4rem;
+
+}
+
+/*Utilisation des couleurs*/
+#portfolioDimitri{
+
+    background: #002975; /*Reference hexadecimale */
+    color: whitesmoke; /* nom intelligible */
+    text-align: center;
+
+}
+
+#portfolioDimitri article{
+   
+    background-color: rgb(251, 0, 0); /*Reference RGBA */
+    color: white;
+    padding: 2rem;
+    margin: 1rem;
+
+    /* faire en sorte d'afficher les articles sur 3 colonnes */
+   
+    display: inline-block;
+}
+
+
