@@ -3,6 +3,9 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+/*Importer des caractéres de google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One|EB+Garamond');
+
 
 /*
 Style reset
@@ -25,7 +28,8 @@ Style reset
         font-size: 1.5rem; /* => 15px */
 
         /* changer la police de caractére */
-        font-family: "Arial", sans-serif; 
+      font-family: 'EB Garamond', serif;
+
     }
 
     /*Supprimer la décoration des balises a */
@@ -42,6 +46,11 @@ Style reset
 
     section{
         padding: 6rem 0;
+    }
+
+    h1, h2, h3{
+          font-family: 'Black Ops One', cursive;
+           font-weight: 400;
     }
 
     h2{
@@ -67,7 +76,11 @@ Style reset
 Style largeur max
 */
 
-nav ul, #dimitri, #about p, #contact, footer section{
+nav ul, 
+main section:first-child, 
+main section:nth-child(2) p,
+main section:last-child,
+footer section{
     
     /*Definir une largeur max*/
     max-width: 95rem;
@@ -124,7 +137,7 @@ Style Header
                    margin-right: 1rem;
                 }
 
-                #firstNaviLi{
+                nav li:first-child {
                         /*Sortir la balise du flux pour la repositionner précisément */
                         position: absolute;
                         /*Placer la balise à gauche */
@@ -133,9 +146,7 @@ Style Header
                         
                         }
 
-               
-
-                h1{
+               h1{
                     padding-bottom: 6rem;
                     text-transform: uppercase;
                     font-size: 6rem;
@@ -151,7 +162,9 @@ Style Header
 /*
 Style Dimitri Raievsky
 */
-               #dimitri article{
+               
+               /* Selectionner le N-ème (nth) enfant*/
+               main section:first-child article{
 
         /* Créer 3 colonnes */
         display: inline-block;
@@ -162,7 +175,7 @@ Style Dimitri Raievsky
         position: relative;
 }
 
-                #dimitri a{
+                main section:first-child a{
                     background: rgba(95, 158, 160, .7);
                     color: white;
                 /*Sortir la balise du flux pour la posi précisément */
@@ -187,13 +200,13 @@ Style Dimitri Raievsky
                 }
 
                 /*Modifier l'opacité de la balise en hover */
-                #dimitri a:hover{
+                main section:first-child a:hover{
                     opacity: 1;
                 }
 
 
-                #dimitri{
-        text-align: center;
+                main section:first-child{
+                text-align: center;
 }
 
 
@@ -201,7 +214,7 @@ Style Dimitri Raievsky
 Style About me
 */
 
-#about{
+main section:nth-child(2){
     
     color:white;
     background: #233140;
@@ -209,7 +222,7 @@ Style About me
     
 } 
 
-#about p{
+main section:nth-child(2) p{
    
     /*afficher le texte sur 2 colonnes */
      column-count: 2;
@@ -222,7 +235,7 @@ Style About me
      margin-bottom: 1.5rem;
 }
 
-#about a{
+main section:nth-child(2) a{
     
     color: dimgray;
     border: .3rem solid lightgreen;
