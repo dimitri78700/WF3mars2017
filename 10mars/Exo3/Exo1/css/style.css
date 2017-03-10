@@ -1,0 +1,305 @@
+
+/*importer un fichier CSS*/
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/*
+Style reset
+/*
+
+ /*supprimer toutes les marges*/
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    /*Faire en sorte que 1rem soit égal à 10px*/
+
+    html{ 
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+
+        /* changer la police de caractére */
+        font-family: "Arial", sans-serif; 
+    }
+
+    /*Supprimer la décoration des balises a */
+
+    a{
+        text-decoration: none; 
+    }
+
+    /* faire en sorte que les images ne dépassent pas leurs parents */
+
+    img{
+        max-width: 100%;
+    }
+
+    section{
+        padding: 6rem 0;
+    }
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        
+        /*ajouter une marge ext en bas de 30px*/
+        margin-bottom: 3rem;
+
+        font-size: 4rem;
+
+    }
+
+    h3{
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+
+
+
+/*
+Style largeur max
+*/
+
+nav ul, #dimitri, #about p, #contact, footer section{
+    
+    /*Definir une largeur max*/
+    max-width: 95rem;
+
+    /*centrer une balise de type block dans son parent*/
+    margin: auto; 
+}
+
+
+
+/*
+Style Header 
+*/
+            header{
+                text-align: center;
+                 color: white;
+                 background: cadetblue;
+                
+                 /* ajouter une marge int de 60px */
+                 padding-bottom: 6rem;
+                 }
+
+                Nav{
+                    /*mettre le text en MAJ*/
+                    text-transform: uppercase;
+                    
+                    background: #233140;
+                    text-align: right;
+                    padding: 4rem;
+
+                    /*ajouter une marge ext*/
+                    margin-bottom: 3rem;
+                }
+
+               
+                
+                Nav a{
+                    color:gold;
+                    
+                    /*Texte en gras*/
+                    font-weight: bold;
+                }
+
+               nav ul{
+                   position: relative;
+               }
+               
+                /*aligner les balises li */
+                
+                li{
+                   display: inline-block; 
+
+                   /*ajouter une marge ext à droite*/
+                   margin-right: 1rem;
+                }
+
+                #firstNaviLi{
+                        /*Sortir la balise du flux pour la repositionner précisément */
+                        position: absolute;
+                        /*Placer la balise à gauche */
+                        left: 0;
+                        font-size: 1.5em;
+                        
+                        }
+
+               
+
+                h1{
+                    padding-bottom: 6rem;
+                    text-transform: uppercase;
+                    font-size: 6rem;
+                }
+
+                header p{
+                    /*augmenter la taille de font du p*/
+                    font-size: 2.2rem;
+                }
+
+
+
+/*
+Style Dimitri Raievsky
+*/
+               #dimitri article{
+
+        /* Créer 3 colonnes */
+        display: inline-block;
+        width: 30%;
+        margin: 1.5rem;
+
+        /*bloquer les enfants dans leur parent */
+        position: relative;
+}
+
+                #dimitri a{
+                    background: rgba(95, 158, 160, .7);
+                    color: white;
+                /*Sortir la balise du flux pour la posi précisément */
+                    position: absolute;
+                
+                /*Placer la balise en haut à gauche */
+                    top: 0;
+                    left: 0;
+
+                    /*faire en sorte que la balise soit à 100% de la taille de son parent */
+                    width: 100%;
+                    height: 100%;
+                    
+                    font-size: 8rem;
+
+                    /*reduire l'opacité de la balise*/
+                    opacity: 0;
+
+                    /*Gerer une transition entre les etats de la balise*/
+                    -webkit-transition: all .5s;
+                    transition: all .5s;
+                }
+
+                /*Modifier l'opacité de la balise en hover */
+                #dimitri a:hover{
+                    opacity: 1;
+                }
+
+
+                #dimitri{
+        text-align: center;
+}
+
+
+/*
+Style About me
+*/
+
+#about{
+    
+    color:white;
+    background: #233140;
+    text-align: center;
+    
+} 
+
+#about p{
+   
+    /*afficher le texte sur 2 colonnes */
+     column-count: 2;
+     -webkit-column-count: 2;
+     -moz-column-count: 2;
+
+    /*Justifier le texte */
+     text-align: justify;
+     
+     margin-bottom: 1.5rem;
+}
+
+#about a{
+    
+    color: dimgray;
+    border: .3rem solid lightgreen;
+    border-style: outset;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+
+    /*créer un bord arrondi*/
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+
+
+
+/*
+Style contact me
+*/
+
+input, textarea{
+            display: block;
+            width: 90%;
+            margin: 1rem auto;
+            padding: 1rem;
+            font-size: 2rem;
+
+            border: none;
+            border-bottom: .1rem solid white;
+        }
+
+textarea{
+    /*definir une hauteur min*/
+    min-height: 20rem;
+    
+}
+
+    /*selectionner une balise grace à un attribut et sa valeur*/
+    [type="submit"]{
+        width: 10rem;
+        display: inline-grid;
+        background: black;
+        color: white;
+        font-weight: bold;
+
+        border-radius: .5rem;
+
+    }
+
+
+
+/*
+Style footer
+*/
+
+        footer{
+            color: white;
+            text-align: center;
+            background: cadetblue;
+            
+        }
+
+        footer article{
+            display: inline-block;
+            width: 30%;
+            
+            /* Gerer l'alignement vertical */
+            vertical-align: top;
+        }
+
+/* Selectionner une balise grâce à son attribut et valeur*/
+        
+        [href="http://google.com"]{
+            color: yellow;
+        }
+
+        aside{
+            padding: 1.5rem;
+            background: #233140;
+        }
