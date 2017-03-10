@@ -1,0 +1,72 @@
+li{
+    display: inline-block;
+}
+
+
+ul, main{
+    padding: 0;
+    max-width: 50rem;
+    margin: auto;
+}
+
+nav{
+    text-align: right;
+}
+
+
+header, footer{
+    background: brown;
+    color: white;
+    padding: 0.5rem 1rem;
+
+}
+
+/*
+Positionner la première li de la nav
+*/
+
+nav ul{
+    position: relative;
+}
+
+
+#liOnLeft{
+        position: absolute;
+        left: 0;
+}
+
+footer ul{
+    
+    /*Bloquer les enfants LI*/
+    position: relative;
+}
+
+#liOnRight{
+    position: absolute;
+    right: 0;
+}
+
+
+/*
+Figer une balise
+*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+main{
+    padding: 3rem 0;
+    text-align: justify;
+}
