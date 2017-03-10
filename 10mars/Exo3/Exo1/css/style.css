@@ -84,7 +84,7 @@ Style Header
             header{
                 text-align: center;
                  color: white;
-                 background: cadetblue;
+                 background: teal;
                 
                  /* ajouter une marge int de 60px */
                  padding-bottom: 6rem;
@@ -302,4 +302,10 @@ Style footer
         aside{
             padding: 1.5rem;
             background: #233140;
+        }
+
+        img{
+    max-width: 100%;
+    border-style: groove;
+    border-radius: 2rem;
         }
