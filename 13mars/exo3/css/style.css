@@ -1,0 +1,70 @@
+a{
+    font-size: 4rem;
+    text-decoration: none;
+    color: limegreen;
+    background: black;
+    padding: 1rem;
+    
+    /*les transitions s'ajoutent sur l'état de base des balises*/
+    -webkit-transition: background 2s, color 4s, padding 6s;
+     transition: background 2s, color 4s, padding 6s;
+
+
+}
+
+/* modifier l'aspect de la balise a au survol de la souris */
+a:hover{
+    color: red;
+    background: darkgrey;
+    padding: 2rem;
+}
+
+section{
+    background: indigo;
+    width: 10rem;
+    height: 10rem;
+
+    /*Effectuer une transition sur tout les propriétés*/
+    -webkit-transition: all 2s;
+    transition: all 2s;
+
+    /*Modifier la courble d'animation*/
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+
+    /*Ajouter un délai avant la transition */
+    transition-delay: 4s;
+    -webkit-transition-delay: 4s;
+
+
+}
+
+section:hover{
+        background: deepskyblue;
+        -webkit-transform: rotateZ(360deg);
+         transform: rotateZ(360deg);
+}
+
+
+ul{
+    /*Supprimer le style de la liste*/
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    border-left: 0 solid red;
+    
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    display: inline-block;
+    font-style: italic;
+}
+
+
+li:hover{
+    padding-left: 1rem;
+    color: red;
+    border-left: .5rem solid red;
+    
+}
