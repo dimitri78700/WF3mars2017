@@ -20,7 +20,7 @@ body{
     /*Ne jamais définir les propriétés width: et height sur le body */
     font-size: 1.5rem;  /*1.5rem=15px*/
     text-align: center;
-    background: saddlebrown;
+    background: lemonchiffon;
     }
 
 header,main,footer{

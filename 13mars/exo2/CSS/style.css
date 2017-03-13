@@ -1,0 +1,142 @@
+/*
+Style Reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+section{
+    border: .1rem solid red;
+    height: 15rem; /*Eviter d'utilisere la propriété heigth*/
+    margin: 4rem;
+    padding: 2rem;
+    
+    /* Créer un bord arrondi de 10px */
+    border-radius: 1rem;
+}
+
+article{
+    width: 5rem;
+    height: 5rem;
+    background: blueviolet;
+    color: gold;
+    
+}
+
+
+/*
+Css3 Translate
+*/
+
+section:first-child article{
+    -ms-transform: translate(2rem, 2rem);
+    -webkit-transform: translate(2rem, rem);
+     transform: translate(2rem, 2rem);
+   
+}
+
+/*Css3 Rotate ()*/
+
+section:nth-child(2) article{
+
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+
+         transform: rotate(45deg);
+}
+
+/*CSS3 SkewX et SkewY */
+
+section:nth-child(3) article{
+
+    -ms-transform: skewX(45deg); /* IE 9 */
+    -webkit-transform: skewX(45deg); /* Safari */
+    transform: skewX(45deg);
+}
+
+section:nth-child(4) article{
+
+    -ms-transform: skewY(45deg); /* IE 9 */
+    -webkit-transform: skewY(45deg); /* Safari */
+    transform: skewY(45deg);
+}
+
+/* CSS3 scale() */
+
+section:nth-child(5) article{
+
+        -ms-transform: scale(3,5);
+        -webkit-transform: scale(3, 5);
+        transform: scale(3, 5);
+}
+
+/*CSS3 rotateX()= rotation de bas en haut  et rotateY() rotation de gauche à droite ou inverse
+rotateZ() rotation sur profondeur*/
+
+section:nth-child(6) article{
+    transform: rotateX(45deg);
+    -webkit-transform:rotateX(45deg);
+}
+
+section:nth-child(7) article{
+    transform: rotateY(45deg);
+    -webkit-transform:rotateY(45deg);
+}
+
+section:nth-child(8) article{
+    transform: rotateZ(45deg);
+    -webkit-transform:rotateZ(45deg);
+}
+
+
+/*Créer un rond avec un carré*/
+section:nth-child(9) article{
+    border-radius: 50%;
+
+}
+
+
+/*Utilisation de la translate () pour caler des balises*/
+
+section:nth-child(10) article{
+
+        font-size: 1rem;
+        border: .1rem solid red;
+        display: inline-block;
+        vertical-align: top;
+        margin: .5rem;
+        position: relative;
+
+
+}
+
+section:nth-child(10) article p{
+
+        border: .1rem solid wheat;
+        width: 90%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+
