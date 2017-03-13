@@ -1,0 +1,85 @@
+/*
+Style Reset
+*/
+
+/*Supprimer toutes les marges de toutes les balises*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Configurer la valeur 1rem = 10px */
+
+html{
+    font-size: 62.5%;
+    }
+
+body{
+    
+    /*Ne jamais définir les propriétés width: et height sur le body */
+    font-size: 1.5rem;  /*1.5rem=15px*/
+    text-align: center;
+    background: saddlebrown;
+    }
+
+header,main,footer{
+    /*limiter la largeur*/
+    max-width: 50rem;
+    /*center la balise en page HTML*/
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+/*
+Style Header
+*/
+
+header{
+    background: white;
+  
+    /*Bloqueer les enfants dans leur parent*/
+    position: relative;
+}
+
+/*Selectionner la 1ere LI du Header et la sortir du flux pour la repositionner à droite */
+Header li:first-child{
+        position: absolute;
+        right: 2rem;
+}
+
+header li:last-child{
+    position: absolute;
+    left: 2rem;
+}
+
+/*aligner les balises li de la nav*/
+nav li{
+    display: inline-block;
+}
+
+
+/*
+Style Main
+*/
+
+/* exclure de la selection les input de type submit */
+label, textarea, input:not([type=submit]){
+    display: block;
+    width: 100%;
+}
+
+/*
+Style Footer
+*/
+
+    /*Faire en sorte que l footer soit toujours collé en bas de la page */
+    footer{
+        position: fixed;
+        background: white;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+

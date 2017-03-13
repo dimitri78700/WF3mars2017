@@ -1,0 +1,103 @@
+<!--
+
+            - Créer un document de base HTML
+           
+            - Créer une ouverture de page 
+                    - Un titre principal
+                    - une navigation principal avec 4 liens
+                        - Home
+                        - About
+                        - Contacts
+                        - Facebook
+           
+           - Créer une zone de contenu principal
+                - Une Section
+                    - Sous-Titre "About"
+                    - 1 image
+                    - 1 Paragraphe
+                - Une Section
+                    - Sous-Titre "Contacts"
+                    - Formulaire : nom/email/message
+         
+         - Créer une fermture de page
+                -Under MIT Licence
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>SuperManiac</title>
+
+    <!--intégrer une feuille css-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    
+
+<Header>
+    
+        <h1>Church Cat</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Facebook</a></li>
+        </ul>
+    </nav>
+</Header>
+
+
+<main>
+    
+    <Section>
+        <h2>About</h2>
+        <img src="img/chatdrole.jpg" alt="Photo chat drole">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio blanditiis eos porro itaque perspiciatis odit deleniti enim deserunt. Possimus eligendi similique repellendus tempore atque odit numquam eaque delectus praesentium, porro! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem at cum eaque totam, atque, rerum commodi, in, debitis corrupti voluptatibus itaque inventore voluptates assumenda iste earum iure. Labore iste, quis!</p>
+    </Section>
+
+    
+    <Section>
+        <h2>Contacts</h2>
+        
+        <form action="#">
+            <!--Pour associer un label à input il faut utiliser l'id de l'input dans l'attribut for du label
+            -->
+            <label for="userName">Nom :</label>
+            <input type="Name" id="userName" placeholder="Min. 5 caractères">
+
+            <label for="userEmail">Email :</label>
+            <input type="email" id="userEmail" placeholder="Adresse mail valide">
+
+            <label for="userMessage">Message :</label>
+            <textarea  id="userMessage" placeholder="Min. 5 caractères"></textarea>
+
+            <input type="submit" value="envoyer le message">
+
+        </form>
+
+    </Section>
+</main>
+
+<footer>
+    <aside>Under MIT Licence</aside>
+</footer>
+    
+</body>
+
+
+
+</html>
