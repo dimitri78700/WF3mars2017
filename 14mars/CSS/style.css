@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
+@-webkit-keyframes pictoHeaderAnim {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(1rem);}
+    100% {transform: translateY(0);}
+
+}
+
+@keyframes pictoHeaderAnim {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(1rem);}
+    100% {transform: translateY(0);}
+
+}
+
+
 /*
 Style RESET
 */
@@ -119,7 +134,20 @@ h1 + a{
     
     /*Créer un rond avec une balise carré*/
     border-radius: 50%;
+
+    /* Appliquer l'animation */
+    -webkit-animation-name: pictoHeaderAnim;
+    animation-name: pictoHeaderAnim;
+   
+    /*Definir la durée*/
+    -webkit-animation-duration: 1s;
+     animation-duration: 1s;
+
+     /*définir le nombre de la boucle*/
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
  }
+ 
 
 a img{
     padding-top: .8rem;
@@ -133,6 +161,7 @@ Style MAIN
 
         /*CallToAction*/
          .callToaction {
+            text-align: left;
             color: snow;
             border: .1rem solid snow;
             display: inline-block;
@@ -146,6 +175,27 @@ Style MAIN
              color: red;
              border-color: black;
          }
+
+         .callToaction::before{
+             content: url(../img/puce-bas-blanche.png);
+             display: block;
+             height: 3rem;
+             width: 3rem;
+
+             /* Habiller la balise */
+             float: left;
+             margin-right: 1.5rem;
+
+            }
+
+            .callToaction.red::before{
+                content: url(../img/puce-droite-bleu.png);
+            }
+
+            .callToaction::after{
+                /* Annuler le flottement */
+                clear: both;
+            }
         
         /*Programme* / Réponse/ */
 
