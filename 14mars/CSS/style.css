@@ -20,6 +20,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background: white;
+    text-align: center;
    }
 
 a{
@@ -29,8 +30,9 @@ a{
 
 
 
-h1 span{
+span{
     text-transform: lowercase;
+    
  }
 
     
@@ -48,13 +50,34 @@ h1 b{
     display: block;
 }
 
+h2, h3{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+section{
+    padding: 4rem 2rem;
+}
+
+p{
+    padding: 4rem 0;
+}
+
+figure{
+    padding: 2rem 0;
+}
+
+img{
+    max-width: 100%;
+}
 
 /*
 Style HEADER
 */
 
 header{
-    text-align: center;
+   
     color: white;
 
     /*mettre une image de fond en parallaxe*/
@@ -102,3 +125,123 @@ a img{
     padding-top: .8rem;
     
 }
+
+
+/*
+Style MAIN
+*/
+
+        /*CallToAction*/
+         .callToaction {
+            color: snow;
+            border: .1rem solid snow;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: .5rem;
+            margin-top: 2rem;
+
+         }
+
+         .callToaction.red{
+             color: red;
+             border-color: black;
+         }
+        
+        /*Programme* / Réponse/ */
+
+        section:nth-child(2), section:nth-child(4){
+            color: snow;
+            /* effet parallaxe CSS*/
+            background-image: url(../img/img-foule.jpg);
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+         /*Solution, Chiffres, footer*/
+
+
+        section:nth-child(3), section:nth-child(7), footer{
+            color: snow;
+            background: #002a35;
+        }
+
+       
+        /*Inscrivez-vous*/
+        
+        [alt="Logo du salon des maires"]{
+            width: 10rem;
+            margin-bottom: 2rem;
+        }
+
+        /*Vidéo*/
+
+        section:nth-child(6){
+            background-color: #002a35;
+            /*Bloquer les enfants dans le parent*/
+            position: relative;
+           
+           /* Masquer les balises enfants qui dépassent du parent */
+            overflow: hidden;
+        }
+
+        video{
+            /* Placer la vidéo en fond d'écran */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            
+        }
+        
+
+        section:nth-child(6) article{
+                color: snow;
+                background: rgb(0, 0, 1);
+                padding: 4rem 2rem;
+                /* Faire passer la balise sur la 1ere couche */
+                z-index: 1;
+                position: relative;
+                opacity: 0.6;
+        }
+
+         section:nth-child(6) h3{
+             font-weight: 800;
+             font-size: 1.7rem;
+             margin-bottom: 2rem;
+         }
+
+         section:nth-child(6) a{
+             color: yellowgreen;
+         }
+
+         /* Chiffres */
+
+        section:nth-child(7) figure{
+                display: inline-block;
+                width: 49%;
+                
+                vertical-align: top;
+        }
+
+
+
+         /* Présentation */
+         article + img{
+             width: 15rem;
+             margin-bottom: 4rem;
+         }
+
+            iframe {
+            border-style: outset;
+            border: none;
+            border-radius: 10%;
+            min-height: 25rem;
+            width: 100%;
+        }
+
+        /*footer*/
+
+        footer{
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
