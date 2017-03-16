@@ -72,6 +72,7 @@ img{
 
 header > a{
     background: aliceblue;
+    font-style: 
 }
 
 
@@ -156,6 +157,8 @@ nav > a{
         position: absolute;
         left: 2rem;
         background: #828282;
+        font-size: 2rem;
+        font-weight: bold;
         }
 
 nav li{
@@ -169,6 +172,12 @@ nav li{
 /*
 Main
 */
+
+main{
+    max-width: 950px;
+    margin: auto;
+
+}
 
 
 section:first-child{
@@ -213,6 +222,16 @@ section figcaption a{
         padding-bottom: 5rem;
         
     }
+
+
+/*
+Footer
+*/
+
+
+footer h2{
+
+}
 
 
 
