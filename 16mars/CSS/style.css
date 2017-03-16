@@ -1,0 +1,229 @@
+
+/* Importer FontAwesome */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* Importer les polices */
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,700');
+
+
+
+/*
+Style Reset
+*/
+
+*{
+  padding: 0;
+  margin: 0;
+
+  -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+        font-size: 1.5rem; /* => 15px */
+        font-family: 'Merriweather', serif;
+        text-align: center;
+    }
+
+h1, h2, h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+
+h1 {
+        font-weight: 700;
+        line-height: 1em;
+        text-transform: uppercase;
+        padding: 0 2rem;
+        font-weight: bold;
+    }
+
+h2{
+    font-family: fantasy;
+    padding: 2rem; 
+
+}
+
+    
+
+h3{
+        font-size: 2rem;
+        margin: 2rem auto 1rem auto;
+        padding: 1rem;
+    }
+
+a, figcaption{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+header > a{
+    background: aliceblue;
+}
+
+
+header > a, main a{
+        font-size: 1.2rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        
+        -webkit-border-radius: 2rem;
+        border-radius: 2rem;
+        border-style: outset;
+
+    }
+
+    p{
+        margin: 1rem;
+        padding: 3rem;
+        font-size: 1.4rem;
+        font-style: italic;
+    }
+
+nav .fa, footer .fa{
+    font-size: 1.7rem;
+}
+
+.fa{
+    font-size: 4em;
+}
+
+
+
+
+/*
+Class Button
+*/
+
+.button{
+    border-color: black;
+    background: orange;
+    color: white;
+    
+}
+
+.firstbutton{
+        border-color: orange;
+        background: white;
+}
+
+
+        
+/*Header*/
+
+header{
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 16rem 2rem 10rem 2rem;
+    color: white;
+}
+
+
+nav{
+    position: fixed;
+    background: #828282;
+    padding: 2rem;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 2rem;
+    text-align: right;
+    color: black;
+    
+}
+
+nav ul {
+        display: none;
+    }
+
+nav > a{
+        position: absolute;
+        left: 2rem;
+        background: #828282;
+        }
+
+nav li{
+       display: inline-block;
+}
+
+
+
+
+
+/*
+Main
+*/
+
+
+section:first-child{
+    background: orange;
+    color: black;
+    padding-bottom: 5rem;
+    border-color: orange;
+}
+
+section figure{
+    float: left;
+    position: relative;
+    width: 50%;
+    line-height: 0;
+}
+
+section figcaption a{
+
+        font-size: 5.3rem;
+        background: rgba(169, 169, 169, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        line-height: 1;
+        border-radius: 0;
+        color: lightgrey;
+    }
+     section figcaption a:hover{
+
+        opacity: 1;
+    }
+
+
+    section:last-child{
+        background: orange;
+        padding: 6rem;
+        padding-bottom: 5rem;
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
