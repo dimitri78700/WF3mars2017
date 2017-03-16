@@ -187,6 +187,32 @@ section:first-child{
     border-color: orange;
 }
 
+/*
+Style Services
+*/
+    section:nth-child(2){
+        color: #222;
+        padding: 4rem 2rem;
+    }
+
+    section:nth-child(2) h2:after{
+
+        margin-bottom: 4rem;
+
+    }
+
+    section:nth-child(2) .fa{
+        font-size: 4rem;
+        color: #F05F40;
+    }
+
+    h3 + p {
+        color: grey;
+        margin-bottom: 4rem;
+    }
+
+
+
 section figure{
     float: left;
     position: relative;
@@ -225,15 +251,22 @@ section figcaption a{
 
 
 /*
-Footer
+Style Footer
 */
+    footer{
+        color: #222;
+        padding: 4rem 2rem;
+    }
 
+    footer .fa{
+        font-size: 3rem;
+        display: block;
+        margin: 3rem auto 1rem auto;
+    }
 
-footer h2{
-
-}
-
-
+    footer a{
+        color: #F05F40;
+    }
 
 
 
