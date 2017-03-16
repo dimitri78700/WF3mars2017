@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,700');
 
 
-
 /*
 Style Reset
 */
@@ -83,8 +82,9 @@ header > a, main a{
         text-transform: uppercase;
         padding: 1rem 1.5rem;
         
-        -webkit-border-radius: 2rem;
-        border-radius: 2rem;
+        -webkit-border-radius: 8rem;
+        border-bottom-left-radius: 40rem;
+        border-top-right-radius: 40rem;
         border-style: outset;
 
     }
@@ -105,26 +105,23 @@ nav .fa, footer .fa{
 }
 
 
-
-
 /*
 Class Button
 */
 
 .button{
-    border-color: black;
+    border-color: #fdfdfd;
     background: orange;
     color: white;
     
 }
 
 .firstbutton{
-        border-color: orange;
-        background: white;
+        border-color: #fdfdfd;
+        background: #d8d5d5;
 }
 
 
-        
 /*Header*/
 
 header{
@@ -138,7 +135,7 @@ header{
 
 nav{
     position: fixed;
-    background: #828282;
+    background: #ff9800;
     padding: 2rem;
     width: 100%;
     left: 0;
@@ -156,7 +153,7 @@ nav ul {
 nav > a{
         position: absolute;
         left: 2rem;
-        background: #828282;
+        background: #ff9800;
         font-size: 2rem;
         font-weight: bold;
         }
@@ -244,8 +241,9 @@ section figcaption a{
 
     section:last-child{
         background: orange;
-        padding: 6rem;
-        padding-bottom: 5rem;
+        padding: 3rem;
+        padding-bottom: 8rem;
+        clear: both;
         
     }
 
@@ -267,15 +265,3 @@ Style Footer
     footer a{
         color: #F05F40;
     }
-
-
-
-
-
-
-
-
-
-
-    
-
