@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto:400,700');
+
+
+/*
+Style Reset
+*/
+ *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+
+        }
+
+html{
+    font-size: 62.5%;  
+
+}
+
+body{
+    text-align: center;
+    background: white;
+
+}
+
+ul{
+    list-style: none;
+    font-size: 1.7rem;
+    position: relative;
+    text-transform: uppercase;
+    text-align: right;
+    }
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+    color: white;
+    background:#0b0b2d;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5rem;
+    margin-right: 50%;
+    text-align: left;
+}
+
+p{
+    font-size: 1.5rem;
+    font-family: Quicksand, sans-serif;
+    padding: 4rem;
+
+}
+
+img{
+    float: left;
+    position: relative;
+    width: 50%;
+    line-height: 0;
+}
+
+.imageCircle{
+    border-radius: 50%;
+    max-width: 30%;
+    position: absolute;
+    left: 0;
+    top:auto;
+
+}
+
+
+/*
+header
+*/
+
+header nav{
+    padding: 2rem;
+    background-image: url(../img/back.jpg);
+    text-align: center;
+    position: relative;
+    background-size: 100%;
+ }   
+   
+
+header nav li:first-child {
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold
+
+
+}
+
+ nav li {
+    display: inline-block;
+    text-transform: none;
+    padding: 1rem;
+
+}
+
+header ul{
+    color: white;
+    
+}
+
+
+
+
+
+/*
+main
+*/
+
+section{
+    padding: 6rem 0;
+}
+
+section p{
+    padding: 2rem;
+    display: inline-block;
+    width: 49%;
+}
+
+main section:first-child article {
+    display: inline-block;
+    width: 30%;
+    margin: 1.5rem;
+    line-height: 0;
+    position: relative;
+    }
+
+section:nth-child(2){
+    text-align: center;
+}
+
+article{
+    display: inline-block;
+    width: 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+footer
+*/
+
+footer{
+    background: #0b0b2d;
+    padding: 2rem;
+}
+
+footer nav{
+     text-align: left;
+     color: white;
+}
+
+footer li:last-child {
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    text-align: right

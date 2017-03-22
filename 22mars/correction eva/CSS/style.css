@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700|Roboto');
+
+
+
+ *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+
+        }
+
+html{
+    font-size: 62.5%;
+    }
+
+body{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, li:first-child{
+    font-family: 'Quicksand', sans-serif;
+    /*largeur de la police*/
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1em;
+    margin-bottom: 2rem;
+    color: #0b0b2d;
+    }
+
+h2{
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+h2 span{
+    background: #0b0b2d;
+    padding: 1rem 1.5rem;
+    display: block;
+}
+
+li{
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    margin-bottom: 2rem;
+}
+
+
+
+/*
+Header
+*/
+
+
+header{
+    color: white;
+    padding: 2rem;
+    background-image: url(../img/back.jpg);
+    background-size: cover;
+   
+}
+
+nav li:first-child{
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+
+/*
+Main
+*/
+
+main{
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 5.5rem;
+}
+    /*Selectionner la balise img qui suit directement la balise h1*/
+
+    h1 + img{
+        width: 10rem;
+        float: left;
+        margin-right: 1.5rem;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+figure{
+    position: relative;
+    margin-bottom: 1rem;
+
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 0.5rem;
+}
+
+
+textarea, input:not([type="submit"]){
+    display: block;
+    width: 100%;
+    border: none;
+    background: #eee;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+[type="submit"]{
+    border: none;
+    background: #0b0b2d;
+    padding: 1rem 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+textarea{
+    min-height: 15rem;
+}
+
+iframe{
+    border-style: inset;
+    width: 100%;
+    min-height: 30rem;
+}
+
+/*
+style 
+footer
+*/
+
+footer{
+    color: darkblue;
+    background: red;
+    padding: 2rem;
+}
+
+
+
+@media 
