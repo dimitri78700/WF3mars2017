@@ -1,0 +1,166 @@
+/*
+Style
+Reset
+J'ai besoin de supprimer toutes les marges, d'intégrer le padding et les bordure dans la taille des boites et d'initialiser le rem
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:62.5%;
+}
+
+/*Jamais de width ou height dans le body*/
+
+body{
+    font-size: 1.5rem; 
+}
+
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*
+Style header
+- ajouter une marge interieur de 20px
+- la nav ne dépasse pas 850px
+- les liens de la nav sont centrés sauf le 1er qui est à gauche et le dernier à droite
+*/
+
+header{
+        padding: 2rem;
+        border: 2rem solid #3F51B5;
+        text-align: center;
+        border-radius: 15rem;
+        border-style: groove;
+}
+
+nav{
+        max-width: 85rem;
+        margin: auto;
+        border: .6rem black;
+        position: relative;
+        border-radius: 10rem;
+        border-style: double;
+}
+
+li{
+        display: inline-block;
+        padding: 2rem;
+}
+
+li:first-child, li:last-child{
+        position: absolute;
+        top: 0;
+}
+
+li:first-child{
+        left: 0;
+}
+
+li:last-child{
+        right: 0;
+}
+
+
+/*
+style main
+- Le main ne dépasse pas 850px
+- les différentess boites ont une marge en de 40px
+*/
+
+
+main{
+        max-width: 85rem;
+        margin: 0 auto 4rem auto;
+
+}
+
+section:not(:last-child){
+        margin-bottom: 4rem;
+}
+
+
+
+/*
+style Portfolio
+- le portfolio est sur 2 colonnes
+- les figcaptions sont calés au-dessus de l'image avec un fond de couleur blanc à 50% opacity tout en haut à gauche et sur toute la largeur 
+*/
+
+figure{
+    display: inline-block;
+    width: 49%;
+    position: relative;
+    
+}
+
+figcaption{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, .5);
+        padding: 1rem;
+
+}
+
+
+/*
+Style Formulaire
+- le textarea et le input ( sauf le submit ) font toute la largeur du formulaire
+- le type submit à une couleur à une couleur de fond et une couleur de police 
+*/
+
+form{
+    width: 50%;
+    text-align: right;
+}
+
+
+
+input:not([type="submit"]), textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+[type="submit"]{
+    background: darkblue;
+    color: white;
+    border: none;
+    padding: 1rem;
+   
+}
+
+
+/*Méthode Desktop Down*/
+
+    @media screen and (max-width: 450px){
+
+        figure, form, article{
+            display: block;
+            width: 100%;
+        }
+        
+        li:first-child, li:last-child{
+        position: initial;
+        
+        }
+
+        li{
+            padding: 0;
+        }
+
+
+    }
