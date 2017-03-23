@@ -1,0 +1,210 @@
+/*Importation font*/
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/*
+Style
+Reset
+J'ai besoin de supprimer toutes les marges, d'intégrer le padding et les bordure dans la taille des boites et d'initialiser le rem
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:62.5%;
+}
+
+/*Jamais de width ou height dans le body*/
+
+body{
+    font-size: 1.5rem;
+    background-image: url(../img/background.png);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+h1, h3{
+    color: #C55394;
+}
+
+h2{
+    color: #EB43A3;
+    text-align: left;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+h1, h2, h3{
+    font-family: 'Courgette', cursive;
+}
+
+h3{
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/*Hover sur les balise A*/
+a:hover{
+    background: #EB43A3;
+    padding: 2rem;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+p{
+    display: inline-block;
+    text-align: initial;
+    padding: 2rem;
+}
+
+.fa{
+    padding: 1rem;
+    color: #EB43A3;
+}
+
+
+/*
+style
+header
+*/
+
+header h1{
+    /*Ajout de l'image dans l'article du h1*/
+    background-image: url(../img/rainbow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5rem 2rem;
+    width: 98%;
+}
+
+header nav{
+    background: #C55394;
+    text-align: center;
+}
+
+ul{
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+li{
+        display: inline-block;
+        padding: 2rem;
+}   
+
+nav li:first-child{
+        position: absolute;
+        top: 1.5;
+        left: 0;
+        font-style: italic;
+        font-family: 'Courgette', cursive;
+        font-size: 2.5rem;
+        font-weight: 900;
+}
+
+/*
+Style 
+Main
+*/
+
+
+main{
+    border: .2rem gray;
+    border-radius: 2rem;
+    margin: 0.2rem 10rem 5rem;
+    box-shadow: 0rem 0.8rem 2rem grey;
+    background:white;
+    padding: 3rem;
+}
+
+section{
+    padding: 1rem;
+}
+
+
+/* Section et images */
+
+figure{
+    display: inline-block;
+    width: 22%;
+    position: relative;
+    margin: 1rem;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    color: white;
+}
+
+
+
+/*Style Section formulaire et google map */
+
+  article{
+    display: inline-block;
+    width: 22%;
+    position: relative;
+    margin: 3rem;
+    bottom: 16rem;;
+}
+
+
+form{
+    width: 100%;
+    text-align: left;
+    display: inline-block;;
+}
+
+
+input:not([type="submit"]){
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+[type="submit"]{
+    background: #EB43A3;
+    color: white;
+    border: none;
+    padding: 1rem;
+   
+}
+
+
+/*
+Style
+Footer
+*/
+
+footer{
+    background: #C55394;
+    text-align: right;
+}
+
+aside{
+    right: 0;
+    display: inline-block;
+    color: white;
+    padding: 1rem;
+
+}
