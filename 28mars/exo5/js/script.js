@@ -37,9 +37,14 @@ var myModulo = 12 % 5;
 console.log(myModulo);
 
 // Opérateur d'addition et d'affectation : +=
-var a = 10;
-var b = 5;
+var first = 10;
+var second = 5;
 
 // a = a + b;
-a += b;
-console.log(a);
+first += second;
+console.log(first);
+
+
+// Opérateur de soustraction et d'affectation : -=;
+second -= first;
+console.log(second);
