@@ -28,8 +28,8 @@ function translateColor( paramColor ){
 
             // Pour tous les autres cas : default est OBLIGATOIRE
             default: console.log('je ne connais pas cette couleur'); break;
-
     }
-
+    
 };
+
 
