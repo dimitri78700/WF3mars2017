@@ -10,13 +10,19 @@ $(document).ready( function(){
             var myNav = [ 'Accueil', 'Portfolio', 'Contacts'  ];
 
 
-
             // Créer un objet pour les titres des pages
             var myTitles = {
                     Accueil: 'Welcome here',
                     Portfolio: 'Découvrez mes travaux',
                     Contacts: 'Contacter moi pour plus d\'information'
             };
+
+            var myContent = {
+                    Accueil: '<h3>Contenu de la page Accueil</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi, velit voluptate deleniti sequi. Dolor reiciendis unde dicta soluta culpa, nihil blanditiis quaerat vero vitae illo minus minima doloremque atque!</p>',
+                    Portfolio: '<h3Contenu de la page Portfolio</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi, velit voluptate deleniti sequi. Dolor reiciendis unde dicta soluta culpa, nihil blanditiis quaerat vero vitae illo minus minima doloremque atque!</p>',
+                    Contacts: '<h3Contenu de la page Contacts</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi, velit voluptate deleniti sequi. Dolor reiciendis unde dicta soluta culpa, nihil blanditiis quaerat vero vitae illo minus minima doloremque atque!</p>'
+
+            }
 
             // Afficher dans la console le header
             var myHeader = $( 'header' );
@@ -25,7 +31,7 @@ $(document).ready( function(){
             myHeader.append( '<h1>' + siteTitle + '</h1>' );
 
             // Générer une balise nav + ul dans le header
-            myHeader.append('<nav> <ul> </ul> </nav>');
+            myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i> <ul> </ul> </nav>');
 
             // Faire une boucle for(){...} sur myNav pour Générer les liens de la nav
             for(var i = 0; i < myNav.length; i++){
@@ -37,6 +43,9 @@ $(document).ready( function(){
             // Afficher dans le main le titre issu de l'objet myTitles
             var myMain = $('main');
             myMain.append( '<h2>' + myTitles.Accueil + '</h2>' );
+            myMain.append( '<section>' + myContent.Accueil + '</section>' )
+
+
 
             // Capter l'événement click sur les balises a en bloquant le comportement naturel des balises a
             $('a').click( function(evt){
@@ -45,10 +54,10 @@ $(document).ready( function(){
                 evt.preventDefault();
 
                 // Connaitre l'occurence de la balise a sur laquelle l'utilisateur à cliqué
-                console.log( $(this) );
+                //console.log( $(this) )
 
                 // Récupérer la valeur de l'attribut href
-                console.log( $(this).attr('href') );
+                //console.log( $(this).attr('href') )
 
                 // Vérifier la valeur de l'attribut href pour afficher le bon titre
 
@@ -57,17 +66,25 @@ $(document).ready( function(){
                         // Selectionner la balise h2 pour changer son contenu
                         $('h2').text( myTitles.Accueil );
 
+                        // Selectionner la section pour changer le Contenu
+                        $('section').html(myContent.Accueil);
+
                 } else if ( $(this).attr('href') == 'Portfolio'){
                         // Selectionner la balise h2 pour changer son contenu
                         $('h2').text( myTitles.Portfolio );
+
+                        // Selectionner la section pour changer le Contenu
+                        $('section').html(myContent.Portfolio);
 
                 } else {
                         // Selectionner la balise h2 pour changer son contenu
                         $('h2').text( myTitles.Contacts );
 
+                        // Selectionner la section pour changer le Contenu
+                        $('section').html(myContent.Contacts);
+
                 };
 
             });
-
 
 });  // Fin de la fonction de chargement du DOM
