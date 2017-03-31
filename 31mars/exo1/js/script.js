@@ -3,7 +3,7 @@ $(document).ready( function(){
 
 
             // Créer une variable pour le titre du site 
-            var siteTitle = 'Dimitri Supertramp <i>Webforce 3</i>';
+            var siteTitle = 'Welcome to Paradise <i>Webforce 3</i>';
 
 
             // Créer un tableau pour la nav 
@@ -33,6 +33,15 @@ $(document).ready( function(){
             // Générer une balise nav + ul dans le header
             myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i> <ul> </ul> </nav>');
 
+
+            // Activer le BurgerMenu au click sur la balise .fa-bars
+            $('.fa-bars').click( function(){
+
+                    $('nav ul').toggleClass('toggleBurger');
+
+            } );
+
+
             // Faire une boucle for(){...} sur myNav pour Générer les liens de la nav
             for(var i = 0; i < myNav.length; i++){
 
@@ -40,15 +49,22 @@ $(document).ready( function(){
                     $('ul').append('<li><a href="' + myNav[i] + '"> ' + myNav[i] + '</a></li>');
             };
 
+
             // Afficher dans le main le titre issu de l'objet myTitles
             var myMain = $('main');
             myMain.append( '<h2>' + myTitles.Accueil + '</h2>' );
-            myMain.append( '<section>' + myContent.Accueil + '</section>' )
+            myMain.append( '<section>' + myContent.Accueil + '</section>' );
+
+            // Ajouter la class active sur la 1ere li de la nav
+            $('nav li:first').addClass('active');
 
 
 
             // Capter l'événement click sur les balises a en bloquant le comportement naturel des balises a
             $('a').click( function(evt){
+
+                // Supprimer la class des balises li de la nav
+                $('nav li').removeClass('active');
 
                 // Bloquer le comportement naturel de la balise
                 evt.preventDefault();
@@ -69,12 +85,18 @@ $(document).ready( function(){
                         // Selectionner la section pour changer le Contenu
                         $('section').html(myContent.Accueil);
 
+                        // Ajouter la class active sur la balise li de la balise a Selectionner
+                        $(this).parent().addClass('active');
+
                 } else if ( $(this).attr('href') == 'Portfolio'){
                         // Selectionner la balise h2 pour changer son contenu
                         $('h2').text( myTitles.Portfolio );
 
                         // Selectionner la section pour changer le Contenu
                         $('section').html(myContent.Portfolio);
+
+                        // Ajouter la class active sur la balise li de la balise a Selectionner
+                        $(this).parent().addClass('active');
 
                 } else {
                         // Selectionner la balise h2 pour changer son contenu
@@ -83,8 +105,12 @@ $(document).ready( function(){
                         // Selectionner la section pour changer le Contenu
                         $('section').html(myContent.Contacts);
 
-                };
+                        // Ajouter la class active sur la balise li de la balise a Selectionner
+                        $(this).parent().addClass('active');
 
+                };
+                        // Fermer le BurgerMenu
+                        $('nav ul').removeClass('toggleBurger')
             });
 
 });  // Fin de la fonction de chargement du DOM

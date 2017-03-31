@@ -4,123 +4,194 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 /*
-
-
 Style reset
-
 */
 
-*{
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+    *{
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
-html{
-    font-size: 62,5%;
+    html{
+        font-size: 62,5%;
+    }
 
-}
+    body{
+        font-family: 'Dosis', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+        background: white;
+    }
 
-body{
-    font-family: 'Dosis', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    text-align: center;
-    background: white;
+    h1{
+        font-style: italic;
+        color: deepskyblue;
+    }
 
-}
 
-h1, h2, h3{
-    font-family: 'Anton', sans-serif;
-    font-weight: 400;
-    
-}
+    h1, h2, h3{
+        font-family: 'Anton', sans-serif;
+        font-weight: 400;   
+    }
 
 /*
-
 Header
-
 */
 
+    header, footer{
+        color: ghostwhite;
+        background-color: darkblue;
+        padding: 1rem;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    .fa-bars{
+
+        font-size: 1.5rem;
+        position: absolute;
+        padding-top: .5rem;
+        background-color: red;
+        border: .3rem solid white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        left: 50%;
+        bottom: 0;
+        cursor: pointer;
+
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+
+        -webkit-transform: translate(-50%, 100%);       
+                transform: translate(-50%, 100%);
+    }
+
+    h1 i{
+        font-family: 'Dosis', sans-serif;
+        font-weight: 400;
+        font-size: .9rem;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    nav ul{
+        height: 0;
+        overflow: hidden;
+        list-style: none;
+        
+        -webkit-transition: all .3s;
+                transition: all .3s;
+                
+    }
+
+    nav a{
+        text-decoration: none;
+        font-weight: 500;
+        color:deepskyblue;
+    }
+
+    nav li{
+        padding: 1rem;
+        margin-bottom: .5rem;
+        background-color: white;
+        
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .active{
+        background: black;
+
+    }
+
+    .active a{
+        color: #ff0000;
+    }
 
 
-header, footer{
-    color: yellow;
-    background-color: cornflowerblue;
-    padding: 2rem;
-    margin-bottom: 4rem;
-    position: relative;
-}
-
-.fa-bars{
-
-    font-size: 1.5rem;
-    position: absolute;
-    padding-top: .5rem;
-    background-color: red;
-    border: .3rem solid white;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    left: 50%;
-    bottom: 0;
-    cursor: pointer;
-
-    -webkit-border-radius: 50%;
-            border-radius: 50%;
-
-    -webkit-transform: translate(-50%, 50%);       
-            transform: translate(-50%, 50%);
-}
-
-h1 i{
-    font-family: 'Dosis', sans-serif;
-    font-weight: 400;
-    font-size: .9rem;
-    display: block;
-    margin-bottom: 1.5rem;
-}
-
-nav ul{
-    display: none;
-}
+    .toggleBurger{
+        height: 11rem;
+    }
 
 /*
-
 Main
+ */
 
-*/
+    h2{
+        color: black;
 
-h2{
-    color: black;
+    }
 
-}
+    h2:after{
+        content: '';
+        display: block;
+        width: 5rem;
+        height: .2rem;
+        margin: 1rem auto 2rem auto;
+        border-bottom: .2rem dotted black;   
+    }
 
-h2:after{
-    content: '';
-    display: block;
-    width: 5rem;
-    height: .2rem;
-    margin: 1rem auto 2rem auto;
-    border-bottom: .2rem dotted black;   
-}
+    h3{
+        margin-bottom: 1rem;
+    }
 
-h3{
-    margin-bottom: 1rem;
-}
+    main, h1, nav{
+        max-width: 85rem;
+        margin: auto;
+        position: relative;
+    }
 
 
 /*
-
 Footer
-
 */
 
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-bottom: 0;
-}
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+
+/*
+Média
+*/
+
+    @media screen  and (min-width: 850px){
+
+            /*Style Header*/
+            header{
+                text-align: left;
+            }
+
+            .fa-bars{
+                display: none;
+            }
+
+            nav ul{
+                height: auto;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                padding: 1rem;
+            }
+
+            nav li{
+                display: inline-block;
+                border-style: ridge;
+                border-radius: 25%;
+            }
+
+            nav li:not(:last-child){
+                margin-right: .5rem;
+            }
+
+            
+    }
