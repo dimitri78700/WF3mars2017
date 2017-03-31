@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo3 : validation d'un formulaire en JQuery</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <header>
+            <h1>Exo3: validation formulaire en JQuery</h1>
+        </header>
+
+        <main>
+
+                <section>
+                    <h2>Mon super Site de fou !</h2>
+
+                    <img src="http://lorempixel.com/800/400/" alt="Site de fou">
+
+                    <h3>Ajouter un commentaire</h3>
+
+                    <form action="addComment.php">
+
+                            <article>
+                                <label for="userName">Votre Nom <b></b></label>
+                                <input type="text">
+                            </article>
+
+                            <article>
+                                <label for="userMessage">Votre message <b></b></label>
+                                <textarea name="userMessage" id="userMessage"></textarea>
+                            </article>
+
+                            <input type="submit" value="Commenter">
+
+                    </form>
+                </section>
+        </main>     
+        <footer>Under MIT licence</footer>
+
+         <!-- Intégrer JQuery avant le script de la page -->
+        <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+        </script>
+
+        <!--Intégrer toujours le js à la fin du body-->
+        <script src="js/script.js"></script>
+
+
+    </body>
+</html>
