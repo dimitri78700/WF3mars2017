@@ -1,0 +1,369 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Suez+One');
+
+/*
+Style Reset
+*/
+        *{
+
+            /* Supprimer toutes les marges */
+            margin: 0;
+            padding: 0;
+
+            /* Intégrer le padding et le border dans la taille des boites */
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+        }
+
+        /* Configurer l'utilisation de 1rem = 10px */
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            text-align: center;
+            font-size: 1.5rem; /* => 15px */
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            font-family: 'Suez One', serif;
+            padding-bottom: 2rem;
+        }
+
+        h2{
+            font-family: 'Suez One', serif;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        h1 span{
+            font-family: 'Roboto', sans-serif;
+            font-size: .5em; /* => la moitié de h1 */
+            display: block;
+        }
+
+        a, header li{
+            text-decoration: none;
+
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+        /* Supprimer le style des listes */
+        ul{
+            list-style: none;
+        }
+
+        img{
+            max-width: 100%;
+        }
+
+
+/*
+Style Header
+*/
+        header{
+            color: white;
+            background-color: #4CAF50;
+            padding: 2rem;
+
+            /* Bloquer les enfant dans le parent */
+            position: relative;
+        }
+
+        nav{
+            display: none;
+        }
+
+        .aboutPage nav{
+                position: fixed;
+                z-index: 10000;
+                top: 0;
+                left: -100%;
+                height: 100%;
+                padding: 2rem;
+                width: 20rem;
+                background: #FFC107;
+
+                display: block;
+        }
+
+
+        header > a{
+            /* La balise A qui est enfant direct du header */
+            font-size: 1.9rem;
+            color: #22175b;
+            background: white;
+            width: 4rem;
+            height: 4rem;
+            padding-top: .7rem;
+            border: .2rem solid #FFC107;
+            display: inline-block;
+
+            /* Positionner précisemment la balise */
+            position: absolute;
+            top: 100%;
+            left: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            -webkit-border-radius: 50%;  
+            border-radius: 50%;
+        }
+
+        header > a:hover{
+            color: white;
+            background: #22175b;
+            border-color: white;
+        }
+
+        header li{
+            font-weight: 700;
+            background: rgba(255, 255, 255, .5);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        header li:hover{
+            background: white;
+        }
+
+        header li:hover a{
+            color: #22175b;
+        }
+
+        nav a{
+            color: white;
+        }
+
+
+/*
+Style main
+*/
+        main {
+            padding: 4rem 2rem 10rem 2rem;
+        }
+
+        /*Style About*/
+        
+        [src="img/doge.jpg"]{
+            border: .3rem inset limegreen;
+
+            -webkit-border-radius : 25%;
+                border-radius: 25%;
+
+                width: 16rem;
+                margin-bottom: 2rem;
+                
+                -webkit-box-shadow : 0 0 1rem rgba(0,0,0, 0.2);
+                -moz-box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+                box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+                
+        }
+
+        [src="img/doge.jpg"] + p{
+                margin-bottom: 2rem;
+        }
+
+        /* La balise ul qui est placée juste après la balise h3 */
+        h3 + ul{
+
+            text-align: left;
+            margin: 2rem auto;
+
+
+        }
+
+        /* Toute les balises qui suivent une balise h3 */
+        h3 + ul li{
+
+            background: limegreen;
+            padding:  .1rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        h3 + ul p{
+            background: #ffc822;
+            padding: 1rem;
+            min-height: 3.5rem;
+
+        /*Pour l'animation*/
+            width: 0;
+        }
+
+        h3 + ul span{
+            position: absolute;
+        }
+
+
+    /* Style Portfolio */
+        figure{
+            position: relative;
+
+        }
+
+        figcaption{
+            position: absolute;
+            width: 20rem;
+            background: black;
+            color: white;
+            top: 50%;
+            left: 50%;
+            padding: 1rem 2rem;
+            
+            -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+
+            -webkit-border-top-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+            
+        }
+
+        figcaption button{
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            border: 0;
+            padding: 1rem;
+            
+            -webkit-border-bottom-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        #modal{
+           position: fixed;
+           top: 0;
+           left: 0;
+           background: rgba(0,0,0, .7);
+           width: 100%;
+           height: 100;
+           z-index: 2000;
+
+           /* Pour l'animation */
+            display: none;
+        }
+
+        #modal article{
+            background: lightgreen;
+            max-width: 35rem;
+            margin: 5rem auto;
+            padding: 2rem;
+            text-align: left;
+        }
+
+
+    /* Style contacts */
+
+    form{
+        
+    }
+       
+
+
+/*    
+Style footer
+    */
+        footer {
+            color: white;
+            position: fixed;
+            z-index: 1000;
+            bottom: 0;
+            left: 0;
+            width: 100%;    
+            background: #4CAF50;
+            padding: 2rem; 
+        }
+
+        footer a {
+            color: white;
+        }
+
+        /* Toutes les balises li du footer sauf la dernière */
+        footer li:not(:last-child){
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+
+
+/*
+Requêtes media
+*/
+        /* Ecran d'une taille minimale de 400px */
+        @media screen and (min-width: 400px){
+
+            /* Style portfolio */
+                .portfolioPage article{
+
+                    /* Passer en 2 colonnes */
+                    display: inline-block;
+                    width: 49%;
+
+                    /* Gérer les paddings */
+                    padding: 0 1rem 0 0;
+
+                }
+
+                /* Sélectionner toutes les 2 balise à partir de la 2ème */
+                .portfolioPage article:nth-child( 2n + 2 ){
+                    padding: 0 0 0 1rem;
+                }
+
+        }
+
+        /* Ecran d'une taille minimale de 750px */
+        @media screen and (min-width: 750px){
+
+            /* Style reset */
+                main, h1, nav{
+                    max-width: 85rem;
+                    /* Centrer dans la largeur */
+                    margin: auto;
+                }
+
+                h1{
+                    font-size: 4rem;
+                    text-indent: 1rem;
+                }
+
+                h1 span{
+                    display: initial;
+                }
+
+
+            /* Style header */
+
+                header{
+                    text-align: left;
+                    text-indent: 1rem;
+                }
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+
+                /* Afficher la nav */
+                nav{
+                    display: block;
+                }
+
+                /* Aligner les item de la nav */
+                nav li{
+                    display: inline-block;
+                    text-indent: 0;
+                }
+
+            /* Style main */
+                main {
+                    padding: 4rem 0 10rem 0;
+                }
+    }

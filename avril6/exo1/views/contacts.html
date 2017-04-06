@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Page Contacts</title>
+    </head>
+    <body>
+        
+        <h2>Contactez-moi</h2>
+        <p>Pour me contacter : </p>
+
+        <form action="php/sendMessage.php">
+
+            <article>
+                <label for="userName">Votre Nom</label>
+                <input type="text" id="userName" name="name">
+            </article>
+
+            <article>
+                <label for="useremail">Votre Email</label>
+                <input type="text" id="userEmail" name="email">
+            </article>
+
+            <article>
+                <label for="userSubject">Choisir un sujet</label>
+                <select id="userSubject" name="subject" >
+                    <option value="null">- Selectionner -</option>
+                    <option value="contacts">- Prise de contacts -</option>
+                    <option value="rdv">- Prise de rendez-vous -</option>
+                    <option value="devis">- Demande de devis-</option>
+                </select>
+
+            </article>
+
+            <article>
+                <label for="userMessage">votre message</label>
+                <textarea id="userMessage" name="message"></textarea>
+
+                <p><input type="checkbox">Accepter le CG</p>
+            </article>
+
+            <input type="submit" value="Envoyer">
+
+        </form>
+        
+    </body>
+</html>
