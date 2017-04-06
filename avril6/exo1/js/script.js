@@ -55,11 +55,27 @@ $(document).ready(function(){
 
             });
 
+
             // supprimer le message d'erreur du selectionner
             $('select').focus(function(){
 
                     $(this).prev().addClass('hideError');
-            })
+            });
+
+            // Supprimer le message d'erreur de la checkbox
+            $('[type="checkbox"]').focus(function(){
+
+                if($(this).checked == false) {
+
+                    $('form p').addClass('hideError');
+                };
+            
+            });
+
+            // Fermer la modal
+            $('.fa-times').click(function(){
+                $('#modal').fadeOut();
+            });
 
             // Capter la soumission du formulaire
             $('form').submit(function(evt){
@@ -136,8 +152,17 @@ $(document).ready(function(){
                     // Envoie  des données dans le fichier de traitement PHP
                     // PHP répondu true = > continuer le traitement du formulaire
 
+                            //  ajouter la valeur de userName dans la balise h2 span de la modal
+                            $('#modal span').text(userName.val() );
+
+                            // afficher la modal
+                            $('#modal').fadeIn();
+
                             // Vider les champs du formulaire
                             $('form')[0].reset();
+
+                            // Supprimer les messages d'erreur
+                            $('form b').text('');
 
                             // replacer les labels 
                             $('label').removeClass();
