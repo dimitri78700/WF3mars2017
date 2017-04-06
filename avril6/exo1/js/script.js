@@ -32,14 +32,129 @@ $(document).ready(function(){
                 })
         };
 
+        // Créer une fonction pourla gestion du formulaire
+        function contactForm(){
+            
+            // Capter le focus sur les inputs
+            $('input:not([type="submit"]), textarea').focus(function(){
+
+                // Selection la balise précédente pour y ajouter la class openedLabel
+                $(this).prev().addClass(' openedLabel hideError');
+            });
+
+            // Capter le blur sur les inputs et le textarea
+            $('input, textarea').blur(function(){
+
+                // Verifier si il n'y a pas de caractéres dans le inputs
+                if($(this).val().length == 0){
+
+                    // selectionner la balise précédente pour supprimer la class openedLabel
+                $(this).prev().removeClass();
+
+                };
+
+            });
+
+            // supprimer le message d'erreur du selectionner
+            $('select').focus(function(){
+
+                    $(this).prev().addClass('hideError');
+            })
+
+            // Capter la soumission du formulaire
+            $('form').submit(function(evt){
+
+                // bloquer le comportement naturel du formulaire
+                evt.preventDefault();
+
+                //  Définiir les variables globlales du formulaire
+
+                var userName = $('#userName');
+                var userEmail = $('#userEmail');
+                var userSubject = $('#userSubject');
+                var userMessage = $('#userMessage');
+                var checkbox = $('[type="checkbox"]');
+                var formScore = 0; 
+
+                // Verifier que userName à au mini 2 caractéres
+
+                if( userName.val().length < 2 ){
+
+                        $('[for="userName"] b').text(' min 2 caractéres !');
+
+
+                } else{
+                   // Incrémenter la valeur de formScore 
+                   formScore++;
+                };
+
+                //  Verifier que userMail à 5 caractéres
+
+                if( userEmail.val().length < 5 ){
+                         $('[for="userEmail"] b').text(' min 5 caractéres !');
+
+                } else{
+                    // Incrémenter la valeur de formScore
+                    formScore++;
+                };
+
+                // Verifier le userSubject à bien était choisis 
+
+                if( userSubject.val() == 'null' ){
+                         $('[for="userSubject"] b').text(' Selection obligatoire !');
+
+                } else{
+                    // Incrémenter la valeur de formScore
+                    formScore++;
+                };
+
+                // Verifier qu'il y a min 5 caractéres dans le userMessage
+
+                if( userMessage.val().length < 5 ){
+                         $('[for="userMessage"] b').text(' min 5 caractéres !');
+
+                } else{
+                    // Incrémenter la valeur de formScore
+                    formScore++;
+                };
+
+                // Verifier sur la checkbox est cochée
+
+                if (checkbox[0].checked == false ){
+                     $('form p b').text(' Accepter les conditions générales ! ');'('
+
+                } else{
+                    // Incrémenter la valeur de formScore
+                    formScore++;
+                };
+
+                // validation final du formulaire
+                if(formScore == 5){
+
+                    console.log('formulaire validé');
+
+                    // Envoie  des données dans le fichier de traitement PHP
+                    // PHP répondu true = > continuer le traitement du formulaire
+
+                            // Vider les champs du formulaire
+                            $('form')[0].reset();
+
+                            // replacer les labels 
+                            $('label').removeClass();
+                };
+
+            });
+
+        };
+
         // Charger le contenu de home.html dans le main
         $('main').load( 'views/home.html' );
 
 
 /*Home Page */
 
-        // Burger Menu : ouverture 
-        $('h1 + a').click(function(evt){
+            // Burger Menu : ouverture 
+            $('h1 + a').click(function(evt){
 
             // Bloquer le comportement naturel de la balise a
             evt.preventDefault();
@@ -90,6 +205,11 @@ $(document).ready(function(){
                       };
 
                    });
+
+                    // Vérifier si l'utilisateur est sur la, page contacts.html
+                    if(viewToLoad == 'contacts.html'){
+                        contactForm();
+                    }
 
                 });
 

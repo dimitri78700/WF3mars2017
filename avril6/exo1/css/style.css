@@ -26,6 +26,7 @@ Style Reset
             font-size: 1.5rem; /* => 15px */
             font-weight: 400;
             font-family: 'Roboto', sans-serif;
+           
         }
 
         h1{
@@ -102,7 +103,7 @@ Style Header
             width: 4rem;
             height: 4rem;
             padding-top: .7rem;
-            border: .2rem solid #FFC107;
+            border: .2rem outset #000000;
             display: inline-block;
 
             /* Positionner précisemment la balise */
@@ -119,7 +120,7 @@ Style Header
 
         header > a:hover{
             color: white;
-            background: #22175b;
+            background: limegreen;
             border-color: white;
         }
 
@@ -135,7 +136,7 @@ Style Header
         }
 
         header li:hover a{
-            color: #22175b;
+            color: limegreen;
         }
 
         nav a{
@@ -153,17 +154,17 @@ Style main
         /*Style About*/
         
         [src="img/doge.jpg"]{
-            border: .3rem inset limegreen;
+               border: .3rem groove white;
 
-            -webkit-border-radius : 25%;
+               -webkit-border-radius : 25%;
                 border-radius: 25%;
 
                 width: 16rem;
                 margin-bottom: 2rem;
                 
-                -webkit-box-shadow : 0 0 1rem rgba(0,0,0, 0.2);
-                -moz-box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
-                box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+                -webkit-box-shadow : 0 0 1rem rgb(43, 42, 30);
+                -moz-box-shadow: 0 0 1rem rgb(43, 42, 30);
+                box-shadow: 0 0 1rem rgb(43, 42, 30);
                 
         }
 
@@ -262,9 +263,87 @@ Style main
 
     /* Style contacts */
 
-    form{
+        form{
+            text-align: left;
+            margin: 2rem auto;
+        }
+
+        select{
+            margin: 1rem auto 3rem auto;
+        }
+
+        textarea{
+            min-height: 20rem;
+        }
+
+        textarea, input, label{
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 1rem;
         
-    }
+        }
+
+        input{
+            position: relative;
+            z-index: 2000;
+            background: transparent;
+        }
+
+        [type="checkbox"]{
+            display: inline-block;
+            width: auto;
+        }
+
+        textarea, input:not([type="submit"]){
+            border-bottom: .1rem inset green;
+            margin-bottom: 3rem;
+        }
+
+        form article{
+            position: relative;
+
+        }
+
+        label{
+            padding: 0;
+            font-weight: 700;
+            transition: all .5s;
+        }
+
+        label:not([for="userSubject"]){
+            top: .5rem;
+            position: absolute;
+        }
+
+        label.openedLabel{
+            top: -1.5rem;
+            font-size: 1.2rem;
+            color: grey;
+        }
+
+        input[type="submit"] {
+            background: limegreen;
+            border-style: outset;
+        }
+
+        form b{
+            color: red;
+            font-size: .9rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-style: italic;
+
+            -webkit-transition: opacity .5s;
+            transition: opacity .5s;
+        }
+
+        .hideError b{
+            opacity: 0;
+        }
+
+
+        
        
 
 
