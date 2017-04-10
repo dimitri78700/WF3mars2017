@@ -159,7 +159,7 @@ $(document).ready(function(){
                             $('#modal').fadeIn();
 
                             // Vider les champs du formulaire
-                            $('form')[0].reset();
+                            $('form')[0].reset('');
 
                             // Supprimer les messages d'erreur
                             $('form b').text('');

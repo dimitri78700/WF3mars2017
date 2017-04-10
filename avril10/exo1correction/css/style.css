@@ -146,7 +146,7 @@ Style Portfolio
 Style Contacts
 */
 
-    section:last-child{
+    section:nth-child(2){
         padding: 4rem 2rem;
         color: white;
         background-image: url(../img/map-image.png);
@@ -169,6 +169,41 @@ Style Contacts
         min-height: 20rem;
     }
 
+    .error{
+        border: .2rem solid red !important;
+        background-color: red;
+    }
+
+    /*Modal*/
+    
+    div{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+
+        /*Pour l'animation*/
+        display: none;
+        
+    }
+
+    div section{
+        color: black;
+        width: 30rem;
+        margin: 5rem auto;
+        position: relative;
+
+        -webkit-border-radius: .5rem;
+        border-radius: .5rem;
+    }
+
+    .fa-times{
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+    }
 
 /*
 Footer
