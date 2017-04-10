@@ -1,0 +1,158 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+
+/*Style reset*/
+
+
+*{
+
+     /* Supprimer toutes les marges */
+     margin: 0;
+     padding: 0;
+
+     /* Intégrer le padding et le border dans la taille des boites */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+
+        }
+
+     /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+        }
+
+    
+     body{
+            text-align: center;
+        }
+
+
+      a{
+             text-decoration: none;
+             
+
+        }
+
+      h1{
+            color: #ff0;
+              text-align: left;
+              font-weight: 400;
+              font-family: sans-serif;
+              position: absolute;
+              top: 0;
+              left: 0;
+        
+           }
+
+     h2 {
+            font-style: italic;
+            font-size: 3rem;
+            color: #fff;
+            margin: 3rem;
+        }
+
+     h3 {
+            color: #000;
+            font-size: 3rem;
+            margin: 2rem;
+        }
+
+
+    /*Style Header*/
+
+
+    header{
+            background-image: url(../img/header-bg.jpg);
+            text-align: center;
+            padding: 2rem;
+            background-size: cover;
+    }
+
+
+    nav{
+            display: inline-block;
+            margin-bottom: 3rem;
+    }
+
+    li{
+            display: inline-block;
+            padding: 1rem;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+    }
+
+
+    header button{
+        background-color: yellow;
+        color: white;
+    }
+
+    header article p{
+                color: white;
+                font-size: 5rem;
+                margin: 2rem;
+                padding: 2rem;
+    }
+    
+
+    /*Style Main*/
+
+    main{
+    padding: 2rem;
+    }    
+
+    section {
+    margin-bottom: 5.5rem;
+}
+    
+
+    /*style Portfolio*/
+
+    figure{
+    position: relative;
+    margin-bottom: 2rem;
+
+    }
+
+    figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 0.5rem;
+}
+
+   
+
+    /*Style Contacts*/
+    
+    form{
+        display: block;
+    }
+
+    #BackGroundMap{
+        background-image: url(../img/map-image.png);
+        background: black;
+        background-position: center;
+    }
+
+
+
+    /*Style footer */
+
+    footer{
+        background-color: white;
+        display: inline-block
+    }
+
+    footer li{
+        color: black;
+        display: inline-block;
+        position: static;
+    }
+

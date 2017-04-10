@@ -1,0 +1,545 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Suez+One');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+/*
+Style Reset
+*/
+        *{
+
+            /* Supprimer toutes les marges */
+            margin: 0;
+            padding: 0;
+
+            /* IntÃ©grer le padding et le border dans la taille des boites */
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+        }
+
+        /* Configurer l'utilisation de 1rem = 10px */
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            text-align: center;
+            font-size: 1.5rem; /* => 15px */
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+           
+        }
+
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            font-family: 'Suez One', serif;
+            padding-bottom: 2rem;
+        }
+
+        h2{
+            font-family: 'Suez One', serif;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        h1 span{
+            font-family: 'Roboto', sans-serif;
+            font-size: .5em; /* => la moitiÃ© de h1 */
+            display: block;
+        }
+
+        a, header li{
+            text-decoration: none;
+
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+        /* Supprimer le style des listes */
+        ul{
+            list-style: none;
+        }
+
+        img{
+            max-width: 100%;
+        }
+
+
+/*
+Style Header
+*/
+        header{
+            color: white;
+            background-color: #4CAF50;
+            padding: 2rem;
+
+            /* Bloquer les enfant dans le parent */
+            position: relative;
+        }
+
+        nav{
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+        .openedNav{
+            height: 20rem;
+        }
+
+        .aboutPage nav{
+                position: fixed;
+                z-index: 10000;
+                top: 0;
+                left: -100%;
+                height: 100%;
+                padding: 2rem;
+                width: 20rem;
+                background: #FFC107;
+
+                display: block;
+        }
+
+
+        header > a{
+            /* La balise A qui est enfant direct du header */
+            font-size: 1.9rem;
+            color: #22175b;
+            background: white;
+            width: 4rem;
+            height: 4rem;
+            padding-top: .7rem;
+            border: .2rem outset #000000;
+            display: inline-block;
+
+            /* Positionner prÃ©cisemment la balise */
+            position: absolute;
+            top: 100%;
+            left: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            -webkit-border-radius: 50%;  
+            border-radius: 50%;
+        }
+
+        header > a:hover{
+            color: white;
+            background: limegreen;
+            border-color: white;
+        }
+
+        header li{
+            font-weight: 700;
+            background: rgba(255, 255, 255, .5);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        header li:hover{
+            background: white;
+        }
+
+        header li:hover a{
+            color: limegreen;
+        }
+
+        nav a{
+            color: white;
+        }
+
+
+/*
+Style main
+*/
+        main {
+            padding: 4rem 2rem 10rem 2rem;
+        }
+
+        /*Style About*/
+        
+        [src="src/app/img/doge.jpg"] {
+               border: .3rem groove white;
+
+               -webkit-border-radius : 25%;
+                border-radius: 25%;
+
+                width: 16rem;
+                margin-bottom: 2rem;
+                
+                -webkit-box-shadow : 0 0 1rem rgb(43, 42, 30);
+                -moz-box-shadow: 0 0 1rem rgb(43, 42, 30);
+                box-shadow: 0 0 1rem rgb(43, 42, 30);
+                
+        }
+
+        [src="src/app/img/doge.jpg"] + p{
+                margin-bottom: 2rem;
+        }
+
+        /* La balise ul qui est placÃ©e juste aprÃ¨s la balise h3 */
+        h3 + ul{
+
+            text-align: left;
+            margin: 2rem auto;
+
+
+        }
+
+        /* Toute les balises qui suivent une balise h3 */
+        h3 + ul li{
+
+            background: limegreen;
+            padding:  .1rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        h3 + ul p{
+            background: #ffc822;
+            padding: 1rem;
+            min-height: 3.5rem;
+
+        /*Pour l'animation*/
+            width: 0;
+        }
+
+        h3 + ul span{
+            position: absolute;
+        }
+
+
+    /* Style Portfolio */
+        figure{
+            position: relative;
+
+        }
+
+        figcaption{
+            position: absolute;
+            width: 20rem;
+            background: black;
+            color: white;
+            top: 50%;
+            left: 50%;
+            padding: 1rem 2rem;
+            
+            -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+
+            -webkit-border-top-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+            
+        }
+
+        figcaption button{
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            border: 0;
+            padding: 1rem;
+            
+            -webkit-border-bottom-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        #modal{
+           position: fixed;
+           top: 0;
+           left: 0;
+           background: rgba(0,0,0, .7);
+           width: 100%;
+           height: 100;
+           z-index: 2000;
+
+           /* Pour l'animation */
+            display: none;
+        }
+
+        #modal article{
+            background: lightgreen;
+            max-width: 35rem;
+            margin: 5rem auto;
+            padding: 2rem;
+            text-align: left;
+        }
+
+
+    /* Style contacts */
+
+        form{
+            text-align: left;
+            margin: 2rem auto;
+        }
+
+        select{
+            margin: 1rem auto 3rem auto;
+        }
+
+        textarea{
+            min-height: 20rem;
+        }
+
+        textarea, input, label{
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 1rem;
+        
+        }
+
+        input{
+            position: relative;
+            z-index: 2000;
+            background: transparent;
+        }
+
+        [type="checkbox"]{
+            display: inline-block;
+            width: auto;
+        }
+
+        textarea, input:not([type="submit"]){
+            border-bottom: .1rem inset green;
+            margin-bottom: 3rem;
+        }
+
+        form article{
+            position: relative;
+
+        }
+
+        label{
+            padding: 0;
+            font-weight: 700;
+            transition: all .5s;
+        }
+
+        label:not([for="userSubject"]){
+            top: .5rem;
+            position: absolute;
+        }
+
+        label.openedLabel{
+            top: -1.5rem;
+            font-size: 1.2rem;
+            color: grey;
+        }
+
+        input[type="submit"] {
+            background: limegreen;
+            border-style: outset;
+        }
+
+        form b{
+            color: red;
+            font-size: .9rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-style: italic;
+
+            -webkit-transition: opacity .5s;
+            transition: opacity .5s;
+        }
+
+        .hideError b{
+            opacity: 0;
+        }
+
+
+        
+       
+
+
+/*    
+Style footer
+    */
+        footer {
+            color: white;
+            position: fixed;
+            z-index: 1000;
+            bottom: 0;
+            left: 0;
+            width: 100%;    
+            background: #4CAF50;
+            padding: 2rem; 
+        }
+
+        footer a {
+            color: white;
+        }
+
+        /* Toutes les balises li du footer sauf la derniÃ¨re */
+        footer li:not(:last-child){
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+
+
+/*
+RequÃªtes media
+*/
+        /* Ecran d'une taille minimale de 400px */
+        @media screen and (min-width: 400px){
+
+            /* Style portfolio */
+                .portfolioPage article{
+
+                    /* Passer en 2 colonnes */
+                    display: inline-block;
+                    width: 49%;
+
+                    /* GÃ©rer les paddings */
+                    padding: 0 1rem 0 0;
+
+                }
+
+                /* SÃ©lectionner toutes les 2 balise Ã  partir de la 2Ã¨me */
+                .portfolioPage article:nth-child( 2n + 2 ){
+                    padding: 0 0 0 1rem;
+                }
+
+        }
+
+        /* Ecran d'une taille minimale de 750px */
+        @media screen and (min-width: 750px){
+
+            /* Style reset */
+                main, h1, nav{
+                    max-width: 85rem;
+                    /* Centrer dans la largeur */
+                    margin: auto;
+                }
+
+                h1{
+                    font-size: 4rem;
+                    text-indent: 1rem;
+                }
+
+                h1 span{
+                    display: initial;
+                }
+
+
+            /* Style header */
+
+                header{
+                    text-align: left;
+                    text-indent: 1rem;
+                }
+
+                /* Masquer le burger */
+                header > a{
+                    display: none;
+                }
+
+                /* Afficher la nav */
+                nav{
+                    display: block;
+                }
+
+                /* Aligner les item de la nav */
+                nav li{
+                    display: inline-block;
+                    text-indent: 0;
+                }
+
+            /* Style main */
+                main {
+                    padding: 4rem 0 10rem 0;
+                }
+    }
+
+                #appLoader{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding-top: 15rem;
+            
+                    background: #4CAF50;
+
+                    -webkit-transition: all .5s;
+                    transition: all .5s;
+
+                    -webkit-transition-delay: 1s;
+                    transition-delay: 1s;
+
+                    display: none;
+                }
+
+                .closedLoader{
+                    opacity: 0;
+                }
+
+                
+
+    /* From http://tobiasahlin.com/spinkit/ */
+
+                    .sk-cube-grid {
+                    width: 40px;
+                    height: 40px;
+                    margin: 100px auto;
+                    }
+
+                    .sk-cube-grid .sk-cube {
+                    width: 33%;
+                    height: 33%;
+                    background-color: black;
+                    float: left;
+                    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+                            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+                    }
+                    .sk-cube-grid .sk-cube1 {
+                    -webkit-animation-delay: 0.2s;
+                            animation-delay: 0.2s; }
+                    .sk-cube-grid .sk-cube2 {
+                    -webkit-animation-delay: 0.3s;
+                            animation-delay: 0.3s; }
+                    .sk-cube-grid .sk-cube3 {
+                    -webkit-animation-delay: 0.4s;
+                            animation-delay: 0.4s; }
+                    .sk-cube-grid .sk-cube4 {
+                    -webkit-animation-delay: 0.1s;
+                            animation-delay: 0.1s; }
+                    .sk-cube-grid .sk-cube5 {
+                    -webkit-animation-delay: 0.2s;
+                            animation-delay: 0.2s; }
+                    .sk-cube-grid .sk-cube6 {
+                    -webkit-animation-delay: 0.3s;
+                            animation-delay: 0.3s; }
+                    .sk-cube-grid .sk-cube7 {
+                    -webkit-animation-delay: 0s;
+                            animation-delay: 0s; }
+                    .sk-cube-grid .sk-cube8 {
+                    -webkit-animation-delay: 0.1s;
+                            animation-delay: 0.1s; }
+                    .sk-cube-grid .sk-cube9 {
+                    -webkit-animation-delay: 0.2s;
+                            animation-delay: 0.2s; }
+
+                    @-webkit-keyframes sk-cubeGridScaleDelay {
+                    0%, 70%, 100% {
+                        -webkit-transform: scale3D(1, 1, 1);
+                                transform: scale3D(1, 1, 1);
+                    } 35% {
+                        -webkit-transform: scale3D(0, 0, 1);
+                                transform: scale3D(0, 0, 1); 
+                    }
+                    }
+
+                    @keyframes sk-cubeGridScaleDelay {
+                    0%, 70%, 100% {
+                        -webkit-transform: scale3D(1, 1, 1);
+                                transform: scale3D(1, 1, 1);
+                    } 35% {
+                        -webkit-transform: scale3D(0, 0, 1);
+                                transform: scale3D(0, 0, 1);
+                    } 
+                    }
