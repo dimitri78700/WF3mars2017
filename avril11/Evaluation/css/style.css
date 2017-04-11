@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+
+/*
+Style reset
+*/
+
+    *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; 
+
+    }
+
+
+    html{
+            font-size: 62.5%;
+    }
+
+    body{
+            text-align: center;
+        }
+
+    nav{
+            text-align: left;
+            padding-left: 1rem;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+    header, footer{
+            background-color: #061339;
+            color: #FFF;
+    }
+
+    img{
+            max-width: 100%;
+            background: #7885A5;
+        }
+
+    h2, h3{
+            color: #2F4073;
+            font-family: 'Merienda', cursive;
+            font-size: 2rem;
+        }
+
+    p{
+            margin: 3rem;
+            font-size: 1.5rem;
+    }
+
+    p span {
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: 700;
+    }
+
+    main{
+            background: #eee;
+    }
+
+    h1, h2, nav, aside{
+            font-family: 'Merienda', cursive;
+        }
+
+
+/*
+Style Header
+*/
+
+    header article{
+            color: #FFF;
+            background-image: url(../img/background.jpg);
+            text-shadow: 2px 2px 2px #3c3b3b;
+            height: 20rem;
+        }
+
+        h1{
+            padding: 5rem;
+            font-size: 4rem;
+        }
+
+/*
+Style Main
+*/
+
+        section:first-child{
+                padding: 2rem;
+        }
+
+
+        section:last-child{
+                padding: 2rem;
+        }
+
+        #imgchat:hover img{
+            background-color: #061339;
+        }
+                
+       
+
+ /*
+ Style Formulaire
+ */
+
+        form{
+            margin: 2rem;
+        }
+
+        form article{
+            background-color: #FCFCFC;
+            padding: 2rem;
+            border: .1rem solid #D7D7D7;
+            border-radius:.3rem; 
+            
+        }
+
+        input, textarea, select{
+            display: block;
+            width: 100%;
+            padding:  1rem;
+            margin-bottom: 1rem;
+
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+        }
+
+        input[type="submit"]{
+            color: white;
+            background-color:#64BB67;
+        }
+
+        textarea{
+            min-height: 15rem;
+        }
+
+        .error{
+        border: .1rem solid red !important;
+        background: #ffe8ec;
+        }
+
+
+    /*
+    Style Footer
+    */
+
+        footer{
+            padding: 1.5rem;
+        }
+
+        aside{
+            text-align: right;
+            font-size: medium;
+            }   
+
+
+/*
+Media
+*/
+
+
+/*
+Pour les écrans d'une taille minimale de 850px, mettre les section en 3 colonnes
+*/
