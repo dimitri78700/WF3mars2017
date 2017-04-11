@@ -1,0 +1,100 @@
+
+
+
+
+
+/*
+Style Reset
+*/
+
+
+*{
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    text-align: center;
+    font-size: 1.5rem;
+    }
+
+img{
+    max-width: 100%;
+}
+
+main{
+    padding: 2rem;
+}
+
+
+        /*Mettre le form est l'image sur deux colonnes*/
+
+#myForm article{
+    text-align: left;
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    margin: 2rem auto;
+}
+
+
+/*
+Style header
+*/
+
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+
+    /* pour l'animation*/
+    display: none;
+}
+
+
+#modal article{
+        width: 30rem;
+        background-color: white;
+        padding: 2rem;
+        margin: 5rem auto;
+}
+
+
+/*
+Pour les écrancs d'une taille minimale de 550px, mettre les sections sur deux colonnes
+*/
+
+@media screen and (min-width:550px){
+    main section{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+
+        
+    }
+}
+
+
+/*
+Pour les écrans d'une taille minimale de 850px, mettre les section en 3 colonnes
+*/
+
+@media screen and (min-width:850px){
+    main section{
+        width: 32%;
+
+    }
+}
