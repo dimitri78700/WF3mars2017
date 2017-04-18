@@ -115,6 +115,10 @@ USE bibliotheque;
     -- 4e ligne : la jointure qui lie les 2 tables avec le champs COMMUN
     -- 5e ligne : la ou les conditions supplémentaire 
 
+
+
+    -------- Exo ----------
+
     -- Nous aimerions connaitre les mouvements des livres ( titre, date de sortie et date de rendu ) ecrit par Alphonse Daudet :
 
     SELECT l.titre, e.date_sortie, e.date_rendu
@@ -143,3 +147,79 @@ USE bibliotheque;
     GROUP BY a.prenom;
 
 
+    -- Afficher qui a emprunté quels livres et à quelles dates de sortie ? ( prénom, date de sortie, titre) :
+
+    SELECT a.prenom, e.date_sortie, l.titre
+    FROM abonne a 
+    INNER JOIN emprunt e
+    ON a.id_abonne = e.id_abonne
+    INNER JOIN livre l 
+    ON e.id_livre = l.id_livre;
+    -- ICI pas de group by car il est normal que les prénoms sortent plusieurs fois ils peuvent emprunté plusieurs livres
+
+
+    -- Afficher les prénoms des abonnes avcec les id livre qu'ils ont empruntés :
+    
+    SELECT a.prenom, e.id_livre
+    FROM abonne a 
+    INNER JOIN emprunt e 
+    ON a.id_abonne = e.id_abonne;
+
+
+
+
+-- **************************************
+-- Jointures externe
+-- **************************************   
+
+
+    -- Une jointure externe permet de faire des requetes sans correspondance exigée entre les valeurs requêtées.
+
+    -- Ajouter vous dans la table abonné :
+
+    INSERT INTO abonne (prenom) VALUES('DIMITRI');
+
+    -- Si on relance la derniere requetes de jointure interne, nous n'apparaissons pas dans la liste car nous n'avons pas emprunté de livres.
+    -- Pour y remédier, nous faisons une jointure externe.
+
+    SELECT a.prenom, e.id_livre
+    FROM abonne a
+    LEFT JOIN emprunt e 
+    ON a.id_abonne = e.id_abonne;
+    -- la clause LEFT join  permet de rapatrier toutes les données dans la table considérée comme étant à gauche de l'instruction LEFT JOIN (donc abonne dans notre cas), sans correspondance exigée dans l'autre table (emprunt ici)
+
+
+    -- voici le cas avec un livvre supprimé de la bibliothéque
+    DELETE FROM livre WHERE id_livre = 100;   -- "une vie "
+
+    -- On visualise les emprunts avec une jointure interne 
+    SELECT emprunt.id_emprunt, livre.titre
+    FROM emprunt
+    INNER JOIN livre
+    ON emprunt.id_livre = livre.id_livre;
+    -- on ne voit pas dans cette requête le livre "une vie" qui a été supprimé.
+
+
+    -- On fait la même chose avec une jointure externe :
+    SELECT emprunt.id_emprunt, livre.titre
+    FROM emprunt
+    LEFT JOIN livre
+    ON emprunt.id_livre = livre.id_livre;
+    -- Ici tous les emprunts sont affichés y compris ceux pour lesquels les titres sont suppr et remplacé par NULL.
+
+
+-- **************************************
+-- UNION
+-- **************************************  
+
+    -- Union permet de fusionner le resultat de deux requetes dans la meme liste de resultat 
+
+    -- Exemple : si on désinscrit Guillaume (suppression du profil de la table abonne) on peut afficher à la fois tous les livres empruntés, y compris ceux par des lecteurs désinscrits ( on affiche NULL dans id_livre pour l'abonné 'JLM')
+
+    -- Suppr Guillaume 
+    DELETE FROM abonne WHERE id_abonne = 1;
+
+    -- Requete sur les livres empruntés avec UNION 
+    (SELECT abonne.prenom, emprunt.id_livre FROM abonne LEFT JOIN emprunt ON abonne.id_abonne = emprunt .id_abonne)
+    UNION
+    (SELECT abonne.prenom, emprunt.id_livre FROM abonne RIGHT JOIN emprunt ON abonne.id_abonne = emprunt .id_abonne);
