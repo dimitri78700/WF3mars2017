@@ -1,0 +1,64 @@
+************************
+Présentation de PHPMYADMIN (PMA)
+************************
+
+
+Qu'es-ce que PHPMYADMIN :
+
+PMA est une interface d'administration pour le SGBD de MySQL. Il est écrit en en PHP et s'appuie sur le serveur HTTP Apache (serveur Web).
+
+Il permet d'admin les éléments suivant :
+
+    - Les BDD
+    - Les Tables et leurs champs 
+    - les index, les clés primaires et étrangeres 
+    - les utilisateurs de la base et leurs permissions 
+    - Exporter / importer les données dans divers formats
+
+
+
+Vous pourriez remplacer PMA par d'autres interfaces d'admin de BDD : DBNinja, SQL buddy.....ectt.
+
+
+--------------------------
+Définition des TYPES de champ :
+
+    - INT pour nombre entier
+    - VARCHAR pour chaine de caractères de longueur variable ( taille maxi 255 caractères )
+    - TEXT pour chaine de caractères de longueur variable ( taille maxi 65535 caractères )
+    - Date au format YYYY-MM-BDDD
+    - DATETIME au format YYYY-MM-DD HH:ii:ss
+    - FLOAT pour les nombres décimaux 
+    - ENUM pour donner une liste de valeurs selon la syntaxe 'm' , 'f'
+
+Definition des attributs :
+
+    - Binary : pour rentre le camp sensible à la casse
+    - Unsigned : pas de chiffre négatif
+    - Unsigned ZeroFill : pas de chiffre négatif + compléte avec des 0 ( exemple "12" en INT donnera en base "0012" )
+
+
+
+----------------------------
+IMPORT /  EXPORT
+
+- VIA PHPMYADMIN : avec les onglets "import" ou "export"  correspondants.
+
+- En ligne de commande 
+    Démarrer > exécuter > cmd 
+
+Puis :
+
+- Pour faire un export de BDD 
+cd c:\xampp\mysql\bin 
+mysqldump -u root entreprise > monFichier.sql
+
+=> le fichier d'export appelé monFichier.sql se trouve par défaut dans le dossier 
+    c:\xampp\mysql\bin.
+
+- Pour faire un import en BDD
+1° Créer une base de donnée d'accueil : import_entreprise2
+2° Mettre de le fichier d'import dans le dossier par défaut c:\xampp\mysql\bin
+3° Saisir dans l'invite de commandes : 
+mysql -u root import_entreprise2 < monFichier.sql
+
