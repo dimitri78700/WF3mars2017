@@ -162,12 +162,14 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
         echo 'non, c\'est $b qui est supérieur à $a <br>';
     }
 
-//----
+ //----
+
     if($a > $b && $b > $c ){  // && signifie ET 
         echo 'les 2 conditions sont vraies <br>';
     }
 
 //----
+
     if($a == 9 || $b > $c ) {  // l'opérateur de comparaison est == et l'opérateur OU s'écrit ||
         echo 'ok pour une des 2 conditions <br>';
     } else {
@@ -175,6 +177,7 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
     }
 
 //----
+
     if($a == 8 ){
         echo 'reponse 1 <br>';
     } elseif ($a != 10){   // sinon si $a (!= signe de différent) de 10, on exécute les accolades qui suivent :
@@ -184,6 +187,7 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
     }
 
 //----
+
     if($a == 10 XOR $b == 6){
         echo 'Ok pour la condition exclusive <br>';  // si les 2 conditions sont vraies ou les 2 conditions sont fausses en même temps , nous n'entrons pas dans les accolades.
     }
@@ -196,6 +200,7 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
 
 //----
 //  Différence  entre == et === :
+
     $vara = 1;    // integer
     $varb = '1'; // String 
 
@@ -206,4 +211,177 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
     if($vara === $varb){ 
         echo 'il y a égalité en valeur ET en type entre les 2 varibles <br>';
     }
+
+    //  Avec la présnece du triple =, la comparaison ne fonctionne pas car les variables ne sont pas du même type : on compare un integer avec un string.
+    //  Avec le double =, on ne compare que la valeur : ici la comparaison est donc juste.
+
+
+    // = signe d'affectation 
+    // == comparaison en valeur 
+    // === comparaison type et valeur 
+
+
+//----
+//  empty() et isset() :
+
+    //  empty() : teste si c'est vide ( c'st-à-dire 0, '', NULL, False ou non défini. 
+    //  isset() : teste si c'est défini et a une valeur non NULL. 
+
+    $var1 = 0;
+    $var2 = '';  // Chaine vide
+
+    if (empty($var1)) echo 'on a 0, vide, ou non définie <br>';
+    if (isset($var2)) echo 'var 2 existe bien <br>';
+
+    // Diffrénce entre empty et isset : si on met les lignes 204 et 205 en commentaire (pour les neutraliser), empty reste vrai car $var1 n'est pas définie, alors que isset est car $var2 n'est pas définie.
+
+    // Empty sera utilisé pour vérifier, par exmple, que les champs d'un formulaire sont remplis. isset permettra par exemple de vérif l'existance d'un indice dans un arry avant de l'utiliser.
+
+
+     // phpinfo();
+
+
+    //  --------------------------------
+    // Entrer une valeur dans une variable sous condition (PHP7). 
+
+    $var1 = isset($maVar) ? $maVar : 'valeur par défaut'; // Dans cette ternaire , on affecte la valeur de $maVar à $var1 si elle existe. Celle-ci n'existent pas, on lui affecte 'valeur par défaut'.
+    echo $var1 . '<br>'; // Affiche "valeur par défaut"
+
+    // En version PHP7 :
+    $var2 = $maVar ?? 'valeur par défaut'; // on fait exactement la même chose mais en plus court : le "??" signifie "soit l'un soit l'autre", "prend la 1ere valeur qui existe"
+    echo $var2 . '<br>';
+
+    $var3 = $_GET['pays'] ?? $_GET['ville'] ?? 'pas infos'; // Soit on prend le pays qu'il existe, sinon on prend la vielle si existe, sinon on prend "pas d'infos" par defaut.
+    echo $var3 . '<br>'; // affiche "pas infos"
+
+
+//-------------------------------------------------------------------------
+echo '<h2> Condition Switch </h2>';
+//-------------------------------------------------------------------------
+
+ // Dans le switch ci dessous, les "case" représentent les cas différents dans lesquels on peut potentiellement tomber.
+
+    $couleur = 'jaune';
+
+    switch($couleur){
+            case 'bleu' : echo 'vous aimez le bleu'; break;
+            case 'rouge' : echo 'vous aimez le rouge'; break;
+            case 'vert' : echo 'vous aimez le vert'; break;
+            default : echo 'vous n\'aimez rien <br>';
+    }
+
+    // Le switch compare la valeur de la variable entre parenthèses à chaque cases. Lorsqu'une valeur correspond, on exécute l'instructiion en regarde du case, puis le break qui indique qu'il faut sortir de la condition. 
+    // le default correspond à un else : on l'exécute par défaut quand aucune case ne correspond. 
+
+
+// EXERCICE : écrivez la condition switch ci-dessus avec des if... 
+
+
+    if($couleur == 'bleu '){
+        echo 'vous aimez le bleu <br>';
+    }
+     elseif($couleur == 'rouge ') {
+        echo 'vous aimez le rouge <br>';
+    }
+     elseif($couleur == 'vert ') {
+        echo 'vous aimez le vert <br>';
+    }
+     else {
+        echo 'vous n\'aimez rien <br>';
+    }
+
+
+//-------------------------------------------------------------------------
+echo '<h2> Fonctions prédéfinies </h2>';
+//-------------------------------------------------------------------------
+
+    // Une fonction prédéfinies permet de réaliser un traitement spécifique qui est prévu dans le langage
+
+    // -------
+    echo '<h2> Traitement des chaines de caracteres ( strlen, strpos, substr)</h2>';
+    $email1 = 'prenom@site.fr';
+
+    echo strpos($email1, '@') . '<br>';  // strpos() indique la position 6 du caractere @ dans la chaine $email1
+    echo strpos('bonjour', '@');
+
+    var_dump(strpos('bonjour', '@')); 
+
+    // Quand j'utilise une fonction prédéfinie, il faut se demander quels sont les arguement à lui fournir pour qu'elle s'exécute correctement et ce qu'elle peut retourner comme resultat
+    // dans l'exemple de strpos() : succées => integer, échec => booléan FALSE
+
+    // -------
+    $phrase = 'mettez une phrase à cet endroit';
+
+    echo '<br>' . strlen($phrase) . '<br>'; // Affiche la longueur du string : succés => integer, echec => false.
+
+    $texte = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis laboriosam, cumque exercitationem omnis eligendi delectus nihil eefegrhrhjjtyjtjtyjtyj.';
+
+    echo substr($texte, 0, 20) . '...<a href="">Lire la suite</a><br>'; // On découpe une partie du texte et on lui concatène un lien . succès => string, échec => false. 
+
+    // ---------
+    echo str_replace('site', 'gmail', $email1);  // remplace 'site' par 'gmail' dans le string contenu dans $email1. 
+
+    // --------
+    $message = '   hello world     ';
+    echo strtolower($message) . '<br>'; // passe le string en Minuscules
+    echo strtoupper($message) . '<br>'; // passe le string en majuscules
+    
+    echo strlen($message) . '<br>'; 
+    echo strlen(trim($message)) . '<br>'; // trim() permet de suppr les espaces au début et à la fin d'un string. 
+
+
+//-------------------------------------------------------------------------
+echo '<h2> PHP Manuel </h2>';
+//-------------------------------------------------------------------------
+    // Pour avoir plus d'infos : http://php.net/manual/fr/
+
+
+//-------------------------------------------------------------------------
+echo '<h2> Gestion des dates </h2>';
+//-------------------------------------------------------------------------
+
+    echo date('d/m/Y H:i:s') . '<br>';  // Affiche la date et heure de l'instant selon le format indiqué : d= day , m = month Y = year sur 4 chiffres, H = hours en 24h , i = minutes, s = secondes. On peut choisir les séparateurs.$_COOKIE
+    
+    echo time() . '<br>';  // retourne le timestamp actuel = nombre de secondes écoulées depuis 01/01/1970 à 00:00:00
+
+    // la fonction prédéfinie strtotime() :
+
+    $dateJour = strtotime ('10-01-2016'); // retourne le timestamp de la date indiquée
+    echo $dateJour . '<br>';
+
+    // la fonction strftime() :
+
+    $dateFormat = strftime('%Y-%m-%d', $dateJour); // transforme le timestamp donnée en date selon le format indiqué, ici Y - m - d.
+    echo $dateFormat . '<br>'; // affiche 2016-01-10.
+
+    
+    // Exemple de conversion de format de date  : 
+    // Transformer 23-05-2015 en 2015-05-23 :
+
+    echo strftime('%Y-%m-%d', strtotime('23-05-2015'));
+
+    echo '<br>';
+    // Transformer 2015-05-23 en 23-05-2015
+
+    echo strftime('%d-%m-%Y', strtotime('2015-05-23'));
+
+    echo '<br>';
+
+    // Cette méthode de transformation est limitée dans le temps (2038).... On peut donc utiliser une autre méthode avec la classe DateTime :
+
+    $date = new DateTime('11-04-2017');
+    echo $date->format('Y-m-d');
+
+        // DateTime est une classe que l'on peut comparer à un plan ou un modèle qui sert à construire des objets "date". 
+
+        // On construit un objet "date" avec le mot new, en indiquant la date qui nous intéresse entre parenthèses. $date est donc un objet "date"
+
+        // Cete objet bénéf de méthode (=fonctions) offertes par la classe : il y a entre autres, la méthode format() qui permet de modifier le format d'une date. Pour appeler cette méthode sur l'objet $date, on utilise la fléche "->" . 
+
+
+
+
+
+
+
 ?>
