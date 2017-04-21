@@ -1,7 +1,11 @@
 <style>
     h2{
-        font-size: 15px; color: red;
+        font-size: 15px; color: red; 
       }
+
+    td{
+        padding: 0.5rem;
+    }
 </style>
 
 <?php
@@ -478,6 +482,22 @@ echo '<h2> Les fonctions Utilisateurs </h2>';
     meteo4('printemps', 3);
 
 
+    // Exercices //
+
+    function prixLitre(){
+        return rand(1000, 2000)/1000; // détermine un prix aléatoire entre 1 et 2euros
+    }
+
+    // Ecrivez la fonction factureEssence() qui calcule le prix total de votre facture d'essence en fonction du nombre de litres que vous lui donnez. Cette fonction retourne la phrase "votre facture est de X euros pour Y litres d'essence" (x et y sont variables).
+    // Dans cette fonction, utilisez la fonction prixLitre() qui vous retourne le prix du litre d'essence 
+
+    function factureEssence($litre){
+        $prixTotal = $litre * prixLitre();
+        echo "votre facture est de $prixTotal pour $litre litres d'essence <br>";
+        
+    }
+    factureEssence(50);   
+
 //-------------------------------------------------------------------------
 echo '<h2> Les variables locales et globales </h2>';
 //-------------------------------------------------------------------------
@@ -508,6 +528,8 @@ echo '<h2> Les variables locales et globales </h2>';
 //-------------------------------------------------------------------------
 echo '<h2> les structures itératives : boucle  </h2>';
 //-------------------------------------------------------------------------
+
+
 
     // Boucle WHile 
     $i = 0;  // Valeur de départ de la boucle 
@@ -545,6 +567,158 @@ echo '<h2> les structures itératives : boucle  </h2>';
         ?>
     </select>
 
-   
+ <?php
+
+    // -------------
+    // Boucle do While 
+    // La boucle do while a la particularité de s'exécuter au moins UNE fois, puis tant que la condition de fin est vraie. 
+
+    echo '<br>Boucle do while<br>';
+
+    do{
+        echo 'un tour de boucle';
+    } while (false);
+    // On met la condition pour exécuter les tours de boucle ici à la place de false. dans ce cas précis, on voit que l'ont effectue un tour de boucle bien que la condition soit fausse. 
+
+    // notez que la présence du ";" à la fin de la boucle do while ( contrairement aux autres structures itératives)
 
 
+    // -------------
+    // Boucle FOR :
+    echo '<br>';
+
+    for ($j = 0; $j < 16; $j++){  // initialisation de la valeur de départ; condition d'entrée dans la boucle; incrémentation (ou décrémentation). 
+        print $j . '<br>';
+    }
+
+
+    // ------
+    // Exercice :
+
+    //  1 - faire une boucle qui affiche 0 à 9 sur la meme ligne.
+
+    //  2- faite la même chose mais dans un tableau HTML. 
+
+    for ($t = 0; $t <= 9; $t++){
+        echo $t;
+    }
+
+    // -------
+
+    echo '<table border ="4">';
+        echo '<tr>';
+
+    for ($t = 0; $t <= 9; $t++){
+        print "<td> $t </td>";
+    }
+        echo '</tr>';
+    echo '</table>';
+
+
+     echo '<br>';
+
+    //  faire un tableau avc deux colonnes avec une boucle. 
+
+    // ------For-----
+
+     echo '<table border ="2">';
+
+     for ($r = 0; $r <= 10; $r++){
+        echo '<tr>';
+             for ($t = 0; $t <= 9; $t++){
+                print "<td> $t </td>";
+    } 
+        echo '</tr>';
+    }
+    echo '</table>';
+
+
+    echo '<br>';
+
+    // -----While-----
+
+      echo '<table border ="2">';
+        $i = 0;
+        while($i < 10){
+             echo '</tr>';
+              for ($t = 0; $t <= 9; $t++){
+                print "<td> $t </td>";
+    } 
+            $i++;
+            echo '</tr>';
+    }
+    echo '</table>';
+
+
+//-------------------------------------------------------------------------
+echo '<h2> Les arrays ou tableaux  </h2>';
+//-------------------------------------------------------------------------
+
+    // On peut stocker dans un array une multitude de valeurs, quelque soit leur type. 
+
+    $liste = array('greg', 'nath', 'émilie', 'francois', 'dimitri'); // déclaration d'un array appelé liste $liste contenant des prénoms
+
+    // echo $liste;  <= erreur car on ne peut pas afficher directement le contenu d'un array 
+
+    echo '<pre>'; var_dump($liste);  echo '</pre>';
+
+    echo '<pre>'; print_r($liste);  echo '</pre>';
+    // ces deux instructions d'affichage permettent d'indiquer le type de l'élément mis en argument, ainsi que son contenu. les balises <pre> servent à faire une mise en forme. Notez que ces 2 instructions ne sont pas utilisées qu'en phase de développement. 
+
+
+    // Autre moyen d'affecter des valeurs dans un tableau :
+    
+    $tab[] = 'France';  // Permet d'ajouter France dans le tableau $tab. 
+    $tab[] = 'Italie'; 
+    $tab[] = 'Portugal';
+    $tab[] = 'Russie';
+
+
+    echo '<pre>'; print_r($tab);  echo '</pre>'; // pour voir le contenu du tableau 
+
+    // Pour afficher la valeur Italie qui se situe à l'indice 1 :
+    echo $tab[1] . '<br>'; 
+    
+    // tableau associatif : tableau dont les indices sont littéraux :
+    $couleur = array("b" => "bleu", "l" => "blanc", "r" => "rouge");  // on peut choisir le nom des indices. 
+
+    // pour acceder à un élément du tableau associatif :
+    echo 'la seconde couleur de notre tableau est le ' . $couleur['b'] . '<br>';
+    echo "la seconde couleur de notre tableau est le $couleur[b] <br>"; // affiche bleu. Un array écrit dans des guillemets perd ses quotes autour de son indice. 
+
+
+    //------
+    // Mesurer la taille d'un array :
+
+    echo 'taille du tableau : ' . count($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array. 
+
+    echo 'taille du tableau : ' . sizeof($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array.
+
+    // ------
+    // transformer un array en string : 
+
+    $chaine = implode('-', $couleur);  // implode() rassemble les éléments d'un array en une chaine séparé par le séparateur '-' ici.
+    echo $chaine . '<br>';
+
+    $couleur2 = explode('-', $chaine); // transforme une chaine en array en séparant les éléments grâce au séparateur indiqué (ici un '-')
+    echo '<pre>'; print_r($couleur2);  echo '</pre>';
+
+    //------
+    echo '<h2>  la boucle foreach pour parcourir les arrays  </h2>';
+    // la boucle foreach est un moyen simple de passer en revue un tableau. Elle fonctionne uniquement sur les arrays et les objets. et elle a l'avantage d'etre "automatique", s'arrêtant qand il n'y a plus l'éléments. 
+
+    foreach($tab as $valeur){  // la variable de la valeur (que l'on appele comme on veut) récupére à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab  ["parcourt l'array $tab par ses valeurs"]
+        echo $valeur . '<br>'; 
+    }
+
+    echo '<br>';
+
+    foreach($tab as $indice => $valeur){ // on parcourt l' array $tab par ses indices auxquels les valeurs. 
+        echo $indice . ' correspondant à ' . $valeur .'<br>';    
+        }
+
+
+
+
+
+    ?>
