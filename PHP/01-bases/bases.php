@@ -235,7 +235,7 @@ echo '<h2> Structures conditionnelles et opérateurs de comparaison </h2>';
 
     // Diffrénce entre empty et isset : si on met les lignes 204 et 205 en commentaire (pour les neutraliser), empty reste vrai car $var1 n'est pas définie, alors que isset est car $var2 n'est pas définie.
 
-    // Empty sera utilisé pour vérifier, par exmple, que les champs d'un formulaire sont remplis. isset permettra par exemple de vérif l'existance d'un indice dans un arry avant de l'utiliser.
+    // Empty sera utilisé pour vérifier, par exmple, que les champs d'un formulaire sont remplis. isset permettra par exemple de vérif l'existance d'un indice dans un array avant de l'utiliser.
 
 
      // phpinfo();
@@ -379,9 +379,172 @@ echo '<h2> Gestion des dates </h2>';
         // Cete objet bénéf de méthode (=fonctions) offertes par la classe : il y a entre autres, la méthode format() qui permet de modifier le format d'une date. Pour appeler cette méthode sur l'objet $date, on utilise la fléche "->" . 
 
 
+//-------------------------------------------------------------------------
+echo '<h2> Les fonctions Utilisateurs </h2>';
+//-------------------------------------------------------------------------
+
+    // Les fonctions qui ne sont pas prédéfinies dans le langage sont déclarées puis exécutées par l'utilisateur. 
+
+    //  Déclaration d'une fonction : 
+
+    function separation(){
+        echo '<hr>'; // Simple fonction permettant de tirer un trai dans la page web. 
+            }
+    //  Appel de la fonction par son nom : 
+    separation(); // Ici on execute la fonction 
+
+    //------------
+    // Fonction avec arguments : les arguments sont des paramètres fournis à la fonction et lui permettent de compléter ou modifier son comportement itialement prévu.
+
+    function bonjour($qui){   // $qui apparait ici pour la 1ere fois : il s'agit d'une variable de recéption qui recoit la valeur 
+        return 'Bonjour ' . $qui . '<br>'; // return permet de renvoyer ce qui suit le return à l'endroit où la fonction est call
+        echo 'cette ligne est pas exécutée';  // Après un return, on quitte la fonction, donc on n'exécute pas le code qui suit. 
+    }
+
+    // Appel de la fonction
+    echo bonjour('Pierre');  // On appele la fonctioon en lui donnant le string "Pierre" en argument => affiche 'Bonjour Pierre'
+
+    $prenom = 'Etienne';
+    echo bonjour($prenom); // L'argument peut être une variable : affiche 'Bonjour Etienne'. 
+
+
+    //--------------
+    // Exercice :
+    function appliqueTva($nombre){
+        return $nombre * 1.2;
+    }
+
+    // Ecrivez une fonction tva2 sur la base de la précédente, mais en donnant la possibilité de calculer un nombre avec le taux de notre choix
+
+    function appliqueTva2($nombre, $taux){ // on ne peut pas redéclarer une fonction avc le même nom 
+        return $nombre * $taux; 
+    }
+   
+    echo appliqueTva2(17, 5) . '<br>';  // lorsqu'une fonction attend des arguements, il faut obligatoirement les lui donner
+    
+
+     //--------------
+    // Exercice :
+    function meteo($saison, $temperature){
+        echo "nous sommes en $saison et il fait $temperature degré(s) <br>";
+    }
+    meteo('hiver', 2);
+    meteo('Printemps', 2);
+
+    separation();
+
+    // Créer une fonction meteo2 qui permet d'afficher "au printemps" quand il s'agit du printemps. 
+
+
+    // -----------------//
+
+     function meteo2($saison, $temperature){
+       if($saison =='printemps'){ 
+       echo "nous sommes au $saison et il fait $temperature ° <br>";  
+    }  else{
+       echo "nous sommes en $saison et il fait $temperature ° <br>";
+    }
+
+    }
+
+    meteo2('printemps', 3);
+    meteo2('été', 30);
+
+    separation();
+
+    // -----------------//
+
+    function meteo3($saison, $temperature){
+       if($saison =='printemps') { 
+        $article = 'au';
+    }  else{
+        $article = 'en';
+    }
+        echo "nous sommes $article $saison et il fait $temperature ° <br>";
+    }
+
+    meteo3('printemps', 3);
+    meteo3('été', 30);
+
+    separation();
+
+    // ------------------//
+
+    function meteo4($saison, $temperature){
+        $article = ($saison == 'printemps') ? 'au' : 'en';
+         echo "nous sommes $article $saison et il fait $temperature ° <br>";
+    }
+
+    meteo4('printemps', 3);
+
+
+//-------------------------------------------------------------------------
+echo '<h2> Les variables locales et globales </h2>';
+//-------------------------------------------------------------------------
+
+    function joursemaine(){
+        $jour ='vendredi';  // ici dans la fonction nous sommes dans un espace LOCAL , la variable $jour est locale. 
+        return $jour;
+    }
+
+    // A l'exterieur de la fonction je suis dans l'espace GLOBAL
+    
+    // echo $jour ne pas utiliser une variable locale dans un espace global
+
+   echo joursemaine() . '<br>';  // On peut cepedant récupérer la valeur de $jour grace au return qui est au sein de la fonction et à l'appel de cette fonction 
+   
+   
+   //-----
+   $pays = 'France';  // Variable Globale
+   function affichagePays(){
+       global $pays;   // le mot clé global permet de récup une variable provenant de l'espace global au seins de l'espace local de la fonction
+       echo $pays; // on peut donc utiliser cette variable $pays 
+   }
+   
+   affichagePays();
 
 
 
+//-------------------------------------------------------------------------
+echo '<h2> les structures itératives : boucle  </h2>';
+//-------------------------------------------------------------------------
+
+    // Boucle WHile 
+    $i = 0;  // Valeur de départ de la boucle 
+    while ($i < 3) {  // tant que $i est inférieur à 3, j'exécute les accolades qui suivent'
+            echo " $i--- ";
+            $i++;  // On oublie pas que la d'incrémenter $i pour que la boucle ne soit pas infini (il faut que la condition puisse devenir false à un moment donnée'
+    }
+
+    echo '<br>';
+    // ----
+    $j = 0; 
+    while ($j < 3) {
+        if($j == 2){
+             echo $j;
+        } else {
+            echo "$j---";
+        }
+        $j++;
+    }
+
+    echo '<br>';
+
+    // ---- 
+    // Exercice : à l'aide d'une boucle WHILE, afficher dans un selecteur les années depuis l'année en cours moins jusqu'a 100 ans et jusqu'a l'année en cours : 1917 => 2017 
+
+    ?>
+    
+    <select> 
+        <?php
+        $a = 1917;
+    while ($a <= 2017 ){
+        echo "<option> $a </option> ";
+        $a++;
+    }
+        ?>
+    </select>
+
+   
 
 
-?>
