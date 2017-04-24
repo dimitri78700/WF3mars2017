@@ -18,8 +18,8 @@
         <h1>Formulaire</h1>
         <form action="" method="post">
 
-            <select id="select" id="fruit">
-                
+            <select id="select" name="fruit">
+                <option value="NULL">--Selectionner--</option>
                 <option value="bananes">Bananes</option>
                 <option value="cerises">Cerises</option>
                 <option value="peches">Peches</option>
@@ -27,7 +27,7 @@
             </select>
 
             <label for="poids">Poids</label>
-            <input type="number">
+            <input type="number" name="poids">
 
             <input type="submit" name="validation" value="envoyer">
     </form>
