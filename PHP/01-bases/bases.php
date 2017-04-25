@@ -387,116 +387,116 @@ echo '<h2> Gestion des dates </h2>';
 echo '<h2> Les fonctions Utilisateurs </h2>';
 //-------------------------------------------------------------------------
 
-    // Les fonctions qui ne sont pas prédéfinies dans le langage sont déclarées puis exécutées par l'utilisateur. 
+                    // Les fonctions qui ne sont pas prédéfinies dans le langage sont déclarées puis exécutées par l'utilisateur. 
 
-    //  Déclaration d'une fonction : 
+                    //  Déclaration d'une fonction : 
 
-    function separation(){
-        echo '<hr>'; // Simple fonction permettant de tirer un trai dans la page web. 
-            }
-    //  Appel de la fonction par son nom : 
-    separation(); // Ici on execute la fonction 
+                    function separation(){
+                        echo '<hr>'; // Simple fonction permettant de tirer un trai dans la page web. 
+                            }
+                    //  Appel de la fonction par son nom : 
+                    separation(); // Ici on execute la fonction 
 
-    //------------
-    // Fonction avec arguments : les arguments sont des paramètres fournis à la fonction et lui permettent de compléter ou modifier son comportement itialement prévu.
+                    //------------
+                    // Fonction avec arguments : les arguments sont des paramètres fournis à la fonction et lui permettent de compléter ou modifier son comportement itialement prévu.
 
-    function bonjour($qui){   // $qui apparait ici pour la 1ere fois : il s'agit d'une variable de recéption qui recoit la valeur 
-        return 'Bonjour ' . $qui . '<br>'; // return permet de renvoyer ce qui suit le return à l'endroit où la fonction est call
-        echo 'cette ligne est pas exécutée';  // Après un return, on quitte la fonction, donc on n'exécute pas le code qui suit. 
-    }
+                    function bonjour($qui){   // $qui apparait ici pour la 1ere fois : il s'agit d'une variable de recéption qui recoit la valeur 
+                        return 'Bonjour ' . $qui . '<br>'; // return permet de renvoyer ce qui suit le return à l'endroit où la fonction est call
+                        echo 'cette ligne est pas exécutée';  // Après un return, on quitte la fonction, donc on n'exécute pas le code qui suit. 
+                    }
 
-    // Appel de la fonction
-    echo bonjour('Pierre');  // On appele la fonctioon en lui donnant le string "Pierre" en argument => affiche 'Bonjour Pierre'
+                    // Appel de la fonction
+                    echo bonjour('Pierre');  // On appele la fonctioon en lui donnant le string "Pierre" en argument => affiche 'Bonjour Pierre'
 
-    $prenom = 'Etienne';
-    echo bonjour($prenom); // L'argument peut être une variable : affiche 'Bonjour Etienne'. 
-
-
-    //--------------
-    // Exercice :
-    function appliqueTva($nombre){
-        return $nombre * 1.2;
-    }
-
-    // Ecrivez une fonction tva2 sur la base de la précédente, mais en donnant la possibilité de calculer un nombre avec le taux de notre choix
-
-    function appliqueTva2($nombre, $taux){ // on ne peut pas redéclarer une fonction avc le même nom 
-        return $nombre * $taux; 
-    }
-   
-    echo appliqueTva2(17, 5) . '<br>';  // lorsqu'une fonction attend des arguements, il faut obligatoirement les lui donner
-    
-
-     //--------------
-    // Exercice :
-    function meteo($saison, $temperature){
-        echo "nous sommes en $saison et il fait $temperature degré(s) <br>";
-    }
-    meteo('hiver', 2);
-    meteo('Printemps', 2);
-
-    separation();
-
-    // Créer une fonction meteo2 qui permet d'afficher "au printemps" quand il s'agit du printemps. 
+                    $prenom = 'Etienne';
+                    echo bonjour($prenom); // L'argument peut être une variable : affiche 'Bonjour Etienne'. 
 
 
-    // -----------------//
+                    //--------------
+                    // Exercice :
+                    function appliqueTva($nombre){
+                        return $nombre * 1.2;
+                    }
 
-     function meteo2($saison, $temperature){
-       if($saison =='printemps'){ 
-       echo "nous sommes au $saison et il fait $temperature ° <br>";  
-    }  else{
-       echo "nous sommes en $saison et il fait $temperature ° <br>";
-    }
+                    // Ecrivez une fonction tva2 sur la base de la précédente, mais en donnant la possibilité de calculer un nombre avec le taux de notre choix
 
-    }
+                    function appliqueTva2($nombre, $taux){ // on ne peut pas redéclarer une fonction avc le même nom 
+                        return $nombre * $taux; 
+                    }
+                
+                    echo appliqueTva2(17, 5) . '<br>';  // lorsqu'une fonction attend des arguements, il faut obligatoirement les lui donner
+                    
 
-    meteo2('printemps', 3);
-    meteo2('été', 30);
+                    //--------------
+                    // Exercice :
+                    function meteo($saison, $temperature){
+                        echo "nous sommes en $saison et il fait $temperature degré(s) <br>";
+                    }
+                    meteo('hiver', 2);
+                    meteo('Printemps', 2);
 
-    separation();
+                    separation();
 
-    // -----------------//
-
-    function meteo3($saison, $temperature){
-       if($saison =='printemps') { 
-        $article = 'au';
-    }  else{
-        $article = 'en';
-    }
-        echo "nous sommes $article $saison et il fait $temperature ° <br>";
-    }
-
-    meteo3('printemps', 3);
-    meteo3('été', 30);
-
-    separation();
-
-    // ------------------//
-
-    function meteo4($saison, $temperature){
-        $article = ($saison == 'printemps') ? 'au' : 'en';
-         echo "nous sommes $article $saison et il fait $temperature ° <br>";
-    }
-
-    meteo4('printemps', 3);
+                    // Créer une fonction meteo2 qui permet d'afficher "au printemps" quand il s'agit du printemps. 
 
 
-    // Exercices //
+                    // -----------------//
 
-    function prixLitre(){
-        return rand(1000, 2000)/1000; // détermine un prix aléatoire entre 1 et 2euros
-    }
+                    function meteo2($saison, $temperature){
+                    if($saison =='printemps'){ 
+                    echo "nous sommes au $saison et il fait $temperature ° <br>";  
+                    }  else{
+                    echo "nous sommes en $saison et il fait $temperature ° <br>";
+                    }
 
-    // Ecrivez la fonction factureEssence() qui calcule le prix total de votre facture d'essence en fonction du nombre de litres que vous lui donnez. Cette fonction retourne la phrase "votre facture est de X euros pour Y litres d'essence" (x et y sont variables).
-    // Dans cette fonction, utilisez la fonction prixLitre() qui vous retourne le prix du litre d'essence 
+                    }
 
-    function factureEssence($litre){
-        $prixTotal = $litre * prixLitre();
-        echo "votre facture est de $prixTotal pour $litre litres d'essence <br>";
-        
-    }
-    factureEssence(50);   
+                    meteo2('printemps', 3);
+                    meteo2('été', 30);
+
+                    separation();
+
+                    // -----------------//
+
+                    function meteo3($saison, $temperature){
+                    if($saison =='printemps') { 
+                        $article = 'au';
+                    }  else{
+                        $article = 'en';
+                    }
+                        echo "nous sommes $article $saison et il fait $temperature ° <br>";
+                    }
+
+                    meteo3('printemps', 3);
+                    meteo3('été', 30);
+
+                    separation();
+
+                    // ------------------//
+
+                    function meteo4($saison, $temperature){
+                        $article = ($saison == 'printemps') ? 'au' : 'en';
+                        echo "nous sommes $article $saison et il fait $temperature ° <br>";
+                    }
+
+                    meteo4('printemps', 3);
+
+
+                    // Exercices //
+
+                    function prixLitre(){
+                        return rand(1000, 2000)/1000; // détermine un prix aléatoire entre 1 et 2euros
+                    }
+
+                    // Ecrivez la fonction factureEssence() qui calcule le prix total de votre facture d'essence en fonction du nombre de litres que vous lui donnez. Cette fonction retourne la phrase "votre facture est de X euros pour Y litres d'essence" (x et y sont variables).
+                    // Dans cette fonction, utilisez la fonction prixLitre() qui vous retourne le prix du litre d'essence 
+
+                    function factureEssence($litre){
+                        $prixTotal = $litre * prixLitre();
+                        echo "votre facture est de $prixTotal pour $litre litres d'essence <br>";
+                        
+                    }
+                    factureEssence(50);   
 
 //-------------------------------------------------------------------------
 echo '<h2> Les variables locales et globales </h2>';
@@ -654,72 +654,72 @@ echo '<h2> les structures itératives : boucle  </h2>';
 echo '<h2> Les arrays ou tableaux  </h2>';
 //-------------------------------------------------------------------------
 
-    // On peut stocker dans un array une multitude de valeurs, quelque soit leur type. 
+                // On peut stocker dans un array une multitude de valeurs, quelque soit leur type. 
 
-    $liste = array('greg', 'nath', 'émilie', 'francois', 'dimitri'); // déclaration d'un array appelé liste $liste contenant des prénoms
+                $liste = array('greg', 'nath', 'émilie', 'francois', 'dimitri'); // déclaration d'un array appelé liste $liste contenant des prénoms
 
-    // echo $liste;  <= erreur car on ne peut pas afficher directement le contenu d'un array 
+                // echo $liste;  <= erreur car on ne peut pas afficher directement le contenu d'un array 
 
-    echo '<pre>'; var_dump($liste);  echo '</pre>';
+                echo '<pre>'; var_dump($liste);  echo '</pre>';
 
-    echo '<pre>'; print_r($liste);  echo '</pre>';
-    // ces deux instructions d'affichage permettent d'indiquer le type de l'élément mis en argument, ainsi que son contenu. les balises <pre> servent à faire une mise en forme. Notez que ces 2 instructions ne sont pas utilisées qu'en phase de développement. 
-
-
-    // Autre moyen d'affecter des valeurs dans un tableau :
-    
-    $tab[] = 'France';  // Permet d'ajouter France dans le tableau $tab. 
-    $tab[] = 'Italie'; 
-    $tab[] = 'Portugal';
-    $tab[] = 'Russie';
+                echo '<pre>'; print_r($liste);  echo '</pre>';
+                // ces deux instructions d'affichage permettent d'indiquer le type de l'élément mis en argument, ainsi que son contenu. les balises <pre> servent à faire une mise en forme. Notez que ces 2 instructions ne sont pas utilisées qu'en phase de développement. 
 
 
-    echo '<pre>'; print_r($tab);  echo '</pre>'; // pour voir le contenu du tableau 
-
-    // Pour afficher la valeur Italie qui se situe à l'indice 1 :
-    echo $tab[1] . '<br>'; 
-    
-    // tableau associatif : tableau dont les indices sont littéraux :
-    $couleur = array("b" => "bleu", "l" => "blanc", "r" => "rouge");  // on peut choisir le nom des indices. 
-
-    // pour acceder à un élément du tableau associatif :
-    echo 'la seconde couleur de notre tableau est le ' . $couleur['b'] . '<br>';
-    echo "la seconde couleur de notre tableau est le $couleur[b] <br>"; // affiche bleu. Un array écrit dans des guillemets perd ses quotes autour de son indice. 
+                // Autre moyen d'affecter des valeurs dans un tableau :
+                
+                $tab[] = 'France';  // Permet d'ajouter France dans le tableau $tab. 
+                $tab[] = 'Italie'; 
+                $tab[] = 'Portugal';
+                $tab[] = 'Russie';
 
 
-    //------
-    // Mesurer la taille d'un array :
+                echo '<pre>'; print_r($tab);  echo '</pre>'; // pour voir le contenu du tableau 
 
-    echo 'taille du tableau : ' . count($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array. 
+                // Pour afficher la valeur Italie qui se situe à l'indice 1 :
+                echo $tab[1] . '<br>'; 
+                
+                // tableau associatif : tableau dont les indices sont littéraux :
+                $couleur = array("b" => "bleu", "l" => "blanc", "r" => "rouge");  // on peut choisir le nom des indices. 
 
-    echo 'taille du tableau : ' . sizeof($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array.
+                // pour acceder à un élément du tableau associatif :
+                echo 'la seconde couleur de notre tableau est le ' . $couleur['b'] . '<br>';
+                echo "la seconde couleur de notre tableau est le $couleur[b] <br>"; // affiche bleu. Un array écrit dans des guillemets perd ses quotes autour de son indice. 
 
-    // ------
-    // transformer un array en string : 
 
-    $chaine = implode('-', $couleur);  // implode() rassemble les éléments d'un array en une chaine séparé par le séparateur '-' ici.
-    echo $chaine . '<br>';
+                //------
+                // Mesurer la taille d'un array :
 
-    $couleur2 = explode('-', $chaine); // transforme une chaine en array en séparant les éléments grâce au séparateur indiqué (ici un '-')
-    echo '<pre>'; print_r($couleur2);  echo '</pre>';
+                echo 'taille du tableau : ' . count($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array. 
 
-    //------
-    echo '<h2>  la boucle foreach pour parcourir les arrays  </h2>';
-    // la boucle foreach est un moyen simple de passer en revue un tableau. Elle fonctionne uniquement sur les arrays et les objets. et elle a l'avantage d'etre "automatique", s'arrêtant qand il n'y a plus l'éléments. 
+                echo 'taille du tableau : ' . sizeof($couleur) . '<br>'; // Compte le nombre d'éléments dans l'array.
 
-    foreach($tab as $valeur){  // la variable de la valeur (que l'on appele comme on veut) récupére à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab  ["parcourt l'array $tab par ses valeurs"]
-        echo $valeur . '<br>'; 
-    }
+                // ------
+                // transformer un array en string : 
 
-    echo '<br>';
+                $chaine = implode('-', $couleur);  // implode() rassemble les éléments d'un array en une chaine séparé par le séparateur '-' ici.
+                echo $chaine . '<br>';
 
-    foreach($tab as $indice => $valeur){ // on parcourt l' array $tab par ses indices auxquels les valeurs. 
-        echo $indice . ' correspondant à ' . $valeur .'<br>';    
-        }
+                $couleur2 = explode('-', $chaine); // transforme une chaine en array en séparant les éléments grâce au séparateur indiqué (ici un '-')
+                echo '<pre>'; print_r($couleur2);  echo '</pre>';
 
-//--------------------------------------
+                //------
+                echo '<h2>  la boucle foreach pour parcourir les arrays  </h2>';
+                // la boucle foreach est un moyen simple de passer en revue un tableau. Elle fonctionne uniquement sur les arrays et les objets. et elle a l'avantage d'etre "automatique", s'arrêtant qand il n'y a plus l'éléments. 
+
+                foreach($tab as $valeur){  // la variable de la valeur (que l'on appele comme on veut) récupére à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab  ["parcourt l'array $tab par ses valeurs"]
+                    echo $valeur . '<br>'; 
+                }
+
+                echo '<br>';
+
+                foreach($tab as $indice => $valeur){ // on parcourt l' array $tab par ses indices auxquels les valeurs. 
+                    echo $indice . ' correspondant à ' . $valeur .'<br>';    
+                    }
+
+//---------------------------------------------
  echo '<h2> Les array multidimensionnels </h2>';
- //--------------------------------------
+ //--------------------------------------------
             
             // Nous parlons de tableaux multidimensionnels quand un tableau est contenu dans una utre tableau.
             // Chaque tableau représente une dimension.
@@ -749,24 +749,58 @@ echo '<h2> Les arrays ou tableaux  </h2>';
                     echo $value['prenom'] .'<br>';
                     
                 }
- //--------------------------------------
+ //-----------------------------------------
  echo '<h2> Les inclusions de fichiers </h2>';
- //--------------------------------------
-                echo 'Première inclusion';
+ //-----------------------------------------
+            echo 'Première inclusion';
                 include('exemple.inc.php'); // On inclut le fichier dont le chemin est spécifié ici
-                echo '<br>Deuxième inclusion';
+            echo '<br>Deuxième inclusion';
                 include_once('exemple.inc.php'); 
                 // Avec le once, on vérifie d'abord si le fichier n'est pas deja inclus, avant de faire l'inclusion (évite par exemple de redéclarer des fonctions en incluant 2 fois le meme fchier)
                 
-                echo '<br>Troisième inclusion';
+            echo '<br>Troisième inclusion';
                 require('exemple.inc.php'); // require fait la même chose que include, mais génère une erreur de type fatale, s'il ne parvient pas à inclure le fichier, qui interrompt l'exécuton du script.
                 // En revanche, include génère une erreur de type warning dans ce cas, ce qui n'interrompt pas la suite de l'exécution du script
-                echo '<br>Quatrième inclusion';
+            echo '<br>Quatrième inclusion';
                 require_once('exemple.inc.php'); // Avec le once, on vérifie d'abord si le fichier n'est pas déjà inclus avant de faire l'inclusion.
                 // Le ".inc" du nom du fichier inclus est la à titre indicatif pour préciser qu'il s'agit d'un fichier inclus et non pas d'un fichier directement utilisé
                 // **************************************************************************************************
             
             
+ //----------------------------------------
+ echo '<h2> Introductiion aux Objets </h2>';
+ //----------------------------------------
+
+            // Un objet est un autre type de donnée. Un objet est issu d'une classe qui posséde des attributs (encore appelées propriétés) et des méthodes (équivalent de fonctions). 
+            // L'objet créer à partir d'une classe, peut accéder à ses attributs et ses méthodes. 
+
+            // Exemple avec un personnage de type 'Etudiant' : 
+            class Etudiant {
+                 public $prenom = 'Julien'; // public pour préciser que l'élément est accessible partout, et donc en dehors de la classe. 
+                 public $age = 25;  // $age est un attribut ou propriété
+                 public function pays(){  // méthode appelée pays 
+                    return 'France';
+                }
+            }
+               
+            $objet = new Etudiant(); // Permet de créer un nouvel objet : on instancie la classe Etudiant en un objet appelé $objet . $objet est une instance de la classe Etudiant. 
+
+            echo '<pre>'; print_r($objet); echo '<pre>'; // On regarde le contenu de $objet on voit son type, et la classe dont il est issus 
+
+            echo $objet->prenom . '<br>'; // Affiche le prenom de l'étudiant , nous pouvons accéder à une propriété d'un objet en mettant une flèche "->" .
+
+            //  Affiche le pays via la méthode pays() : 
+            echo $objet->pays() . '<br>'; // on appélle la méthod pays() avec ses parenthéses : elle nous retourne 'France'
 
 
+            // Contexte :  sur un site, une classe Panier contiendra les propriètés et les méthodes nécessaires au fonctionnement du panier d'achat :
+            class Panier {
+                public function ajout_article($article){
+                    // Instruction qui ajoute le produit au panier
+                    return "l'article $article a bien été ajouté au panier <br>";
+                }
+            }
+            // Lorsqu'on clique sur le bouton "ajout au panier"
+            $panier = new Panier ();  // On crée un panier dans un 1er temps 
+            echo $panier->ajout_article('pull');  // Puis on ajoute un pull au panier en appelant la methode ajout_article() 
     ?>
