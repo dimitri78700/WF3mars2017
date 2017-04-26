@@ -116,4 +116,178 @@
      $employe = $result->fetch(PDO::FETCH_ASSOC);
      
      echo "Bonjour je suis du service $employe[service] <br>";
-    
+
+
+
+// 04. While et fetch_assoc //
+
+        echo '<h2> 04. While et fetch_assoc </h2>';
+
+
+        $resultat = $pdo->query("SELECT * FROM employes");
+        
+        echo 'nombre d\'employés : ' . $resultat->rowCount() . '<br>';  // Permet de compter de nombre de lignes retournées par la requête
+
+        while ($contenu = $resultat->fetch(PDO::FETCH_ASSOC)){ // Fetch retourne la ligne suivante du jueu de résultat en array associatif. La boucle WHILE permet de faire avancer le curseur dans le jeu de resultats, et s'arrete quand il est à la fin des resultats.
+
+             // echo '<pre>'; print_r($contenu); echo '<pre>'; // on voit que $contenu est un array associatif qui contient les données de chaque ligne du jeu de résultats. Les nom des indices correspondent aux noms des champs. 
+
+             echo '----------<br>';
+             echo $contenu['id_employes'] . '<br>';
+             echo $contenu['prenom'] . '<br>';
+             echo $contenu['nom'] . '<br>';
+             echo $contenu['nom'] . '<br>';
+             echo $contenu['service'] . '<br>';
+             echo '----------<br>';
+        }
+
+        // Quand vous faites une requête qui ne sort qu'un seul resultat : pas de boucle WHILE, mais un fetch seul.
+        
+        // Quand vous avez plusieurs résultats dans la requête : on fait une boucle WHILE pour parcourir tous les resultats. 
+
+
+
+// 05. fetchAll //
+
+        echo '<h2> 05. fetchAll </h2>';
+
+        $resultat = $pdo->query("SELECT * FROM employes");
+
+        $donnees = $resultat->fetchAll(PDO::FETCH_ASSOC); // retourne toutes les lignes de résultats dans un tableau multidimmensionel sans faire de boucle : vous avez un array associatif à chaque indice numérique. Marche aussi avec FETCH_NUM
+
+        // echo '<pre>'; print_r($donnees); echo '<pre>';
+
+        // Pour lire le contenu d'un array multidimmensionel, nous faisons des boucles foreach imbriquées : 
+        
+        echo '<strong>Double boucle foreach</strong>';
+
+        foreach ($donnees as $contenu){  // $contenu est un sous array assiociatif 
+            foreach ($contenu as $indice => $valeur){  // On parcourt donc chaque sous array
+                echo $indice . ' correspont à ' . $valeur . '<br>';
+            }
+            echo '---------<br>';
+        }
+
+
+
+// Exercice : 
+
+        echo '<h2> 06. Exercice </h2>';
+
+        // Afficher la liste des bases de données présentent sur votre SGBD dans une liste <ul><li>. 
+        // Pour mémoire; la requête SQL est show database.
+
+        echo '<ul>';
+
+        $resultat = $pdo->query("SHOW DATABASES");
+        $donnees = $resultat->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($donnees as $contenu){  
+            foreach ($contenu as $indice => $valeur){  
+                echo '<li>' . $indice . ' correspont à ' . $valeur . '</li>' . '<br>';
+            }
+            echo '---------<br>';
+        }
+        echo '</ul>';
+
+        // -------
+
+        echo '<ol>';
+        $resultat = $pdo->query("SHOW DATABASES");
+
+        while ($contenu = $resultat->fetch(PDO::FETCH_ASSOC)){ 
+            echo  '<li>' . $contenu['Database'] . '</li>';
+        }
+        echo '</ol>';
+
+
+
+// 07. Table HTML //  // notions importantes à apprendre //
+
+        echo '<h2> 07. Table HTML </h2>';
+
+         $resultat = $pdo->query("SELECT * FROM employes");
+
+         echo '<table border ="1">';
+
+            echo '<tr>';
+                for($i = 0; $i < $resultat->columnCount(); $i++){
+                    echo '<pre>'; print_r($resultat->getColumnMeta($i)); echo '<pre>'; // Pour voir ce que retourne la méthode getColumnMeta() : un array avec nottament l'indice name qui contient le nom de champs. 
+
+                    $colonne = $resultat->getColumnMeta($i);  // $colonne est un array qui contient l'indice name 
+                    echo '<th>' . $colonne['name'] . '</th>'; // l'indice name contient le nom du champs 
+                }
+            echo '</tr>';
+
+            // Affichage des autres lignes :
+            while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)){
+                echo '<tr>';
+                    foreach($ligne as $information) {
+                        echo '<td>' . $information . '</td>';
+                    }
+                echo '</tr>';
+            }
+
+         echo '</table>';
+
+
+
+// 08. Requêtes préparées : prepare() + bindParam() + execute()  // 
+
+         echo '<h2> 08. Requêtes préparées : prepare() + bindParam() + execute()  </h2>';
+
+         $nom = 'sennard'; 
+
+        //  Préparation de la requête : 
+        $resultat = $pdo->prepare("SELECT * FROM employes WHERE nom = :nom ");  // On prépare la requête sans l'exécuter, avec un marqueur nominatif ecrit :nom 
+
+        // On donne une valeur au marqueur  :nom 
+        $resultat->bindParam(':nom', $nom, PDO::PARAM_STR); // Je lie le marqueur :nom à la variable $nom. Si on change le contenu de la variable, la valeur du marqueur changera changera automatiquement si on fait plusieurs execute. 
+
+        // On exécute la requête  :
+        $resultat->execute();
+
+        $donnees = $resultat->fetch(PDO::FETCH_ASSOC); // $donnees est un array associatif 
+        echo implode($donnees, ' - ');  // implode transforme l'array en string 
+
+        /*
+            prepare() renvoie toujours un objet PDOstatement 
+            execute() renvoie :
+                        succés : un objet PDOstatement
+                        Echec  : False
+
+            les requêtes préparées sont à préconiser si vous exécuter plusieurs fois la même requête ( par exemple dans une boucle ), et ainsi le cycle complet analyse / interpretation / exécution de la requête. 
+
+            Par ailleurs, les requêtes préparées sont souvent utilisées pour assainir les données en forçant le type des valeurs communiquées aux marqueurs. 
+
+        */
+
+
+// 09. Requêtes préparées : prepare() + bindValue() + execute()  // 
+
+        echo '<h2> 08. Requêtes préparées : prepare() + bindValue() + execute()  </h2>';
+
+        $nom = 'Thoyer'; 
+
+        // on prépare la requete :
+        $resultat = $pdo->prepare("SELECT * FROM employes WHERE nom = :nom ");
+
+        // on lie le marqueur à une valeur
+        $resultat->bindValue(':nom', $nom, PDO::PARAM_STR); // bindValue recoit une variable ou un string . Le marqueur pointe uniquement vers la valeur : si celle çi change , il faudra refaire un bindValue pour prendre en compte cette nouvelle valeur lors d'un prochain execute(). 
+
+        // on exécute la requête :
+        $resultat->execute();
+
+        $donnees = $resultat->fetch(PDO::FETCH_ASSOC); 
+        echo implode($donnees, ' - ');
+
+        // Si on change la valeur de la variable $nom, sans faire un nouveau bindValue, le marqueur de la requetes pointe toujours vers 'Thoyer' :
+        $nom = 'Thoyer'; 
+        
+        $resultat->execute();
+
+        $donnees = $resultat->fetch(PDO::FETCH_ASSOC); 
+        echo implode($donnees, ' - '); // en effet, on obtient encore les informations de Thoyer et non de Durand.
+        
+         
+        ?>
