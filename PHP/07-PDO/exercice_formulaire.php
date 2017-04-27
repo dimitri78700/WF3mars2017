@@ -47,7 +47,8 @@
 
             $req = $resultat->execute();
 
-            if($req) { // execute () ci-dessus renvoie soit un objet PDOstatement (qui a une valeur implicite true) si la requête a fonctionné, il vaut true implicitement : on entre donc dans la condition 
+            // Afficher un message "Ajout ok"
+            if($req) { // execute () ci-dessus renvoie true en cas de succées de la requête, sinon false. 
                     echo 'Ajout Ok';
             } else {
                     echo ' une erreur est survenue';
