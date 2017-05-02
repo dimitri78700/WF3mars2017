@@ -22,9 +22,9 @@
 
 // Déclaration des variables d'affichage du site :
 
-    $contenu = '',
-    $contenu_gauche = '',
-    $contenu_droite = '',
+    $contenu = '';
+    $contenu_gauche = '';
+    $contenu_droite = '';
 
 // Autres inclusions : 
     
