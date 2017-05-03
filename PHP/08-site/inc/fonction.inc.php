@@ -48,3 +48,18 @@
             return $r; // retourne un objet PDOStatement qui contient le résultat de la requête
             
         }
+
+
+// *************  FONCTION PANIER  ****************
+
+            function creationDuPanier(){
+                if(!isset($_SESSION['panier'])){
+                    // si il n'existe pas dans session on le crée ( le panier )
+                    $_SESSION['panier'] = array();   // le panier est un array vide. 
+                    $_SESSION['panier'] ['titre'] = array();
+                    $_SESSION['panier'] ['id_panier'] = array();
+                    $_SESSION['panier'] ['quantite'] = array();
+                    $_SESSION['panier'] ['prix'] = array();
+
+                }
+            }
