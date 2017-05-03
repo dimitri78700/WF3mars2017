@@ -47,29 +47,35 @@
 
     //  3- Affichage du formulaire d'ajout au panier si sotck > 0 :
 
-    $contenu .= '<div class="col-md-4">'
-                    if($produit['stock'] > 0){
+    $contenu .= '<div class="col-md-4">';
+                    if($produit['stock'] > 0) {
 
                         // si il y a du stock on met le bouton d'ajout au panier
                         $contenu .= '<form method="post" action="panier.php">';
 
                                 $contenu .= '<input type="hidden" name="id_produit" value="'. $produit['id_produit'] . '">';
 
-                                $contenu .= '<select name="quantite" id="quantite">'
+                                $contenu .= '<select name="quantite" id="quantite" class="form-group-sm form-control-static">';
                                         for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++) {
                                             $contenu .= "<option>$i</option>";
                                         }
                                 $contenu .=  '</select>';
                                 
-                                $contenu .= '<input type="submit" name="ajout_panier" value="ajouter au panier" class="btn">';
+                                $contenu .= '<input type="submit" name="ajout_panier" value="ajouter au panier" class="btn" style="margin-left:10px">';
 
-                        $contenu .= '</form>'
+                        $contenu .= '</form>';
 
                     } else {
                         $contenu .= '<p>Rupture de Stock</p>';
 
                     }
-                '</div>'
+
+                    echo '<br>';
+                    
+                    // 4- lien retour vers la boutique : 
+                    $contenu .= '<p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
+
+                $contenu .= '</div>';
 
     } else {
         // Si l'indice id_produit n'est pas dans l'url 
