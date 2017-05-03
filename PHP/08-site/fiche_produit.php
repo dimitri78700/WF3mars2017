@@ -19,9 +19,9 @@
 
      // 2- affichage du détail du produit : 
 
-     $produit = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul produit 
+    $produit = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul produit 
 
-     $contenu .= '<div class="row">
+    $contenu .= '<div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">'. $produit['titre'] .'</h1>
                     </div>
@@ -45,20 +45,37 @@
 
                  </div>';
 
+    //  3- Affichage du formulaire d'ajout au panier si sotck > 0 :
+
+    $contenu .= '<div class="col-md-4">'
+                    if($produit['stock'] > 0){
+
+                        // si il y a du stock on met le bouton d'ajout au panier
+                        $contenu .= '<form method="post" action="panier.php">';
+
+                                $contenu .= '<input type="hidden" name="id_produit" value="'. $produit['id_produit'] . '">';
+
+                                $contenu .= '<select name="quantite" id="quantite">'
+                                        for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++) {
+                                            $contenu .= "<option>$i</option>";
+                                        }
+                                $contenu .=  '</select>';
+                                
+                                $contenu .= '<input type="submit" name="ajout_panier" value="ajouter au panier" class="btn">';
+
+                        $contenu .= '</form>'
+
+                    } else {
+                        $contenu .= '<p>Rupture de Stock</p>';
+
+                    }
+                '</div>'
+
     } else {
         // Si l'indice id_produit n'est pas dans l'url 
         header('location:boutique.php'); // On le redirige vers la boutique
         exit();
     }
-
-
-
-
-
-
-
-
-
 
 
 // -------------------------- Affichage ---------------------------- //
