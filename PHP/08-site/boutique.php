@@ -19,7 +19,7 @@
 
     // 2- Affichage des produits selon la catégorie choisie :
 
-    if(isset($_GET['categorie']) && $_GET['catégorie'] != 'all'){
+    if(isset($_GET['categorie']) && $_GET['categorie'] != 'all'){
         // Si on a choisi une catégorie autre que "all" :
         $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit WHERE categorie = :categorie", array(':categorie' => $_GET['categorie']));
 
