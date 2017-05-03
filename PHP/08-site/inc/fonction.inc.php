@@ -72,8 +72,19 @@
                 $position_produit = array_search($id_produit, $_SESSION['panier'] ['id_produit']); // array_search retourne un chiffre si l'id_produit est présent dans l'array $_SESSION['panier'], qui correspond à l'indice auquel se situe l'élément (rappel : dans un array le 1er indice vaut 0). Sinon retourne FALSE. 
 
                 if($position_produit === false ) {
+
                     // si le produit n'est pas dans le panier, on l'ajoute 
-                    $_SESSION['panier'] ['titre'] [] = $titre; 
+
+                    $_SESSION['panier'] ['titre'] [] = $titre;  // les crochets vides pour ajouter l'élément à la fin de l'array 
+                    $_SESSION['panier'] ['id_produit'] [] = $id_produit; 
+                    $_SESSION['panier'] ['quantite'] [] = $quantite; 
+                    $_SESSION['panier'] ['prix'] [] = $prix; 
+                } else {
+                    
+                    //  si le produit existe, on ajoute la quantité nouvelle à la quantité deja prensente dans le panier
+
+                    $_SESSION['panier'] ['quantite'] [$position_produit] += $quantite;
+
                 }
 
             }
