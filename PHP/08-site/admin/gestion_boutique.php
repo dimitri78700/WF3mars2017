@@ -96,7 +96,7 @@
 
             // 6- Affichage des produits dans le back-office :
 
-            if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])){ // si $_GET contient affichage ou que l'on arrive sur la page la 1er fois.$_COOKIE
+            if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])){ // si $_GET contient affichage ou que l'on arrive sur la page la 1er fois.
 
                 $resultat = executeRequete("SELECT * FROM produit");  // on séléctionne tous les produits 
 

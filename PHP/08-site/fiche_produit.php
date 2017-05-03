@@ -9,7 +9,9 @@
     // 1- Controler de l'existence du produit démandé : 
 
     if(isset($_GET['id_produit'])) {  // si existe l'indice id_produit dans l'url
-        // on requête en base le produit demandé pour vérifier son existence : 
+
+        // on requête en base le produit demandé pour vérifier son existence :
+
         $resultat = executeRequete("SELECT * FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
 
         if($resultat->rowCount() <= 0){
@@ -71,7 +73,7 @@
                     }
 
                     echo '<br>';
-                    
+
                     // 4- lien retour vers la boutique : 
                     $contenu .= '<p><a href="boutique.php?categorie='. $produit['categorie'] .'">Retour vers votre sélection</a></p>';
 
@@ -83,7 +85,27 @@
         exit();
     }
 
+// ---------------
+//     Exercice
+// ---------------
 
+/*
+    Vous allez créer des suggestions de produits : affichez 2 produits (photo et titre) aléatoirement appartement à la catégorie du produit affiché dans la détail. Ces produits affiché dans la page détails. Ces produits doivent être différents du produit affiché. La photo est cliquable et amène à la fiche produit. 
+
+    Utilisez la variable $aside pour afficher le contenu. 
+
+*/
+    
+    $suggest = executeRequete("SELECT id_produit, photo, titre FROM produit WHERE categorie = '$produit[categorie]' AND id_produit <> '$_GET[id_produit]' ORDER BY RAND() LIMIT 2");  // <> = différent de 
+       
+    while($affichage = $suggest->fetch(PDO::FETCH_ASSOC)){
+        $aside .= '<div class="col-sm-3">';
+            $aside .=  '<a href="fiche_produit.php?id_produit='. $affichage['id_produit'] .'"><img src="'. $affichage['photo'] .'" style="width:100%"></a>';
+            $aside .=  '<h4>' . $affichage['titre'] . '</h4>';
+        $aside .= '</div>';
+    }
+
+   
 // -------------------------- Affichage ---------------------------- //
 
     require_once ('inc/haut.inc.php');
