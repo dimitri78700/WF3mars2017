@@ -10,12 +10,45 @@
 
     if(isset($_GET['id_produit'])) {  // si existe l'indice id_produit dans l'url
         // on requête en base le produit demandé pour vérifier son existence : 
+        $resultat = executeRequete("SELECT * FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
 
+        if($resultat->rowCount() <= 0){
+            header('location:boutique.php');  // si il n'y a pas de résusltat dans la requête, c'est que le produit n'existe pas : on oriente alors vers la boutique. 
+            exit();
+        }
+
+     // 2- affichage du détail du produit : 
+
+     $produit = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul produit 
+
+     $contenu .= '<div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">'. $produit['titre'] .'</h1>
+                    </div>
+                  </div>';
+
+    $contenu .= '<div class="col-md-8">
+                    <img class="img-responsive" src="' . $produit['photo'] . '" >
+                </div>';
+
+    $contenu .= '<div class="col-md-4">
+                    <h3>Description</h3>
+                    <p>' . $produit['description'] . '</p>
+                    <h3>Détails</h3>
+                    <ul>
+                        <li>Catégorie : '. $produit['categorie'] .'</li>
+                        <li>Couleur : '. $produit['couleur'] .'</li>
+                        <li>Taille : '. $produit['taille'] .'</li>
+                    </ul>
+
+                    <p class="lead">Prix : ' . $produit['prix'] . ' €</p>
+
+                 </div>';
 
     } else {
         // Si l'indice id_produit n'est pas dans l'url 
-        
-
+        header('location:boutique.php'); // On le redirige vers la boutique
+        exit();
     }
 
 

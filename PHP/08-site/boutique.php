@@ -9,7 +9,7 @@
 
     $contenu_gauche .= '<p class="lead">Vêtements</p>';
     $contenu_gauche .= '<div class="list-group">';
-            $contenu_gauche .= '<a href="" class="list-group-item">Toutes les catégories</a>';
+            $contenu_gauche .= '<a href="?categorie=all" class="list-group-item">Toutes les catégories</a>';
 
             // Boucle while qui parcourt l'objet $categorie_des_produits pour en faire faire un array associatif :
             while($cat = $categorie_des_produits->fetch(PDO::FETCH_ASSOC)) {
@@ -31,7 +31,7 @@
     while($produit = $donnees->fetch(PDO::FETCH_ASSOC)){
         $contenu_droite .= '<div class="col-sm-4 col-lg-4 col-md-4">';
             $contenu_droite .= '<div class="thumbnail">';
-                $contenu_droite .= '<a href="fiche_produit.php?id_produit = '. $produit['id_produit'] . '"><img src="'. $produit['photo'] .'"width="130" height="100"></a>';
+                $contenu_droite .= '<a href="fiche_produit.php?id_produit='. $produit['id_produit'] . '"><img src="'. $produit['photo'] .'" width="130" height="100"></a>';
 
                 $contenu_droite .= '<div class="caption">';
                     $contenu_droite .= '<h4 class="pull-right"> ' . $produit['prix'] . ' €</h4>';
