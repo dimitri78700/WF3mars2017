@@ -73,8 +73,14 @@
 
             executeRequete("INSERT INTO details_commande (id_commande, id_produit, quantite, prix) VALUES (:id_commande, :id_produit, :quantite, :prix)",array(':id_commande' => $id_commande, ':id_produit' => $id_produit, ':quantite' => $quantite, ':prix' => $prix));
 
-            // ---------
+            // Décrémentation du stock du produit :
+
+            executeRequete("UPDATE produit SET stock = stock - :quantite WHERE id_produit = :id_produit", array(':quantite' => $quantite, ':id_produit' => $id_produit));
         }
+
+        unset($_SESSION['panier']);  // On supprime le panier validé 
+
+        $contenu .= '<div class="bg-success">Merci pour votre commande, le numéro de suivi est le '. $id_commande . '</div>';
 
     }
 
