@@ -139,6 +139,7 @@
 
                 if (isset($_SESSION['panier'])){
                     return count($_SESSION['panier']['id_produit']);
+                    // return array_sum($_SESSION['panier']['quantite']);  // array_sum additionne les valeurs situées à un indice. 
                 } else {
                     return 0;
                 }
