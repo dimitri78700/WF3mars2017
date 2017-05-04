@@ -57,7 +57,7 @@
                     // si il n'existe pas dans session on le crée ( le panier )
                     $_SESSION['panier'] = array();   // le panier est un array vide. 
                     $_SESSION['panier'] ['titre'] = array();
-                    $_SESSION['panier'] ['id_panier'] = array();
+                    $_SESSION['panier'] ['id_produit'] = array();
                     $_SESSION['panier'] ['quantite'] = array();
                     $_SESSION['panier'] ['prix'] = array();
 
@@ -69,7 +69,7 @@
 
                 creationDuPanier(); // pour créer la structure si elle n'existe pas 
 
-                $position_produit = array_search($id_produit, $_SESSION['panier'] ['id_produit']); // array_search retourne un chiffre si l'id_produit est présent dans l'array $_SESSION['panier'], qui correspond à l'indice auquel se situe l'élément (rappel : dans un array le 1er indice vaut 0). Sinon retourne FALSE. 
+                $position_produit = array_search($id_produit, $_SESSION['panier']['id_produit']); // array_search retourne un chiffre si l'id_produit est présent dans l'array $_SESSION['panier'], qui correspond à l'indice auquel se situe l'élément (rappel : dans un array le 1er indice vaut 0). Sinon retourne FALSE. 
 
                 if($position_produit === false ) {
 
@@ -87,4 +87,25 @@
 
                 }
 
+            }
+
+
+
+            //-------------------------------------
+  
+            function montantTotal(){
+
+                $total = 0; // contient le total de la commande
+
+                for($i = 0; $i < count($_SESSION['panier']['id_produit']); $i++){
+
+                    // Tant que $i est inférieur au nombre de produits présents dans le paner, on additionne le prix fois la quantité :
+
+                    $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+                    // Le symbole += pour ajouter la nouvelle valeur à l'ancienne sans l'écraser
+
+    
+                }
+
+                return round($total,2);  // on retourne le total arrondi à 2 décimales. 
             }
