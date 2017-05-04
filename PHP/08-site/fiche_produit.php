@@ -108,7 +108,7 @@
     }
 
 
-    
+
 // ---------------
 //     Exercice
 // ---------------
@@ -149,6 +149,12 @@
 
         </div>
 
+        <script>
+            $(document).ready(function(){
+                // affiche la fenetre modale :
+                    $("#myModal").modal("show");
+            });        
+        </script>
 
     <?php 
     require_once ('inc/bas.inc.php');
