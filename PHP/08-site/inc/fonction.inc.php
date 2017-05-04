@@ -109,3 +109,27 @@
 
                 return round($total,2);  // on retourne le total arrondi à 2 décimales. 
             }
+
+
+
+            // ------------------------------------------
+
+            function retirerProduitDuPanier($id_produit_a_supprimer){
+
+                // on cherche la position du produit dans le panier : 
+                $position_produit = array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']); // array_search renvoie la position renvoie la position du produit (integer) sinon false  s'il n'y pas 
+
+                if ($position_produit !== false ) {
+
+                    // si le produit est bien dans le panier, on coupe sa ligne :
+                    array_splice($_SESSION['panier']['titre'], $position_produit, 1); // efface la portion du tableau à  partir de l'indice indiqu" par $position_produit et sur la 1ligne 
+                    
+                    array_splice($_SESSION['panier']['id_produit'], $position_produit, 1);
+                    array_splice($_SESSION['panier']['quantite'], $position_produit, 1);
+                    array_splice($_SESSION['panier']['prix'], $position_produit, 1);
+
+                }
+
+            }
+
+
