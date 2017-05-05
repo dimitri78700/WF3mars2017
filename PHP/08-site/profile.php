@@ -38,15 +38,22 @@
 
       $membre = $_SESSION['membre']['id_membre'];
 
-      $suivi = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = '$membre'");
-       
-      echo '<ul>';
-        while($membre = $suivi->fetch(PDO::FETCH_ASSOC)){
-            echo '<li>' . $membre['id_commande'] . '</li>';
-            echo '<li>' . $membre['date_enregistrement'] . '</li>';
-            echo '<li>' . $membre['etat'] . '</li>';
-        }
-        echo '</ul>'; 
+      $suivi = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = '$membre'");  // Dans une requête SQL, on met les variables entre quotes. Pour mémoire si on y met un array, celui ci perd ses quotes autour de l'indice. A savoir : on ne peut pas le faire avec un array multidimensionnel .
+      
+      // s'il y a des commandes dans $suivi, on les affiche :
+      
+      if($suivi->rowCount() != 0){ 
+        while($membre = $suivi->fetch(PDO::FETCH_ASSOC)){    
+            $contenu .= '<h3>Détails de votre Commande sont  : </h3><ul>
+                            <li> votre numéro de commande est le n° '  . $membre['id_commande'] . '</li>
+                            <li> le : ' . $membre['date_enregistrement'] . '</li>
+                            <li> état de la commande : ' . $membre['etat'] . '</li>
+                         </ul>';
+        } 
+     } else {
+        $contenu .= "aucune commande n'est en cours";
+     }   
+        
 
  //-------------------- AFFICHAGE ---------------------- 
 
