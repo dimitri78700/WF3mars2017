@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            div{ width: 50%; margin: 0 auto; }
+            #demo { border: 1px solid; padding: 30px; }
+        </style>
+
+    </head>
+    <body>
+        <div>
+            <p id="demo">...</p>
+            <button type="button" id="action">Changer texte</button>
+        </div>
+
+        <script>
+            // on récup l'élément qui a l'id action pour mettre en place un événement d'une fonction lors du clic.
+            document.getElementById("action").addEventListener("click", changeText);
+
+            function changeText(){
+                var xhttp = new XMLHttpRequest(); // instanciation de l'objet XMLHttpRequest. 
+                
+            }
+
+        </script>
+    </body>
+</html>
