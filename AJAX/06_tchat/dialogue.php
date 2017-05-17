@@ -33,11 +33,12 @@
 
     <script>
 
+        // pour récupérer la liste des membres connectés 
+        setInterval("ajax(liste_membre_connecte)", 5000);
 
 
 
-
-
+        ajax('message_tchat');
         // déclaration de la fonction Ajax
         function ajax(mode, arg = ''){
                 if(typeof(mode) == 'object'){
@@ -61,7 +62,7 @@
 
                     xhttp.onreadystatechange = function(){
                          if(xhttp.readyState == 4 && xhttp.status == 200){
-                             onsole.log(xhttp.responseText);
+                             console.log(xhttp.responseText);
                              var obj = JSON.parse(xhttp.responseText);
 
                              document.getElementById(mode).innerHTML = obj.resultat;
