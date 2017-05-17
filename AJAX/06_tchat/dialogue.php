@@ -1,6 +1,11 @@
 <?php 
 
     require_once('inc/init.inc.php');
+
+    if(empty($_SESSION['pseudo'])){
+        // si l'utilisateur est deja present on le redirige vers index.php 
+        header("location:index.php");
+    }
 ?>
 
 
