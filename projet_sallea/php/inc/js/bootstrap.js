@@ -2364,6 +2364,7 @@ if (typeof jQuery === 'undefined') {
 
 
 
-// ----------------
+// ---------------- date -------------
 
 
+$('.datepicker').datepicker();

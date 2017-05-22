@@ -1,27 +1,24 @@
 <?php
     require_once('inc/init.inc.php');
-    
+
     require_once('inc/header.inc.php');
+
 ?>
 
 
 <form method="post" action="">
     
     <label for="tarif">Tarif</label><br>
-    <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
-        </div>
-    </div>
+    <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime">
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    </script>
 
     <label for="tarif">Tarif</label><br>
-    <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
-        </div>
-    </div>
+    <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime">
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    </script>
 
     <select name="salle" id="salle"><br>
         <?php 
@@ -37,3 +34,10 @@
     <input type="submit" value="Enregistrer">
 
 </form>
+
+
+<?php
+    require_once('inc/footer.inc.php');
+
+
+?>

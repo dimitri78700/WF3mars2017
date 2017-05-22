@@ -29,9 +29,13 @@ function executeRequete($req, $param = array()){ // $param est un array vide par
         }
     }
     // La requette préparée
+
     global $pdo; // $pdo est déclaré dans l'espace global (fichier init.inc.php). Il faut donc faire global $pdo pour l'utiliser dans un espace local de cette fonction'
+    
     $r = $pdo->prepare($req);
+
     $succes = $r->execute($param); // On execute la requette en lui passant l'array $param qui permet d'associer cchaque marquer a sa valeur
+
     // Traitement erreurs SQL eventuelle:
     if(!$succes){ // Si $succes vaut false, il y a une erreur sur la requette
         die('erreur sur la requette SQL:' . $r->errorInfo()[2] ); // die arrete le script et affiche  un message. Ici on affiche un message d'erreur SQL donné par errorInfo(). Cette methode retourne un array dans lequel le message se situe a l'indice [2]

@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="<?php echo RACINE_SITE . '/inc/css/bootstrap.min.css';?>">
         <link rel="stylesheet" href="<?php echo RACINE_SITE . '/inc/css/shop-homepage.css';?>">
         <link rel="stylesheet" href="<?php echo RACINE_SITE . '/inc/css/portfolio-item.css';?>">
-        
+        <link href="./bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <script src="<?php echo RACINE_SITE . 'inc/js/jquery.js';?>"></script>
+        <script src="<?php echo RACINE_SITE . 'inc/js/bootstrap.min.js';?>"></script>
     </head>
 
     <body>
@@ -24,11 +26,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo RACINE_SITE . 'boutique.php'; ?>">Sallea</a>
+                    <a class="navbar-brand" href="<?php echo RACINE_SITE . 'sallea.php'; ?>">SalleA</a>
+                
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <?php 
+                        echo '<li><a href="'. RACINE_SITE .'">Qui sommes nous</a></li>';
+                        echo '<li><a href="'. RACINE_SITE .'">Contacts</a></li>';
                             if(internauteEstConnecte()){ // si membre est connecté
                                 echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';
                                 echo '<li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>';
