@@ -69,7 +69,7 @@
                         // echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
                         foreach($ligne as $index => $data){ // $index réceptionne les indices, $data les valeurs
                             if($index == 'photo'){
-                                $contenu .= '<td><img src="' . $data . '" width="70" height="70"alt=""></td>';
+                                $contenu .= '<td><img src="' . $data . '" width="80" height="80"alt=""></td>';
                             }
                             else{
                                 $contenu .= '<td>' . $data . '</td>';

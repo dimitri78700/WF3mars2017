@@ -33,7 +33,7 @@
                     <ul class="nav navbar-nav">
                         <?php 
                         echo '<li><a href="'. RACINE_SITE .'">Qui sommes nous</a></li>';
-                        echo '<li><a href="'. RACINE_SITE .'">Contacts</a></li>';
+                        echo '<li><a href="'. RACINE_SITE .'contact.php">Contacts</a></li>';
                             if(internauteEstConnecte()){ // si membre est connecté
                                 echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';
                                 echo '<li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>';
