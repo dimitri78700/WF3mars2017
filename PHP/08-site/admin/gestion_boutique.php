@@ -147,7 +147,9 @@
     // 3- Formulaire  HTML
 
         if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 'modification')) :
+        
         // Si on a demandé l'ajout d'un produit ou sa modification, on affiche le formulaire :
+
 
     // 8- Formulaire de modification avec présaisiei des infos dans le formulaire :
 

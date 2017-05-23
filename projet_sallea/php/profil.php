@@ -18,7 +18,6 @@
             }
             $contenu .= '<div><h3>Voici vos information de profil</h3>';            
                 $contenu .= '<p> Votre pseudo :' . $_SESSION['membre']['pseudo'] . '</p>';
-                $contenu .= '<p>' . $_SESSION['membre']['civilite'] . '</p>';
                 $contenu .= '<p> Votre nom :' . $_SESSION['membre']['nom'] . '</p>';
                 $contenu .= '<p> Votre prenom :' . $_SESSION['membre']['prenom'] . '</p>';
                 $contenu .= '<p> Votre email :' . $_SESSION['membre']['email'] . '</p>';

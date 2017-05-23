@@ -46,7 +46,7 @@ CREATE TABLE `salle` (
   `adresse` varchar(50) NOT NULL,
   `cp` int(5) NOT NULL,
   `capacite` int(3) NOT NULL,
-  `categories` enum('réunion','bureau','formation') NOT NULL
+  `categories` enum('reunion','bureau','formation') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 

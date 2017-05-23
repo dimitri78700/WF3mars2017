@@ -7,11 +7,14 @@
 <?php
     //--------------------------- TRAITEMENT ------------------------------
     
-    // 1- Vérification ADMIN
+    // // 1- Vérification ADMIN
         if(!internauteEstConnecteEtEstAdmin()){
             header('location:../connexion.php'); // Si membre pas ADMIN, alors on le redirige vers la page de connexion qui est à la racine du site (en dehors du dossier admin)
             exit();
         }
+
+        $resultat = '';
+
     // 7- Suppression d'un membre
         if(isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_membre'])){
             // On sélectionne en base la photo pour pouvoir supprimer le fichier pjoto correspondant :
@@ -26,7 +29,7 @@
         if($_POST){ // Equivalent à !empty($_POST) car si le $_POST est rempli, il vaut TRUE = formulaire posté
    
             // 4- Suite de l'enregistrement en BDD :
-            executeRequete("REPLACE INTO membre (id_membre, pseudo, mdp, prenom, nom, email, civilite)VALUES(:id_membre, :pseudo, :mdp, :prenom, :nom, :email, :civilite)", array('id_membre' => $_POST['id_membre'], 'pseudo' => $_POST['pseudo'], 'mdp' => $_POST['mdp'], 'prenom' => $_POST['prenom'], 'nom' => $_POST['nom'], 'email' => $_POST['email'], 'civilite' => $_POST['civilite']));
+            executeRequete("REPLACE INTO membre (id_membre, pseudo, mdp, prenom, nom, email, civilite, statut, date_enregistrement)VALUES(:id_membre, :pseudo, :mdp, :prenom, :nom, :email, :civilite, :statut, NOW())", array('id_membre' => $_POST['id_membre'], 'pseudo' => $_POST['pseudo'], 'mdp' => $_POST['mdp'], 'prenom' => $_POST['prenom'], 'nom' => $_POST['nom'], 'email' => $_POST['email'], 'civilite' => $_POST['civilite'], 'statut' => $_POST['statut']));
             $contenu .='<div class="bg-success">Le membre a été enregistré</div>';
             $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des produits plus loin dans le script (point 6)
         } 
@@ -37,13 +40,19 @@
                     </ul>';
   
     // 6- Affichage des produits dans le back-office :
+
         if(isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])) {
+
             // Si $_GET contient affichage ou que l'on arrive sur l apage la 1ere fois ($_GET['action'] n'existe pas)
-            $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produits
-            $contenu .= '<h3>Affichage des produits</h3>';
-            $contenu .= '<p>Nombre de produit(s) dans la boutique :'. $resultat->rowCount() . '</p>';
-            $contenu .= '<table class="table">';
+
+            $resultat = executeRequete("SELECT * FROM membre"); // On sélectionne tous les produits
+
+            $contenu .= '<h3>Affichage des membres</h3>';
+            $contenu .= '<p>Nombre de membres(s) :'. $resultat->rowCount() . '</p>';
+            $contenu .= '<table table border="2" class="table">';
                 // La ligne des entêtes
+
+
                 $contenu .= '<tr>';
                     for($i = 0; $i< $resultat->columnCount(); $i++){
                         $colonne = $resultat->getColumnMeta($i);
@@ -52,7 +61,9 @@
                     }
                     $contenu .= '<th>Action</th>'; // On ajoute une colonne "Action"
                 $contenu .= '</tr>';
+
                 // Affichage des lignes :
+                
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC)){
                     $contenu .= '<tr>';
                         // echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
@@ -74,7 +85,9 @@
         }
     //--------------------------- AFFICHAGE ------------------------------
     require_once('../inc/header.inc.php');
+
     echo $contenu;
+
     // 3- Formulaire  HTML
         if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 'modification' )) :
         // Si on a demandé l'ajout d'un produit ou sa modification, on affiche le formulaire :
@@ -82,11 +95,13 @@
             if(isset($_GET['id_membre'])){
                 // Pour préremplir le formulaire, on requête en BDD les infos du membre passé dans l'URL:
                 $resultat = executeRequete("SELECT * FROM membre WHERE id_membre = :id_membre", array(':id_membre' => $_GET['id_membre']));
+
                 $membre_actuelle= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul produit
             }
 ?>
 
 <h3>Formulaire d'ajout ou de modification d'un membres</h3>
+
 <form method="post" enctype="multipart/form-data" action=""> <!-- "multipart/form-data" permet d'uploader un fichier et de générer une superglobale $_FILES -->
     <input type="hidden" id="id_membre" name="id_membre" value="<?php echo $membre_actuelle['id_membre']?? 0;?>"> <!-- champ caché qui récetionne l'id_produit nécessaire lors de la modification d'un membre existant -->
     
@@ -107,9 +122,12 @@
 
     <label>Civilité</label><br>
     <select name="civilite">
-        <option value="m" selected>Homme</option>
-        <option value="f" <?php if(isset($produit_actuel['civilite'])&& $produit_actuel['civilite'] == 'f') echo 'selected'; ?>>Femme</option>
+        <option value="homme" selected>Homme</option>
+        <option value="femme" <?php if(isset($produit_actuel['civilite'])&& $produit_actuel['civilite'] == 'femme') echo 'selected'; ?>>Femme</option>
     </select><br><br>
+
+     <label for="statut">Statut</label><br>
+    <input type="text" id="statut" name="statut" value="<?php echo $membre_actuelle['statut']?? '';?>"><br><br>
 
     <input type="submit" value="enregister" class="btn"><br><br>
 

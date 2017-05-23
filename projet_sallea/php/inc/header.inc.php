@@ -39,11 +39,13 @@
                                 echo '<li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>';
                             }
                             else{ // Sinon s'il n'est pas connecté
+                            
                                 echo '<li><a href="'. RACINE_SITE .'inscription.php">Inscription</a></li>';
                                 echo '<li><a href="'. RACINE_SITE .'connexion.php">Connexion</a></li>';                                
                             }
 
                             // Menu admin :
+
                             if(internauteEstConnecteEtEstAdmin()){
                                 echo '<li><a href="'. RACINE_SITE .'admin/gestion_des_salles.php">Gestion salles</a></li>';
                                 echo '<li><a href="'. RACINE_SITE .'admin/gestion_des_produit.php">Gestion produits</a></li>';   

@@ -5,6 +5,7 @@
         //Traitement du POST :
             if(!empty($_POST)){ // si le formulaire est posté
                 // validation du formulaire :
+
                     if(strlen($_POST['pseudo']) < 4 || strlen($_POST['pseudo']) > 20){
                         $contenu .= '<div class="bg-danger">Le pseudo doit contenir au moins 4 caractères</div>';
                     }
@@ -51,6 +52,7 @@
                         }
                         else{
                             // Si le pseudo est unique, on peut faire l'inscription en BDD:
+                            
                             $_POST['mdp'] = md5($_POST['mdp']);// permet d'encrypter le mot de passe selon l'algorithme md5. Il faudra le faire aussi sur la page de connexion pour comparer 2mots cryptés
                             executeRequete("INSERT INTO membre(pseudo, mdp, nom, prenom, email, civilite, ville, code_postal, adresse, statut) VALUES(:pseudo, :mdp, :nom, :prenom, :email, :civilite, :ville, :code_postal, :adresse, 0)", array(':pseudo'=> $_POST['pseudo'],':mdp'=> $_POST['mdp'],':nom'=> $_POST['nom'],':prenom'=> $_POST['prenom'],':email'=> $_POST['email'],':civilite'=> $_POST['civilite'],':ville'=> $_POST['ville'],':code_postal'=> $_POST['code_postal'],':adresse'=> $_POST['adresse']));
                             $contenu .= '<div class="bg-danger">Vous avez bien été inscrit.<a href="connexion.php">Cliquez ici pour vous connecter</a></div>';
