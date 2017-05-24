@@ -47,6 +47,7 @@
             $contenu .= '<h3>Affichage des commande</h3>';
             $contenu .= '<p>Nombre d\'commande : '. $resultat->rowCount() . '</p>';
             $contenu .= '<table border="2" class="table">';
+
                 // La ligne des entêtes
 
                 $contenu .= '<tr>';
@@ -57,12 +58,14 @@
                     }
                     $contenu .= '<th>Action</th>'; // On ajoute une colonne "Action"
                 $contenu .= '</tr>';
+
                 // Affichage des lignes :
 
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC)){
                     $contenu .= '<tr>';
                         // echo '<pre>'; print_r($ligne) ; echo '</pre>';                    
                         foreach($ligne as $index => $data){ // $index réceptionne les indices, $data les valeurs
+
                                 $contenu .= '<td>' . $data . '</td>';
                         }
                         $contenu .= '<td>
@@ -90,6 +93,10 @@
                 $resultat = executeRequete("SELECT * FROM commande WHERE id_commande = :id_commande", array(':id_commande' => $_GET['id_commande']));
                 $commande_actuel= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul commande
             }
+
+
+
+            
 ?>
 
 <h3>Formulaire d'ajout ou de modification d'un commande</h3>

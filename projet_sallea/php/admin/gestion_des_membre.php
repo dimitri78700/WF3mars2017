@@ -84,6 +84,8 @@
             $contenu .= '</table>';
         }
     //--------------------------- AFFICHAGE ------------------------------
+
+    
     require_once('../inc/header.inc.php');
 
     echo $contenu;

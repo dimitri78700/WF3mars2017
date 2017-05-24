@@ -63,6 +63,7 @@
                         $contenu_droite .= '</div>';
                     $contenu_droite .= '</div>';                
                 $contenu_droite .= '</div>';
+                
             }
     //--------------------------- AFFICHAGE --------------------------------
 

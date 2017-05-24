@@ -6514,6 +6514,14 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
+
+button.btn {
+    background: #38b538;
+    color: #fff;
+    margin-left: 25%;
+    margin-bottom: 1rem;
+}
+
 .center-block {
   display: block;
   margin-right: auto;

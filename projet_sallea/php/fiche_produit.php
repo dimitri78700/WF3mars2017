@@ -25,6 +25,7 @@
         // 2- Affichage du détail du produit:
 
         $produit = $resultat->fetch(PDO::FETCH_ASSOC); // Pas de while car qu'un seul produit
+
         // dd($produit);
         $contenu .= '<div class="row">
                         <div class="col-lg-12">
@@ -45,10 +46,13 @@
                             <li>Catégorie : '. $produit['categories'] .' </li>
                             <li>Adresse : '. $produit['adresse'] .' </li>
                             <li>Prix : '. $produit['prix'] .' </li>
+                            
                         </ul>
                         <p class="lead">Prix : '. $produit['prix'] .' €</p>
+                        <button class="btn">Reserver</button><br>
                     </div>';
         // 3- Affichage du formulaire d'ajout au panier si stock > 0 :
+
         $contenu .= '<div class"col-md-4">';
             $contenu .= '<p><a href="sallea.php?categorie='. $produit['categories'] .'">Retour vers votre sélection</a></p>';
         $contenu .= '</div>';
@@ -60,9 +64,11 @@
         exit();
     }
     // Affichage d'une fenêtre modale pour confirmer l'ajout du produit au panier :
+
     if(isset($_GET['statut_produit']) && $_GET['statut_produit'] == 'ajoute'){
         
         // On met dans une variable le HTML de la fenêtre modale pour afficher ensuite :
+        
         $contenu_gauche ='<div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
