@@ -7,7 +7,7 @@
     $aside='';
 
     // 1- Contrôle de l'existence du produit demandé :
-    
+
     if (isset($_GET['id_salle'])){ // Si existe l'indicee id-produit dans l'URL
         // On requête en base le produit demandé pour vérifier son existence :
 
@@ -39,14 +39,14 @@
                         <p>'. $produit['description'] .'</p>
                         <h3>Informations complémentaires</h3>
                         <ul>
-                            <li>Arrivé :'. $produit['date_arrivee'] .' </li>
-                            <li>Départ :'. $produit['date_depart'] .' </li>
-                            <li>Capacité :'. $produit['capacite'] .' </li>
-                            <li>Catégorie :'. $produit['categories'] .' </li>
-                            <li>Adresse :'. $produit['adresse'] .' </li>
-                            <li>Prix :'. $produit['prix'] .' </li>
+                            <li>Arrivé : '. $produit['date_arrivee'] .' </li>
+                            <li>Départ : '. $produit['date_depart'] .' </li>
+                            <li>Capacité : '. $produit['capacite'] .' </li>
+                            <li>Catégorie : '. $produit['categories'] .' </li>
+                            <li>Adresse : '. $produit['adresse'] .' </li>
+                            <li>Prix : '. $produit['prix'] .' </li>
                         </ul>
-                        <p class="lead">Prix :'. $produit['prix'] .' €</p>
+                        <p class="lead">Prix : '. $produit['prix'] .' €</p>
                     </div>';
         // 3- Affichage du formulaire d'ajout au panier si stock > 0 :
         $contenu .= '<div class"col-md-4">';

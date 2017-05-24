@@ -17,10 +17,10 @@
                 $contenu .= '<p>Vous êtes un membre</p>';                
             }
             $contenu .= '<div><h3>Voici vos information de profil</h3>';            
-                $contenu .= '<p> Votre pseudo :' . $_SESSION['membre']['pseudo'] . '</p>';
-                $contenu .= '<p> Votre nom :' . $_SESSION['membre']['nom'] . '</p>';
-                $contenu .= '<p> Votre prenom :' . $_SESSION['membre']['prenom'] . '</p>';
-                $contenu .= '<p> Votre email :' . $_SESSION['membre']['email'] . '</p>';
+                $contenu .= '<p> Votre pseudo : ' . $_SESSION['membre']['pseudo'] . '</p>';
+                $contenu .= '<p> Votre nom : ' . $_SESSION['membre']['nom'] . '</p>';
+                $contenu .= '<p> Votre prenom : ' . $_SESSION['membre']['prenom'] . '</p>';
+                $contenu .= '<p> Votre email : ' . $_SESSION['membre']['email'] . '</p>';
             $contenu .= '</div>';            
             
         // // echo '<pre>';print_r($_SESSION);'</pre>';

@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <?php 
-                        echo '<li><a href="'. RACINE_SITE .'">Qui sommes nous</a></li>';
+                        echo '<li><a href="'. RACINE_SITE .'sallea.php">Qui sommes nous</a></li>';
                         echo '<li><a href="'. RACINE_SITE .'contact.php">Contacts</a></li>';
                             if(internauteEstConnecte()){ // si membre est connecté
                                 echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';

@@ -58,7 +58,7 @@
             $resultat = executeRequete("SELECT * FROM avis"); // On sélectionne tous les avis
 
             $contenu .= '<h3>Affichage des avis</h3>';
-            $contenu .= '<p>Nombre d\'avis :'. $resultat->rowCount() . '</p>';
+            $contenu .= '<p>Nombre d\'avis : '. $resultat->rowCount() . '</p>';
             $contenu .= '<table table border="2" class="table">';
                 // La ligne des entêtes
 
