@@ -67,12 +67,13 @@
 
                 // on constitue un nom unique pour le fichier photo :
 
-                $nom_photo = $_POST['pays'] . '_' . $_FILES['photo'] ['name']; 
+                $nom_photo = $_POST['ville'] . '_' . $_FILES['photo']['name']; 
 
                 // On constitue le chemin de la photo enregistré en BDD :
 
-                $photo = RACINE_SITE . '/photo' . $nom_photo;  // On obtient ici le nom et le chemin de la photo depuis la racine du site
+                $photo = RACINE_SITE . 'photo/' . $nom_photo;  // On obtient ici le nom et le chemin de la photo depuis la racine du site
 
+                // dd($photo);
                 // On constitue le chemin absolu complet de la photo depuis la racine serveur :
 
                 $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . $photo; 
@@ -81,7 +82,7 @@
 
                 // Enregistrement du fichier photo sur le serveur : 
 
-                copy($_FILES['photo'] ['tmp_name'], $photo_dossier); // on copie le fichier tempoiraire de la photo stockée au chemin indiqué par $_FILES['photo'] ['tmp_name'] dans le chemin $photo_dossier de notre serveur
+                copy($_FILES['photo']['tmp_name'], $photo_dossier); // on copie le fichier tempoiraire de la photo stockée au chemin indiqué par $_FILES['photo'] ['tmp_name'] dans le chemin $photo_dossier de notre serveur
 
              }
 
@@ -192,7 +193,8 @@
 
                 <label>pays</label><br>
                 <select name="pays">
-                    <option id="france" value="<?php echo $salle ['pays'] ?? ''; ?>">France</option>
+                    <option value="france" selected>France</option>
+                    <option value="irlande" <?php if(isset($salle['pays']) && $salle['pays'] == 'irlande') echo 'selected '?>>Irlande</option>
                 </select><br><br>
 
                 <label>ville</label><br>
@@ -200,6 +202,7 @@
                     <option value="paris" selected>Paris</option>
                     <option value="lyon" <?php if(isset($salle['ville']) && $salle['ville'] == 'lyon') echo 'selected '?>>Lyon</option>
                     <option value="marseille" <?php if(isset($salle['ville']) && $salle['ville'] == 'marseille') echo 'selected '?>>Marseille</option>
+                    <option value="dublin" <?php if(isset($salle['ville']) && $salle['ville'] == 'dublin') echo 'selected '?>>Dublin</option>
                 </select><br><br>
 
                    <label>Catégorie</label><br>
@@ -210,7 +213,7 @@
                 </select><br><br>
 
                 <label for="description">Description</label><br>
-                <textarea id="description" name="description" value="<?php echo $salle['descritpion'] ?? ''; ?>"></textarea><br><br>
+                <textarea id="description" name="description" value="<?php echo $salle['description'] ?? ''; ?>"></textarea><br><br>
 
 
                 <label>Capacité</label><br>
@@ -227,10 +230,13 @@
 
                 <?php
                     if(isset($salle['photo'])){
+
                         echo '<i>Vous pouvez uploader une nouvelle photo</i>';
                         // afficher la photo actuellle : 
+
                         echo '<img src="'. $salle['photo'] .'" width="90" height="90"><br>';
                         //  Mettre le chemin de la photo dans un champ caché pour l'enregistrer en base :
+
                         echo '<input type="hidden" name="photo_actuelle" value="'. $salle['photo'] .'">';
                         // ce champs renseigne le $_POST['photo_actuelle'] qui van en base quand on soument le formulaire de modification. Si on ne remplit pas le formulaire ici, le champs photo de la base est remplacé par un vide, ce qui efface le chemin de la photo. 
                     }

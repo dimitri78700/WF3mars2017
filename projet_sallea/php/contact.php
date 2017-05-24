@@ -38,7 +38,7 @@
             <input type="text" id="email" name="email" value=""><br>
 
             <label for="commentaire">Commentaire</label><br>
-            <input type="text" id="commentaire" name="commentaire" value=""><br><br>
+            <textarea name="commentaire" id="commentaire"></textarea><br><br>
 
             <input type="submit" name="validation" value="envoyer">
         </form>
