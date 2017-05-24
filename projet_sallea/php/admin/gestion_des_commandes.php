@@ -45,8 +45,8 @@
 
             $resultat = executeRequete("SELECT * FROM commande"); // On sélectionne tous les commande
             $contenu .= '<h3>Affichage des commande</h3>';
-            $contenu .= '<p>Nombre d\'commande :'. $resultat->rowCount() . '</p>';
-            $contenu .= '<table class="table">';
+            $contenu .= '<p>Nombre d\'commande : '. $resultat->rowCount() . '</p>';
+            $contenu .= '<table border="2" class="table">';
                 // La ligne des entêtes
 
                 $contenu .= '<tr>';

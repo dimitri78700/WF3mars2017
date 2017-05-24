@@ -55,7 +55,7 @@
 
                 //  si je suis en modification, je mets en base la photo du champs hidden photo_actuelle du formulaire:
 
-                $photo = $_POST['photo'];
+                $photo = $_POST['photo_actuelle'];
 
              }
 

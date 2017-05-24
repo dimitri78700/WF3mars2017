@@ -4,7 +4,8 @@
             <footer>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>copyright &copy; Sallea - 2017</p>
+                        <a href="https://www.cnil.fr/">Mentions légales</a><br><a href="https://fr.wikipedia.org/wiki/Conditions_g%C3%A9n%C3%A9rales_de_vente">Conditions générales de ventes</a><br><br>
+                        <aside>copyright &copy; Sallea - 2017</aside>
                     </div>
                 </div>
             </footer>
