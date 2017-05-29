@@ -1,6 +1,6 @@
 <?php
 
-// 03- Constante_static_self
+// 04- Constante_static_self
     // Maison.class.php
 
     class Maison{
