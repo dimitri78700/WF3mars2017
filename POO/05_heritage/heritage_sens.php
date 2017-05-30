@@ -28,7 +28,7 @@
     echo $c->testA().'<br>'; // Méthode de A accessible par C (héritage indirect)
     echo $c->testB().'<br>'; // Méthode de B accessible par C (héritage direct)
     echo $c->testC().'<br>'; // Méthode de C accessible par C
-    var_dump(het_class_methods($c)); // Affiche les 3 méthodes, car elles appartiennent toutes à C
+    var_dump(get_class_methods($c)); // Affiche les 3 méthodes, car elles appartiennent toutes à C
 
 /*
 Commentaires :
