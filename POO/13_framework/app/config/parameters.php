@@ -4,7 +4,7 @@
     $parameters = array(
 
         'connect' => array(
-            'connect' => "localhost",
+            'host' => "localhost",
             'dbname' => "site",
             'login' => "root",
             'password' => "",

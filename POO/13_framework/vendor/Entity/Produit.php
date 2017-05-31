@@ -1,12 +1,13 @@
 <?php
 
+  namespace Entity;
 
   class Produit {
 
     private $id_produit;
-    private $reference;
-    private $categorie;
-    private $titre $description, $couleur, $taille, $public, $photo, $prix, $stock;
+    private $ref;
+    private $cat;
+    private $titre, $description, $couleur, $taille, $public, $photo, $prix, $st;
 
 /**
 *
