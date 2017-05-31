@@ -75,10 +75,8 @@
             }
 
         public function register($infos){
-            $requete = 'INSERT INTO'  . $this -> getTableName() . ' (' . implode(',' , array_keys($infos)) . ' ) VALUES (' . "':" . implode("',:'" , array_keys($infos)) . "'" . ')';
+            $requete = 'INSERT INTO '  . $this -> getTableName() . ' (' . implode(',' , array_keys($infos)) . ' ) VALUES ( ' . ":" . implode(",:" , array_keys($infos)) . ')';
             
-            echo $requete;
-
             $resultat = $this -> getDb() -> prepare($requete);
             $resultat -> execute($infos);
 

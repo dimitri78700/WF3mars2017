@@ -21,17 +21,43 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 // TEST 3 : EntityRepository
 // $er = new Manager\EntityRepository;
 
-
 // $resultat = $er -> findAll();
 
 // echo '<pre>';
 // print_r($resultat); 
 // echo '</pre>';
 
-// $resultat = $er -> find(7);
+// $resultat = $er -> find(6);
 
 // echo '<pre>';
 // print_r($resultat); 
 // echo '</pre>';
 
+// $resultat = $er -> delete(7);
+
+// echo '<pre>';
+// print_r($resultat); 
+// echo '</pre>';
+
+
+// $produit = array(
+
+//     "id_produit" => NULL,
+//     "reference" => "erggrgr",
+//     "categorie" => "pantalon",
+//     "titre" => "couleur",
+//     "prix" => "15",
+//     "taille" => "M",
+//     "stock" => "3",
+//     "public" => "f",
+//     "photo" => "couleur.jpg",
+//     "couleur" => "rouge",
+//     "description" => "rgrgrgrgrgrg",
+// );
+
+// $resultat = $er -> register($produit);
+
+// echo '<pre>';
+// print_r($resultat); 
+// echo '</pre>';
 
