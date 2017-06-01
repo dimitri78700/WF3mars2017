@@ -49,10 +49,26 @@ vendor/
 		Ce fichier contiendra toutes les fonctions liées à l'entité produit et demandera à EntityRepository d'éxécuter des requêtes. Si une Entité a besoin de requête spécifiques, (exemple :jointure) alors elle sera codée directement dans ce fichier.
 		
 
-		
+		Controller/
+
+			Controller.php : 
+			Controller général de l'application. Il doit effectuer 2 missions : 
+			1/ Récupérer le bon 'repository' qui correspond au controller appelé. getRepository()
+			
+			2/ Affiche la vue correspond à l'action . render()
 
 web/
+
 	index.php : 
 	Clé d'entrée de notre application. ( SILEX : index.php / Symfony app.php) 
+
+
+
+src/
+	  	Controller/
+
+			ProduitController.php :
+			Celle classe hérite du controller général, et permet de déclencher toutes les actions spécifiques à l'entité Produit. 
+		
 
 	

@@ -11,7 +11,7 @@
     // Tout le code de EntityRepository est présent ici
 	
 	
-        public function getAllProduit(){
+        public function getAllProduits(){
             return $this -> findAll();
         }
 
@@ -30,7 +30,7 @@
 
         // requetes spécifiques //  
 
-        public function getAllCategorie(){
+        public function getAllCategories(){
 
 		// récupére toutes les catégories
 
@@ -48,7 +48,7 @@
 	    }
 
 
-        public function getAllProduitByCategorie($categorie){
+        public function getAllProduitsByCategories($categorie){
 
 		//récupére tous les produits en fonction d'une catégorie
             $requete = "SELECT * FROM produit WHERE categorie = :categorie";
@@ -74,13 +74,13 @@
             $requete = "SELECT * FROM produit WHERE categorie = '$categorie' AND id_produit <> $id";
             $resultat = $this -> getDb() -> query($requete);
             
-            $sug = $resultat -> fetchAll(PDO::FETCH_ASSOC);
+            $suggestion = $resultat -> fetchAll(PDO::FETCH_ASSOC);
             
-            if(!$sug){
+            if(!$suggestion){
                 return false;
             }
             else{
-                return $sug;
+                return $suggestion;
             }
 	    }
 

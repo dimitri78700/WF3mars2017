@@ -7,7 +7,7 @@
 
 			$tab = explode('\\', $nom_de_la_class );
 
-			if($tab[0] == 'Controller'){
+			if($tab[0] == 'Controller' && $tab[1] != 'Controller'){
 				$path = __DIR__ . '/../src/' . implode('/', $tab) . '.php';
 			} else {
 				$path = __DIR__ . '/' . implode('/', $tab) . '.php';

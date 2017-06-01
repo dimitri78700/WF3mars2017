@@ -72,6 +72,10 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 // $resultat = $pr -> getAllSuggestions('jean', 6);
 
 
-// echo '<pre>';
-// print_r($resultat); 
-// echo '</pre>';
+//TEST 5 : ProduitController : 
+// $pc = new Controller\ProduitController;
+// $pc -> afficheAll();
+// $pc -> affiche(6);
+// $pc -> categories('jean');
+
+
