@@ -9,31 +9,47 @@
     class ProduitController extends Controller{
         
         public function afficheAll(){
-            $produit = $this -> getRepository() -> getAllProduits();
-            $categorie = $this -> getRepository() -> getAllCategories();
+            $produits = $this -> getRepository() -> getAllProduits();
+            $categories = $this -> getRepository() -> getAllCategories();
 
-            // $this -> render()
+            $params = array(
+			"categories" => $categories,
+			"produits" => $produits,
+			"title" => 'Ma boutique',
 
-            require('../View/Produit/boutique.php');
+		    );
+
+            return $this -> render('layout.html', 'boutique.html', $params);
+            
         }
 
          public function affiche($id){
-             $produit = $this -> getRepository() -> getProduitById($id);
-             $suggestion = $this -> getRepository() -> getAllSuggestions($produit['categorie'], $produit['id_produit']);
+             $produits = $this -> getRepository() -> getProduitById($id);
+             $suggestions = $this -> getRepository() -> getAllSuggestions($produits['categorie'], $produits['id_produit']);
 
-             // $this -> render()
+            $params = array(
+			"produit" => $produit,
+			"suggestions" => $suggestions,
+			"title" => 'fiche produit - ' . $produit['titre']
 
-           require('../View/Produit/fiche_produit.php');
+		    );
+
+            return $this -> render('layout.html', 'fiche_produit.html', $params);
         }
 
 
          public function categories ($categorie){
-             $produit = $this -> getRepository() -> getAllProduitsByCategories($categorie);
-             $categorie = $this -> getRepository() -> getAllCategories();
+             $produits = $this -> getRepository() -> getAllProduitsByCategories($categorie);
+             $categories = $this -> getRepository() -> getAllCategories();
 
-              // $this -> render()
+             $params = array(
+			"produits" => $produits,
+			"categories" => $categories,
+			"title" => 'fiche produit - ' . $categorie
 
-            require('../View/Produit/categorie.php');
+		    );
+
+            return $this -> render('layout.html', 'categorie.html', $params);
         }
         
                 

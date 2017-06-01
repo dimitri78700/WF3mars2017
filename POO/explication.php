@@ -69,6 +69,16 @@ src/
 
 			ProduitController.php :
 			Celle classe hérite du controller général, et permet de déclencher toutes les actions spécifiques à l'entité Produit. 
+
+
+		View/
+
+			Produit/
+				fiche_produit.php, boutique.php, categorie.php : 
+
+
+			layout.html : 
+			Le layout représente la page générale, le template de base.Il peut y envoir plusieurs s'il y a plusieurs structures de page dans notre application (home, produit, boutique, mentions_légales...)
 		
 
 	
