@@ -80,7 +80,7 @@
             $resultat = $this -> getDb() -> prepare($requete);
             $resultat -> execute($infos);
 
-            if(!$resultat){ // si c'est false;
+                if(!$resultat){ // si c'est false;
                     return FALSE;
                 }
                 else{

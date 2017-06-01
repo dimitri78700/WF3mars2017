@@ -43,8 +43,16 @@ vendor/
         EntityRepository.php : 
 		Un repository centralise tout ce qui touche à la BDD et la récupération des entités. Concrètement il ne devrait pas y avoir de requêtes SQL ailleurs que dans un repository. 
 		Si une entité à besoin de requete spécifique (ex : jointure ) dans ce cas les requetes seront codées directement dans le repository en question. 
+
+		Repository/
+		ProduitRepository.php :
+		Ce fichier contiendra toutes les fonctions liées à l'entité produit et demandera à EntityRepository d'éxécuter des requêtes. Si une Entité a besoin de requête spécifiques, (exemple :jointure) alors elle sera codée directement dans ce fichier.
+		
+
 		
 
 web/
 	index.php : 
 	Clé d'entrée de notre application. ( SILEX : index.php / Symfony app.php) 
+
+	

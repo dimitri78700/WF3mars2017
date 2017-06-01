@@ -61,3 +61,17 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 // print_r($resultat); 
 // echo '</pre>';
 
+
+// TEST 4 : ProduitRepository
+// $pr = new Repository\ProduitRepository;
+
+// $resultat = $pr -> getAllProduit();
+// $resultat = $pr -> getProduitById(5);
+// $resultat = $pr -> DeleteProduitById(8);
+// $resultat = $pr -> getAllProduitByCategorie('pull');
+// $resultat = $pr -> getAllSuggestions('jean', 6);
+
+
+// echo '<pre>';
+// print_r($resultat); 
+// echo '</pre>';
