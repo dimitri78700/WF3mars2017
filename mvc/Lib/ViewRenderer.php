@@ -28,6 +28,7 @@ class ViewRenderer {
     
      public function render($view, $parameters = []){
          extract($parameters);
+         
          include $this->viewDir . $view;
     }
         
